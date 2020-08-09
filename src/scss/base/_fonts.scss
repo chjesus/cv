@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Diavlo";
+  src: url("../fonts/Diavlo_BLACK_II_37.otf");
+}
+
+@font-face {
+  font-family: "Lemon Milk";
+  src: url("../fonts/LemonMilk.otf");
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?phzp4b');
+  src: url('../fonts/icomoon.eot?phzp4b#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?phzp4b') format('truetype'),
+    url('../fonts/icomoon.woff?phzp4b') format('woff'),
+    url('../fonts/icomoon.svg?phzp4b#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-react:before {
+  content: "\e900";
+}
+
+.icon-phone:before {
+  content: "\e942";
+}
+
+.icon-location:before {
+  content: "\e947";
+}
+
+.icon-mobile2:before {
+  content: "\e959";
+}
+
+.icon-spinner5:before {
+  content: "\e97e";
+}
+
+.icon-plus:before {
+  content: "\ea0a";
+}
+
+.icon-minus:before {
+  content: "\ea0b";
+}
+
+.icon-mail4:before {
+  content: "\ea86";
+}
+
+.icon-facebook:before {
+  content: "\ea90";
+}
+
+.icon-twitter:before {
+  content: "\ea96";
+}
+
+.icon-github:before {
+  content: "\eab0";
+}
+
+.icon-linkedin2:before {
+  content: "\eaca";
+}
+
+.icon-codepen:before {
+  content: "\eae8";
+}

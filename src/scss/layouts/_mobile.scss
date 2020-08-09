@@ -1,0 +1,141 @@
+// @media screen and (min-width: 992px) and (max-width: 1200px) {}
+
+// @media screen and (min-width: 768px) and (max-width: 991px) {}
+
+// @media screen and (min-width:576px) and (max-width: 767px) {}
+
+// @media screen and (min-width:360px) and (max-width:575px) {}
+
+
+@media screen and (max-width:1024px) {
+  .wrapper {
+    min-height: 14.8rem
+  }
+
+  .title {
+    font-size: 3.8rem
+  }
+
+  .about,
+  .portfolios {
+    padding: 5rem 0
+  }
+}
+
+@media screen and (max-width:768px) {
+  html {
+    font-size: 50%
+  }
+
+  body {
+    padding: 0
+  }
+
+  .header {
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+
+
+    .title__content {
+      margin: 0 1.8rem;
+
+      .wrapper {
+        min-height: 18rem;
+
+        .title {
+          font-size: 5rem
+        }
+      }
+    }
+  }
+
+  .about,
+  .contacts,
+  .portfolios,
+  .services {
+    padding: 8rem 2rem
+  }
+
+  .abouts {
+    margin: 0
+  }
+
+  .certificado__title,
+  .proyecto__title {
+    font-size: 3rem
+  }
+
+  .contacts {
+    padding-top: 16rem;
+    -webkit-clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%)
+  }
+
+  .services--container {
+    .service {
+      width: 100%
+    }
+  }
+
+  .abouts {
+    margin-top: 3rem
+  }
+
+  .contacts {
+    &--container {
+      flex-direction: column;
+
+      article {
+        width: 100%;
+        text-align: center;
+      }
+
+      &--redes {
+        ul {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:480px) {
+  html {
+    font-size: 37.5%
+  }
+
+  .header {
+    .title__content {
+      text-align: center;
+
+      .wrapper {
+        min-height: 20rem
+      }
+    }
+  }
+
+  .title {
+    font-size: 3rem;
+    text-align: center
+  }
+
+  .title--mobile {
+    display: flex;
+    flex-direction: column
+  }
+
+
+}
+
+@media screen and (max-width:320px) {
+  .wrapper {
+    min-height: 11.5rem
+  }
+
+  .title {
+    font-size: 2.8rem
+  }
+
+
+}
