@@ -7,6 +7,7 @@ import developomentWeb from './img/Development-Web.png';
 import landingPage from './img/Landing-Page.png';
 import pongAtari from './img/Pong-Atari.png';
 import gameRockPagerScissors from './img/Rock-Paper-and-Scissors.png';
+import searchUserGithub from './img/search-user-github.png';
 import simonSays from './img/Simon-Says.png';
 import badges from './img/user-badges.png';
 /**
