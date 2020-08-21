@@ -10,6 +10,8 @@ import gameRockPagerScissors from './img/Rock-Paper-and-Scissors.png';
 import searchUserGithub from './img/search-user-github.png';
 import simonSays from './img/Simon-Says.png';
 import badges from './img/user-badges.png';
+import theMovie from './img/the-movie.png';
+
 /**
  *  if you want to use bootstrap styles
  *  copy @import '~bootstrap/scss/bootstrap'; in style.scss
