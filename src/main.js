@@ -11,6 +11,7 @@ import searchUserGithub from './img/search-user-github.png';
 import simonSays from './img/Simon-Says.png';
 import badges from './img/user-badges.png';
 import theMovie from './img/the-movie.png';
+import cryptoPrices from './img/crypto-prices.png';
 
 /**
  *  if you want to use bootstrap styles
