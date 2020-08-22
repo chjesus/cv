@@ -264,6 +264,37 @@
     }
   }
 
+  .experience__container {
+    .experience__item {
+      display: flex;
+      border-bottom: 1px solid black;
+      padding-bottom: 1.5rem;
+      padding-top: 1.5rem;
+
+      &--icon {
+        font-size: 3rem;
+        padding-right: 1.5rem;
+      }
+
+      &--text {
+        h4 {
+          font-size: 2.5rem;
+          text-decoration: underline;
+          padding-bottom: .5rem;
+        }
+
+        h5 {
+          font-size: 2rem;
+          color: gray;
+        }
+
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
   .certificado__container {
     width: 100%;
 
