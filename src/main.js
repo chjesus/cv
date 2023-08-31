@@ -285,4 +285,6 @@ import cryptoPrices from './img/crypto-prices.png';
   badgeClicks();
 
   projectsRepos(dateRepo);
+
+    
 }());
