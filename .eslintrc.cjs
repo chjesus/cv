@@ -8,7 +8,6 @@ module.exports = {
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
 		'plugin:astro/recommended',
-		'plugin:prettier/recommended',
 	],
 	plugins: ['@typescript-eslint', 'jsx-a11y'],
 	// plugins: ["@typescript-eslint", "react", "react-hooks", "import", "jsx-a11y"],
@@ -32,7 +31,10 @@ module.exports = {
 				parser: '@typescript-eslint/parser',
 				extraFileExtensions: ['.astro'],
 			},
-			extends: ['plugin:astro/recommended', 'plugin:astro/jsx-a11y-recommended'],
+			extends: [
+				'plugin:astro/recommended',
+				'plugin:astro/jsx-a11y-recommended',
+			],
 			rules: {
 				// Reglas específicas para archivos .astro
 			},

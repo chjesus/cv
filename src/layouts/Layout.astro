@@ -22,14 +22,34 @@ const { title } = Astro.props
 </html>
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
+		--primary: #5104a3;
+		--primary-dark: #1e013d;
+		--secondary: #d8d8d8;
+		--secondary-dark: #37474f;
+		--background: #110123;
+		--background-dark: #000000;
+		--text: #ffffff;
+		--text-card-service: #718096;
+		--text-card-service-secondary: #2d3748;
+		--text-card-portfolio: #454d55;
+		--text-card-portfolio-secondary: #000000;
+		--text-card-testimonial: #f9fafb;
+		--text-card-testimonial-secondary: #fcfcfd;
+		--accent-light: var(--primary);
+		--accent-dark: var(--primary-dark);
 		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
+			0deg,
+			var(--accent-light) 0%,
+			var(--accent-light) 100%
+		);
+		--accent-card: #e7f3f2;
+		--accent-card-light: #ebf4f8;
+		--accent-card-dark: #dfeef9;
+		--accent-card-gradient: linear-gradient(
+			0deg,
+			var(--accent-card) 0%,
+			var(--accent-card-light) 51%,
+			var(--accent-card-dark) 100%
 		);
 	}
 
