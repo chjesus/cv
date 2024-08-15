@@ -1,0 +1,39 @@
+---
+import { Image } from 'astro:assets'
+import Logo from '../assets/logo.png'
+---
+
+<nav
+	class="grid grid-cols-9 gap-x-5 rounded-full bg-white px-1.5 py-2 text-black"
+>
+	<div class="nav-item rounded-full px-8 py-3 text-center">Home</div>
+	<div class="nav-item rounded-full px-8 py-3 text-center">About</div>
+	<div class="nav-item rounded-full px-8 py-3 text-center">Services</div>
+	<div class="col-span-3 grid grid-cols-subgrid rounded-full text-center">
+		<figure class="col-start-2 cursor-pointer">
+			<Image class="h-11 w-auto object-cover" src={Logo} alt="Logo Jesus DEV" />
+		</figure>
+	</div>
+	<div class="nav-item rounded-full px-8 py-3 text-center">Portfolio</div>
+	<div class="nav-item rounded-full px-8 py-3 text-center">My projects</div>
+	<div class="nav-item rounded-full px-8 py-3 text-center">Contact us</div>
+</nav>
+
+<style>
+	nav {
+		position: sticky;
+		top: 12px;
+		z-index: 0;
+	}
+
+	.nav-item {
+		font-size: 14px;
+		font-weight: 700;
+		cursor: pointer;
+		transition: all 0.3s;
+	}
+
+	.nav-item:hover {
+		background-color: var(--secondary);
+	}
+</style>

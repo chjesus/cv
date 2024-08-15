@@ -5,3 +5,5 @@ node_modules/
 dist/
 public/
 src/utils/serviceWorker.ts
+src/assets/
+src/components/icons

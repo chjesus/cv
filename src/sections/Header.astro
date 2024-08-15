@@ -1,7 +1,54 @@
 ---
-
+import { Image } from 'astro:assets'
+import HeaderImage from '../assets/amico.svg'
+import Nav from '../components/Nav.astro'
+import Button from '../components/Button.astro'
+import Badge from '../components/Badge.astro'
 ---
 
-<header>Header</header>
+<header class="container mx-auto py-3">
+	<Nav />
+	<div class="grid grid-cols-2 py-24">
+		<div class="flex flex-col items-start justify-center">
+			<Badge title="Hello there" />
+			<h1 class="header-title">
+				<strong>
+					Experience the <br /> Mastery
+				</strong>
+				Explore my Website Creations.
+			</h1>
+			<p class="header-description max-w-md py-6 text-white">
+				Welcome to my portfolio of captivating digital experiences. Explore my
+				work and let's create something extraordinary together.
+			</p>
+			<div class="grid auto-cols-max grid-flow-col gap-2">
+				<Button text="Hire me" link={true} icon={false} />
+				<Button text="View Portfolio" link={false} icon={true} />
+			</div>
+		</div>
+		<div class="flex justify-end">
+			<Image src={HeaderImage} alt="Amico" />
+		</div>
+	</div>
+</header>
 
-<style></style>
+<style>
+	header {
+		position: relative;
+	}
+	.header-title {
+		font-size: 62px;
+		line-height: 73px;
+		color: var(--text);
+	}
+
+	.header-title strong {
+		color: var(--primary);
+	}
+
+	.header-description {
+		font-size: 14.22px;
+		font-weight: normal;
+		font-family: 'Cardo';
+	}
+</style>

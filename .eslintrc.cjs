@@ -7,10 +7,10 @@ module.exports = {
 	extends: [
 		'eslint:recommended',
 		'plugin:@typescript-eslint/recommended',
+		'plugin:prettier/recommended',
 		'plugin:astro/recommended',
 	],
 	plugins: ['@typescript-eslint', 'jsx-a11y'],
-	// plugins: ["@typescript-eslint", "react", "react-hooks", "import", "jsx-a11y"],
 	env: {
 		browser: true,
 		es2021: true,

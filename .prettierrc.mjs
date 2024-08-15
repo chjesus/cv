@@ -11,6 +11,7 @@ export default {
 	useTabs: true,
 	endOfLine: 'lf',
 	arrowParens: 'always',
+	bracketSpacing: true,
 	plugins: [
 		'prettier-plugin-astro',
 		'prettier-plugin-astro-organize-imports',

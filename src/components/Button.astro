@@ -1,0 +1,32 @@
+---
+// import {Icon } from 'astro-icon/components'
+import ArrowRight from './icons/ArrowRight.astro'
+interface Props {
+	text: string
+	link: boolean
+	icon: boolean
+}
+
+const { text, link, icon } = Astro.props
+---
+
+<button
+	class=`${ link ? 'px-10' : 'bg-transparent px-5' } rounded-full py-2.5 text-sm`
+>
+	{text}
+	{icon ? <ArrowRight class="size-3.5 fill-white" /> : ''}
+</button>
+
+<style>
+	button {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		width: fit-content;
+		color: var(--text);
+	}
+
+	button:not(.bg-transparent) {
+		background-color: var(--primary);
+	}
+</style>
