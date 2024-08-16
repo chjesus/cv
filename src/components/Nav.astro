@@ -1,39 +1,80 @@
 ---
 import { Image } from 'astro:assets'
 import Logo from '../assets/logo.png'
+import Bars from './icons/Bars.astro'
 ---
 
-<nav
-	class="grid grid-cols-9 gap-x-5 rounded-full bg-white px-1.5 py-2 text-black"
->
-	<div class="nav-item rounded-full px-8 py-3 text-center">Home</div>
-	<div class="nav-item rounded-full px-8 py-3 text-center">About</div>
-	<div class="nav-item rounded-full px-8 py-3 text-center">Services</div>
-	<div class="col-span-3 grid grid-cols-subgrid rounded-full text-center">
-		<figure class="col-start-2 cursor-pointer">
-			<Image class="h-11 w-auto object-cover" src={Logo} alt="Logo Jesus DEV" />
-		</figure>
+<nav class="sticky">
+	<div class="mx-auto max-w-screen-xl rounded-full bg-white px-5 py-2 lg:px-2">
+		<div class="grid auto-cols-max grid-flow-col justify-between gap-x-5">
+			<div class="hidden auto-cols-max grid-flow-col gap-x-2 lg:grid">
+				<div class="nav-item rounded-full px-3 py-2.5 lg:w-24 xl:w-36">
+					Home
+				</div>
+				<div class="nav-item rounded-full px-3 py-2.5 lg:w-24 xl:w-36">
+					About
+				</div>
+				<div class="nav-item rounded-full px-3 py-2.5 lg:w-24 xl:w-36">
+					Services
+				</div>
+			</div>
+			<div class="m-auto text-center">
+				<figure class="cursor-pointer">
+					<Image
+						class="h-6 w-auto object-cover lg:h-11"
+						src={Logo}
+						alt="Logo Jesus DEV"
+					/>
+				</figure>
+			</div>
+			<div class="cursor-pointer lg:hidden">
+				<Bars />
+			</div>
+			<div class="hidden auto-cols-max grid-flow-col gap-x-2 lg:grid">
+				<div class="nav-item rounded-full px-3 py-2.5 lg:w-24 xl:w-36">
+					Portfolio
+				</div>
+				<div class="nav-item rounded-full px-3 py-2.5 lg:w-24 xl:w-36">
+					My projects
+				</div>
+				<div class="nav-item rounded-full px-3 py-2.5 lg:w-24 xl:w-36">
+					Contact us
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="nav-item rounded-full px-8 py-3 text-center">Portfolio</div>
-	<div class="nav-item rounded-full px-8 py-3 text-center">My projects</div>
-	<div class="nav-item rounded-full px-8 py-3 text-center">Contact us</div>
 </nav>
 
 <style>
 	nav {
-		position: sticky;
 		top: 12px;
 		z-index: 0;
 	}
 
 	.nav-item {
-		font-size: 14px;
 		font-weight: 700;
 		cursor: pointer;
 		transition: all 0.3s;
+		text-align: center;
+		font-weight: 600;
+		font-family: 'Source Sans 3';
+		color: var(--text-dark);
 	}
 
 	.nav-item:hover {
 		background-color: var(--secondary);
+	}
+
+	@media (min-width: 998px) {
+		.nav-item {
+			font-size: 14px;
+			line-height: 24px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.nav-item {
+			font-size: 20px;
+		}
 	}
 </style>

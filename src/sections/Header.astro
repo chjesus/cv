@@ -6,40 +6,54 @@ import Button from '../components/Button.astro'
 import Badge from '../components/Badge.astro'
 ---
 
-<header class="container mx-auto py-3">
+<header class="relative px-5 lg:px-16">
 	<Nav />
-	<div class="grid grid-cols-2 py-24">
-		<div class="flex flex-col items-start justify-center">
-			<Badge title="Hello there" />
-			<h1 class="header-title">
-				<strong>
-					Experience the <br /> Mastery
-				</strong>
-				Explore my Website Creations.
-			</h1>
-			<p class="header-description max-w-md py-6 text-white">
-				Welcome to my portfolio of captivating digital experiences. Explore my
-				work and let's create something extraordinary together.
-			</p>
-			<div class="grid auto-cols-max grid-flow-col gap-2">
-				<Button text="Hire me" link={true} icon={false} />
-				<Button text="View Portfolio" link={false} icon={true} />
+	<div class="mx-auto max-w-screen-xl">
+		<div class="grid grid-cols-1 lg:grid-cols-2 py-8 lg:py-24">
+			<div class="flex flex-col items-center lg:items-start justify-center">
+        <div class="mx-auto lg:ml-0">
+          <Badge title="Hello there" />
+        </div>
+				<h1 class="header-title text-center lg:text-left pt-3">
+					<strong> Experience the Mastery </strong>
+					Explore my Website Creations.
+				</h1>
+				<p class="header-description text-center lg:text-left py-6">
+					Welcome to my portfolio of captivating digital experiences. Explore my
+					work and let's create something extraordinary together.
+				</p>
+				<div class="grid auto-cols-max grid-flow-col gap-2">
+					<Button text="Hire me" link={true} icon={false} />
+					<Button text="View Portfolio" link={false} icon={true} />
+				</div>
 			</div>
-		</div>
-		<div class="flex justify-end">
-			<Image src={HeaderImage} alt="Amico" />
+			<div class="flex justify-end mt-12 lg:mt-0">
+				<Image class="lg:w-80 xl:w-9/12" src={HeaderImage} alt="Amico" />
+			</div>
 		</div>
 	</div>
 </header>
 
 <style>
-	header {
-		position: relative;
-	}
 	.header-title {
-		font-size: 62px;
-		line-height: 73px;
+    font-size: 28px;
+		font-family: 'Roboto';
+		line-height: 33px;
 		color: var(--text);
+	}
+
+	@media (min-width: 998px) {
+		.header-title {
+			font-size: 44px;
+			line-height: 52px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.header-title {
+			font-size: 62px;
+			line-height: 73px;
+		}
 	}
 
 	.header-title strong {
@@ -47,8 +61,22 @@ import Badge from '../components/Badge.astro'
 	}
 
 	.header-description {
-		font-size: 14.22px;
 		font-weight: normal;
 		font-family: 'Cardo';
+    font-size: 12px;
+    text-align: center;
+    color: var(--text)
+	}
+	@media (min-width: 998px) {
+		.header-description {
+			font-size: 14.22px;
+      text-align: left;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		.header-description {
+			font-size: 20px;
+		}
 	}
 </style>

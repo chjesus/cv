@@ -14,5 +14,17 @@ const { title } = Astro.props
 	span {
 		font-size: 15px;
 		text-transform: capitalize;
+		font-family: 'Manrope';
+	}
+
+	@media (min-width: 998px) {
+		span {
+			font-size: 10px;
+		}
+	}
+	@media (min-width: 1280px) {
+		span {
+			font-size: 15px;
+		}
 	}
 </style>
