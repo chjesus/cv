@@ -9,16 +9,16 @@ import Badge from '../components/Badge.astro'
 <header class="relative px-5 lg:px-16">
 	<Nav />
 	<div class="mx-auto max-w-screen-xl">
-		<div class="grid grid-cols-1 lg:grid-cols-2 py-8 lg:py-24">
-			<div class="flex flex-col items-center lg:items-start justify-center">
-        <div class="mx-auto lg:ml-0">
-          <Badge title="Hello there" />
-        </div>
-				<h1 class="header-title text-center lg:text-left pt-3">
+		<div class="grid grid-cols-1 py-8 md:grid-cols-2 md:py-12 lg:py-24">
+			<div class="flex flex-col items-center justify-center md:items-start">
+				<div class="mx-auto md:ml-0">
+					<Badge title="Hello there" className="px-2.5 py-1.5" />
+				</div>
+				<h1 class="header-title pt-3 text-center md:text-left">
 					<strong> Experience the Mastery </strong>
 					Explore my Website Creations.
 				</h1>
-				<p class="header-description text-center lg:text-left py-6">
+				<p class="header-description py-6 text-center md:text-left">
 					Welcome to my portfolio of captivating digital experiences. Explore my
 					work and let's create something extraordinary together.
 				</p>
@@ -27,8 +27,10 @@ import Badge from '../components/Badge.astro'
 					<Button text="View Portfolio" link={false} icon={true} />
 				</div>
 			</div>
-			<div class="flex justify-end mt-12 lg:mt-0">
-				<Image class="lg:w-80 xl:w-9/12" src={HeaderImage} alt="Amico" />
+			<div class="flex items-center justify-center md:justify-end">
+				<figure>
+					<Image src={HeaderImage} alt="Amico" />
+				</figure>
 			</div>
 		</div>
 	</div>
@@ -36,12 +38,18 @@ import Badge from '../components/Badge.astro'
 
 <style>
 	.header-title {
-    font-size: 28px;
+		font-size: 28px;
 		font-family: 'Roboto';
 		line-height: 33px;
 		color: var(--text);
 	}
 
+	@media (min-width: 768px) {
+		.header-title {
+			font-size: 36px;
+			line-height: 42px;
+		}
+	}
 	@media (min-width: 998px) {
 		.header-title {
 			font-size: 44px;
@@ -63,20 +71,37 @@ import Badge from '../components/Badge.astro'
 	.header-description {
 		font-weight: normal;
 		font-family: 'Cardo';
-    font-size: 12px;
-    text-align: center;
-    color: var(--text)
+		font-size: 12px;
+		color: var(--text);
 	}
-	@media (min-width: 998px) {
+	@media (min-width: 768px) {
 		.header-description {
 			font-size: 14.22px;
-      text-align: left;
+			text-align: left;
 		}
 	}
 
 	@media (min-width: 1280px) {
 		.header-description {
 			font-size: 20px;
+		}
+	}
+
+	@media (min-width: 768px) {
+		figure {
+			max-width: 300px;
+		}
+	}
+
+	@media (min-width: 998px) {
+		figure {
+			max-width: 330px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		figure {
+			max-width: 470px;
 		}
 	}
 </style>
