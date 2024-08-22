@@ -11,17 +11,21 @@ import JSLogo from '../assets/Logos/JavaScript.png'
 import AstroLogo from '../assets/Logos/Astro.png'
 ---
 
-<section class="px-5 md:px-16 md:py-16 xl:py-28">
+<section class="px-5 py-12 md:px-16 md:py-16 xl:py-28">
 	<div class="mx-auto max-w-screen-xl">
-		<div class="grid grid-cols-2 items-center md:gap-5">
-			<div class="mx-auto">
-				<figure>
-					<Image src={PhotoProfile} alt="Foto de perfil" />
+		<div class="grid grid-cols-1 items-center md:grid-cols-2 md:gap-5">
+			<div class="order-2 mx-auto md:order-1">
+				<figure class="relative">
+					<Image
+						class="relative z-10"
+						src={PhotoProfile}
+						alt="Foto de perfil"
+					/>
 				</figure>
 			</div>
-			<div class="">
+			<div class="order-1 text-center md:order-2 md:text-left">
 				<Badge title="About me" className="--subtitle px-11 py-2" />
-				<h1 class="about-title lg:mb-6 xl:mb-7 xl:mt-2.5">
+				<h1 class="about-title mb-4 mt-2.5 lg:mb-6 xl:mb-7">
 					<span>Jesus</span> Chacon
 				</h1>
 				<p class="about-description mb-3">
@@ -29,13 +33,15 @@ import AstroLogo from '../assets/Logos/Astro.png'
 					industry. Lorem Ipsum has been the industry's standard dummy text ever
 					since the 1500s.
 				</p>
-				<p class="about-description mb-3">
+				<p class="about-description mb-2">
 					It has survived not only five centuries, but also the leap into
 					electronic typesetting, remaining essentially unchanged.
 				</p>
 				<div>
-					<h2 class="about-subtitle md:my-3 lg:my-4 xl:my-6">Skills</h2>
-					<ul class="about-skills">
+					<h2 class="about-subtitle my-3 md:my-3 lg:my-4 xl:my-6">Skills</h2>
+					<ul
+						class="about-skills mx-auto grid w-1/2 grid-cols-3 md:w-full md:grid-cols-9"
+					>
 						<li class="about-skills_item">
 							<Image class="w-12" src={HtmlLogo} alt="HTML Logo" />
 						</li>
@@ -62,11 +68,6 @@ import AstroLogo from '../assets/Logos/Astro.png'
 </section>
 
 <style>
-	figure {
-		position: relative;
-		/* overflow: hidden; */
-		max-width: 450px;
-	}
 	figure::after {
 		content: '';
 		width: 100%;
@@ -82,10 +83,6 @@ import AstroLogo from '../assets/Logos/Astro.png'
 		figure {
 			max-width: 320px;
 		}
-
-		figure::after {
-			height: 50%;
-		}
 	}
 
 	@media (min-width: 1280px) {
@@ -94,10 +91,6 @@ import AstroLogo from '../assets/Logos/Astro.png'
 		}
 	}
 
-	figure img {
-		z-index: 1;
-		position: relative;
-	}
 	.about-title {
 		font-weight: 900;
 		font-family: 'Roboto';
@@ -134,11 +127,12 @@ import AstroLogo from '../assets/Logos/Astro.png'
 		font-size: 14px;
 		font-weight: 400;
 		color: var(--text);
-		width: fit-content;
+		line-height: 19px;
 	}
 
 	@media (min-width: 768px) {
 		.about-description {
+			line-height: normal;
 		}
 	}
 
@@ -158,6 +152,7 @@ import AstroLogo from '../assets/Logos/Astro.png'
 		padding-bottom: 10px;
 		font-weight: 500;
 		position: relative;
+		display: inline-block;
 	}
 
 	.about-subtitle::after {
@@ -182,7 +177,7 @@ import AstroLogo from '../assets/Logos/Astro.png'
 		}
 	}
 	.about-skills {
-		display: flex;
+		/* display: flex; */
 		gap: 20px;
 	}
 
