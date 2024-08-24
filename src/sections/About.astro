@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets'
 
+import Circle from '../components/CircleBlur.astro'
+
 import PhotoProfile from '../assets/foto.png'
 import Badge from '../components/Badge.astro'
 import HtmlLogo from '../assets/Logos/HTML5.png'
@@ -11,8 +13,14 @@ import JSLogo from '../assets/Logos/JavaScript.png'
 import AstroLogo from '../assets/Logos/Astro.png'
 ---
 
-<section class="px-5 py-12 md:px-16 md:py-16 xl:py-28">
-	<div class="mx-auto max-w-screen-xl">
+<section class="relative px-5 py-12 md:px-16 md:py-16 xl:py-28">
+	<Circle
+		number="3"
+		blurSize="w-44 h-44 md:w-32 md:h-32"
+		circleSize="h-3 w-3 md:h-6 md:w-6"
+	/>
+	<Circle number="4" blurSize="w-0 h-0 md:w-52 md:h-52" circleSize="h-0 w-0" />
+	<div class="relative z-10 mx-auto max-w-screen-xl">
 		<div class="grid grid-cols-1 items-center md:grid-cols-2 md:gap-5">
 			<div class="order-2 mx-auto md:order-1">
 				<figure class="relative">

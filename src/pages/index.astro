@@ -9,17 +9,21 @@ import Contact from '../sections/Contact.astro'
 import Projects from '../sections/Projects.astro'
 import Testimonials from '../sections/Testimonials.astro'
 import Footer from '../sections/Footer.astro'
+import Nav from '../components/Nav.astro'
 ---
 
 <Layout title="Jesus Chacon">
 	<div class="bg-black">
-		<Header />
-		<About />
-		<Experience />
-		<Services />
-		<Contact />
-		<Projects />
-		<Testimonials />
-		<Footer />
+		<Nav />
+		<div class="overflow-hidden">
+			<Header />
+			<About />
+			<Experience />
+			<Services />
+			<Contact />
+			<Projects />
+			<Testimonials />
+			<Footer />
+		</div>
 	</div>
 </Layout>

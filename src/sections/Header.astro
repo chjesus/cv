@@ -1,14 +1,16 @@
 ---
 import { Image } from 'astro:assets'
 import HeaderImage from '../assets/amico.svg'
-import Nav from '../components/Nav.astro'
+
 import Button from '../components/Button.astro'
 import Badge from '../components/Badge.astro'
+import Circle from '../components/CircleBlur.astro'
 ---
 
 <header class="relative px-5 lg:px-16">
-	<Nav />
-	<div class="mx-auto max-w-screen-xl">
+	<Circle number="1" blurSize="h-48 w-48" circleSize="h-4 w-4" />
+	<Circle number="2" blurSize="h-0 w-0 md:h-20 md:w-20" circleSize="h-2 w-2" />
+	<div class="relative z-10 mx-auto max-w-screen-xl">
 		<div class="grid grid-cols-1 py-8 md:grid-cols-2 md:py-12 lg:py-24">
 			<div class="flex flex-col items-center justify-center md:items-start">
 				<div class="mx-auto md:ml-0">
@@ -27,7 +29,9 @@ import Badge from '../components/Badge.astro'
 					<Button text="View Portfolio" link={false} icon={true} />
 				</div>
 			</div>
-			<div class="flex items-center justify-center md:justify-end">
+			<div
+				class="mt-12 md:mt-0 flex items-center justify-center md:justify-end"
+			>
 				<figure>
 					<Image src={HeaderImage} alt="Amico" />
 				</figure>

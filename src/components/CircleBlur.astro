@@ -1,0 +1,127 @@
+---
+interface Props {
+	number: string
+	blurSize: string
+	circleSize: string
+}
+
+const { number, blurSize, circleSize } = Astro.props
+---
+
+<div class=`blurred_container --blur-${number} ${blurSize}`>
+	<div class="absolute h-full w-full rounded-full">
+		<div class=`blurred_container-bg w-full h-full --filter-${number}`></div>
+		<div class=`blurred_container-circle rounded-full relative ${circleSize}`>
+		</div>
+	</div>
+</div>
+
+<style>
+	/* Blurred Global */
+	.blurred_container {
+		position: absolute;
+	}
+
+	.blurred_container-bg {
+		position: absolute;
+		background-color: var(--primary);
+		border-radius: 50%;
+		z-index: 1;
+	}
+
+	.blurred_container-circle {
+		top: 60%;
+		left: 60%;
+		z-index: 2;
+		background: linear-gradient(
+			180deg,
+			var(--primary) 0%,
+			var(--primary-dark) 100%
+		);
+		transform: scaleY(-1);
+	}
+
+	/* Blurred 1 */
+	.blurred_container.--blur-1 {
+		top: 200px;
+		right: -12%;
+	}
+
+	.blurred_container-bg.--filter-1 {
+		filter: blur(140px);
+	}
+
+	@media (min-width: 768px) {
+		.blurred_container.--blur-1 {
+			top: 50px;
+			right: 8%;
+		}
+	}
+
+	/* Blurred 2 */
+	.blurred_container-bg.--filter-2 {
+		filter: blur(60px);
+	}
+
+	@media (min-width: 768px) {
+		.blurred_container.--blur-2 {
+			top: 140px;
+			right: 50%;
+		}
+	}
+
+	/* Blurred 3 */
+	.blurred_container.--blur-3 {
+		top: 45%;
+		left: -20%;
+	}
+
+	.blurred_container-bg.--filter-3 {
+		filter: blur(100px);
+	}
+
+	@media (min-width: 768px) {
+		.blurred_container.--blur-3 {
+			top: 30px;
+			left: 75%;
+		}
+	}
+
+	/* Blurred 4 */
+	.blurred_container-bg.--filter-4 {
+		filter: blur(110px);
+	}
+
+	@media (min-width: 768px) {
+		.blurred_container.--blur-4 {
+			top: 100px;
+			left: 0;
+		}
+
+		.blurred_container-bg.--filter-4 {
+			filter: blur(155px);
+		}
+	}
+
+	/* Blurred 5 */
+	.blurred_container.--blur-5 {
+	}
+	/* Blurred 6 */
+	.blurred_container.--blur-6 {
+	}
+	/* Blurred 7 */
+	.blurred_container.--blur-7 {
+	}
+	/* Blurred 8 */
+	.blurred_container.--blur-8 {
+	}
+	/* Blurred 9 */
+	.blurred_container.--blur-9 {
+	}
+	/* Blurred 10 */
+	.blurred_container.--blur-10 {
+	}
+	/* Blurred 11 */
+	.blurred_container.--blur-11 {
+	}
+</style>
