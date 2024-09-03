@@ -11,7 +11,7 @@ const { text, link, icon } = Astro.props
 ---
 
 <button
-	class=`${ link ? 'px-7 md:px-10' : 'bg-transparent px-4' } rounded-full py-1.5 md:py-2.5 text-sm`
+	class=`${ link ? 'px-7 md:px-10' : 'bg-transparent px-4' } py-1.5 md:py-2.5`
 >
 	{text}
 	{icon ? <ArrowRight class="size-3.5 fill-white" /> : ''}
@@ -26,6 +26,7 @@ const { text, link, icon } = Astro.props
 		color: var(--text);
 		font-size: 12px;
 		font-family: 'Roboto';
+		border-radius: 999px;
 	}
 
 	@media (min-width: 768px) {
