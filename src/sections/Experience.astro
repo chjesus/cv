@@ -2,16 +2,16 @@
 import { Image } from 'astro:assets'
 import HeaderImage from '../assets/amico.svg'
 
-import Badge from '../components/Badge.astro'
-import Title from '../components/Title.astro'
+import Badge from '../components/Badge/Badge.astro'
+import Title from '../components/Title/Title.astro'
 import TitleStrong from '../components/TitleStrong.astro'
-import Text from '../components/Text.astro'
+import Text from '../components/Text/Text.astro'
 ---
 
 <section class="relative px-5 py-12 md:px-16 md:py-16 xl:py-28">
 	<div class="relative z-10 mx-auto max-w-screen-xl">
 		<Badge title="Experience" className="--subtitle px-11 py-2" />
-		<div class="grid grid-cols-2 gap-x-28 items-center mt-4">
+		<div class="mt-4 grid grid-cols-2 items-center gap-x-28">
 			<Title className="text-5xl">
 				Check <TitleStrong>Experience</TitleStrong> and Work!
 			</Title>
@@ -20,33 +20,31 @@ import Text from '../components/Text.astro'
 				project tells a story of growth, expertise, and passion.
 			</Text>
 		</div>
-    <div class="grid grid-cols-3 mt-6">
-      <div>
-        <Title className="text-2xl">
-          Work <TitleStrong>Experience</TitleStrong>
-        </Title>
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-        </ul>
-      </div>
-      <div>
-        <Title className="text-2xl">
-          Education
-        </Title>
-        <ul>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-        </ul>
-      </div>
-      <div>
-        <figure>
-          <Image src={HeaderImage} alt="Experience Image"/>
-        </figure>
-      </div>
-    </div>
+		<div class="mt-6 grid grid-cols-3">
+			<div>
+				<Title className="text-2xl">
+					Work <TitleStrong>Experience</TitleStrong>
+				</Title>
+				<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+				</ul>
+			</div>
+			<div>
+				<Title className="text-2xl"> Education </Title>
+				<ul>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+					<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+				</ul>
+			</div>
+			<div>
+				<figure>
+					<Image src={HeaderImage} alt="Experience Image" />
+				</figure>
+			</div>
+		</div>
 	</div>
 </section>
 <style></style>
