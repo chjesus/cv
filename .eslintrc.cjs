@@ -34,7 +34,7 @@ module.exports = {
 				'plugin:astro/recommended',
 				'plugin:astro/jsx-a11y-recommended',
 			],
-			rules: {
+      rules: {
 				// Reglas específicas para archivos .astro
 			},
 		},

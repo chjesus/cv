@@ -1,7 +1,8 @@
 ---
-// import Card from '../components/Card.astro'
-import Layout from '../layouts/Layout.astro'
-import Header from '../sections/Header.astro'
+import Layout from '@app/layout/Layout.astro'
+import Nav from '@app/layout/ui/Nav.astro'
+
+import Header from '@widgets/Header.astro'
 import About from '../sections/About.astro'
 import Experience from '../sections/Experience.astro'
 import Services from '../sections/Services.astro'
@@ -9,14 +10,15 @@ import Contact from '../sections/Contact.astro'
 import Projects from '../sections/Projects.astro'
 import Testimonials from '../sections/Testimonials.astro'
 import Footer from '../sections/Footer.astro'
-import Nav from '../components/Nav/Nav.astro'
 ---
 
 <Layout title="Jesus Chacon">
-	<div class="bg-black">
-		<Nav />
-		<div class="overflow-hidden">
+	<div class="page-container bg-black overflow-hidden">
+		<div class=" mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+			<Nav />
 			<Header />
+		</div>
+		<!-- <div class="overflow-hidden">
 			<About />
 			<Experience />
 			<Services />
@@ -24,6 +26,13 @@ import Nav from '../components/Nav/Nav.astro'
 			<Projects />
 			<Testimonials />
 			<Footer />
-		</div>
+		</div> -->
 	</div>
 </Layout>
+
+<style>
+	.page-container {
+		width: 100%;
+		min-height: 100vh;
+	}
+</style>

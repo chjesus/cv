@@ -1,0 +1,21 @@
+---
+type Props = {
+	blur: string
+	size: string
+	index?: string
+	position?: string
+}
+
+const { blur, size, position, index } = Astro.props
+---
+
+<div class=`absolute ${size} ${position} ${index}`>
+	<div class=`blur_color w-full h-full ${blur}`></div>
+	<slot />
+</div>
+
+<style>
+	.blur_color {
+		background-color: var(--primary);
+	}
+</style>

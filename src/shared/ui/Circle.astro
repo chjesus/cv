@@ -1,0 +1,23 @@
+---
+type Props = {
+	size: string
+	position?: string
+}
+const { size, position } = Astro.props
+---
+
+<div class=`circle ${size} ${position}`></div>
+
+<style>
+	.circle {
+		position: absolute;
+		border-radius: 9999px;
+		z-index: 2;
+		background: linear-gradient(
+			180deg,
+			var(--primary) 0%,
+			var(--primary-dark) 100%
+		);
+		transform: scaleY(-1);
+	}
+</style>

@@ -1,0 +1,28 @@
+---
+type Props = {
+	link?: boolean
+	sFont?: string
+	padding?: string
+}
+
+const { link, sFont, padding } = Astro.props
+---
+
+<button class=`${sFont} ${padding} ${ link && 'bg-transparent' }`>
+	<slot />
+</button>
+
+<style>
+	button {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		width: fit-content;
+		color: var(--text);
+		font-family: 'Roboto';
+		border-radius: 999px;
+		&:not(.bg-transparent) {
+			background-color: var(--primary);
+		}
+	}
+</style>

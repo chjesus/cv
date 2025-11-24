@@ -1,0 +1,24 @@
+---
+interface Props {
+	sFont?: string
+	padding?: string
+}
+
+const { padding, sFont } = Astro.props
+---
+
+<span class=`badge ${sFont} ${padding}`>
+	<slot />
+</span>
+
+<style>
+	.badge {
+		text-transform: capitalize;
+		font-family: 'Manrope';
+		color: var(--text-dark);
+		display: inline-block;
+		line-height: initial;
+		background-color: #ffffff;
+		border-radius: 0.68rem;
+	}
+</style>
