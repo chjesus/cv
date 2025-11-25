@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets'
 
 import PhotoProfile from '@shared/assets/foto.png'
+
 import Badge from '@shared/ui/Badge.astro'
 import BlurCircle from '@shared/ui/BlurCircle.astro'
 import Circle from '@shared/ui/Circle.astro'
@@ -15,11 +16,17 @@ import AstroLogo from '@shared/assets/CatppuccinAstro.svg'
 import ViteLogo from '@shared/assets/CatppuccinVite.svg'
 ---
 
-<section class="relative md:px-14">
-	<div class="grid grid-cols-1 items-center md:grid-cols-2 md:gap-[20px]">
+<section class="relative lg:px-[35px]">
+	<div
+		class="grid grid-cols-1 items-center md:grid-cols-[auto_1fr] md:gap-[25px] xl:gap-[65px]"
+	>
 		<div class="order-2 mx-auto md:order-1">
-			<figure class="relative">
-				<Image class="relative z-10" src={PhotoProfile} alt="Foto de perfil" />
+			<figure class="relative md:w-[322px] xl:w-[460px]">
+				<Image
+					class="relative z-10 w-full"
+					src={PhotoProfile}
+					alt="Foto de perfil"
+				/>
 			</figure>
 		</div>
 		<div class="order-1 text-center md:order-2 md:text-left">
