@@ -2,12 +2,13 @@
 interface Props {
 	sFont?: string
 	padding?: string
+	className?: string
 }
 
-const { padding, sFont } = Astro.props
+const { padding, sFont, className } = Astro.props
 ---
 
-<span class=`badge ${sFont} ${padding}`>
+<span class=`badge ${sFont} ${padding} ${className}`>
 	<slot />
 </span>
 
