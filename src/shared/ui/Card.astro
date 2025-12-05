@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon/components'
+type Props = {
+	icon: string
+	title: string
+	description: string
+}
+
+const { icon, title, description } = Astro.props
+---
+
+<div class="card p-[18px] gap-[2.4rem]">
+	<span class="card-icon cursor-pointer">
+		<Icon name={icon} class="text-[2.6rem]" />
+	</span>
+	<h3 class="card-title text-[2.4rem]">{title}</h3>
+	<p class="card-description text-[1.6rem]">{description}</p>
+</div>
+
+<style lang="scss">
+	.card {
+    display: flex;
+		color: var(--text);
+		border-radius: 10px;
+		flex-direction: column;
+		align-items: flex-start;
+		background-color: var(--primary);
+
+		&:nth-child(odd) {
+			background-color: var(--bg-card-service);
+			.card-icon {
+				border: 1px solid var(--primary);
+			}
+			.card-title {
+				color: var(--text-card-service-title);
+			}
+			.card-description {
+				color: var(--text-card-service-description);
+			}
+		}
+		&-icon {
+			background-color: var(--bg-white);
+			color: var(--primary);
+			border-radius: 999px;
+			padding: 1.6rem;
+		}
+		&-title {
+			font-weight: 700;
+			text-align: left;
+		}
+		&-description {
+			text-align: left;
+			font-weight: 400;
+			line-height: normal;
+		}
+	}
+</style>

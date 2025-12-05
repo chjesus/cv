@@ -1,0 +1,23 @@
+---
+import { Image } from 'astro:assets'
+import ExperienceImage from '@shared/assets/Group.svg'
+---
+
+<section class="contact relative z py-24 md:py-48">
+	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+		<div class="grid grid-cols-2">
+			<div></div>
+			<div>
+				<figure>
+					<Image class="mx-auto" src={ExperienceImage} alt="Experience Image" />
+				</figure>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	.contact {
+		background-color: rgba(255, 255, 255, 0.1);
+	}
+</style>

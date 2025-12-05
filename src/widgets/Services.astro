@@ -1,0 +1,42 @@
+---
+import Badge from '@shared/ui/Badge.astro'
+import Title from '@shared/ui/Title.astro'
+import Strong from '@shared/ui/Strong.astro'
+import Text from '@shared/ui/Text.astro'
+import Card from '@shared/ui/Card.astro'
+---
+
+<section class="relative py-24 text-center md:py-48 overflow-hidden">
+	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+		<Badge sFont="text-[18px]" padding="px-16 py-3" className="relative z-10">
+			Our Services
+		</Badge>
+		<Title className="my-[12px]">
+			<Strong>Services</Strong> That we Provide
+		</Title>
+		<Text className="mx-auto mb-[3.8rem] max-w-7xl lg:mb-[7.6rem]">
+			Innovative and reliable, our service delivers seamless solutions tailored
+			to meet your needs. Elevate your experience with cutting-edge features and
+			exceptional customer satisfaction.
+		</Text>
+		<div class="grid grid-cols-1 gap-[20px] md:grid-cols-2 lg:grid-cols-3">
+			<Card
+				icon="mdi:application-braces-outline"
+				title="Web Design & Development"
+				description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
+			/>
+			<Card
+				icon="mdi:application-braces-outline"
+				title="Mobile App Development"
+				description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
+			/>
+			<Card
+				icon="mdi:application-braces-outline"
+				title="Software Development"
+				description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
+			/>
+		</div>
+	</div>
+</section>
+
+<style></style>

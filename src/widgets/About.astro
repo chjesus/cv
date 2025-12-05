@@ -1,97 +1,115 @@
 ---
 import { Image } from 'astro:assets'
-
-import PhotoProfile from '@shared/assets/foto.png'
+import { Icon } from 'astro-icon/components'
 
 import Badge from '@shared/ui/Badge.astro'
-import BlurCircle from '@shared/ui/BlurCircle.astro'
 import Circle from '@shared/ui/Circle.astro'
-
-import HtmlLogo from '@shared/assets/CatppuccinHtml.svg'
-import CSSLogo from '@shared/assets/CatppuccinCss3.svg'
-import ReactJsLogo from '@shared/assets/CatppuccinJavascriptReact.svg'
-import NextJsLogo from '@shared/assets/CatppuccinNext.svg'
-import JSLogo from '@shared/assets/CatppuccinJavascript.svg'
-import AstroLogo from '@shared/assets/CatppuccinAstro.svg'
-import ViteLogo from '@shared/assets/CatppuccinVite.svg'
+import BlurCircle from '@shared/ui/BlurCircle.astro'
+import Title from '@shared/ui/Title.astro'
+import Strong from '@shared/ui/Strong.astro'
+import Text from '@shared/ui/Text.astro'
+import PhotoProfile from '@shared/assets/foto.png'
 ---
 
-<section class="relative lg:px-[35px]">
-	<div
-		class="grid grid-cols-1 items-center md:grid-cols-[auto_1fr] md:gap-[25px] xl:gap-[65px]"
-	>
-		<div class="order-2 mx-auto md:order-1">
-			<figure class="relative md:w-[322px] xl:w-[460px]">
-				<Image
-					class="relative z-10 w-full"
-					src={PhotoProfile}
-					alt="Foto de perfil"
-				/>
-			</figure>
-		</div>
-		<div class="order-1 text-center md:order-2 md:text-left">
-			<Badge sFont="text-[18px]" padding="px-16 py-3 mb-[10px]">
-				About me
-			</Badge>
-			<h1 class="about-title text-[24px] md:text-[32px] lg:text-[46px]">
-				<span>Jesus</span> Chacon
-			</h1>
-			<p class="about-description mb-[30px] text-[14px] md:text-[20px]">
-				Lorem Ipsum is simply dummy text of the printing and typesetting
-				industry. Lorem Ipsum has been the industry's standard dummy text ever
-				since the 1500s.
-			</p>
-			<p class="about-description mb-[30px] text-[14px] md:text-[20px]">
-				It has survived not only five centuries, but also the leap into
-				electronic typesetting, remaining essentially unchanged.
-			</p>
-			<div>
-				<h2 class="about-subtitle text-left">Skills</h2>
-				<ul class="mt-[24px] grid grid-cols-6 gap-[20px] md:grid-cols-7">
-					<li class="cursor-pointer">
-						<Image src={HtmlLogo} alt="HTML Logo" />
-					</li>
-					<li class="cursor-pointer">
-						<Image src={CSSLogo} alt="CSS Logo" />
-					</li>
-					<li class="cursor-pointer">
-						<Image src={JSLogo} alt="JavaScript Logo" />
-					</li>
-					<li class="cursor-pointer">
-						<Image src={ReactJsLogo} alt="ReactJs Logo" />
-					</li>
-					<li class="cursor-pointer">
-						<Image src={NextJsLogo} alt="NextJs Logo" />
-					</li>
-					<li class="cursor-pointer">
-						<Image src={AstroLogo} alt="Astro Logo" />
-					</li>
-					<li class="cursor-pointer">
-						<Image src={ViteLogo} alt="Vite Logo" />
-					</li>
-				</ul>
+<section class="about">
+	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+		<div class="relative lg:px-[35px]">
+			<div class="about-container grid grid-cols-1 md:grid-cols-[auto_1fr]">
+				<div class="order-2 mx-auto md:order-1">
+					<figure class="about-image_container md:w-[322px] xl:w-[460px]">
+						<Image
+							class="relative z-10 w-full"
+							src={PhotoProfile}
+							alt="Foto de perfil"
+						/>
+					</figure>
+				</div>
+				<div class="order-1 text-center md:order-2 md:text-left">
+					<Badge sFont="text-[18px]" padding="px-16 py-3 mb-[10px]">
+						About me
+					</Badge>
+					<Title className="mb-[36px] uppercase">
+						<Strong>Jesus</Strong> Chacon
+					</Title>
+					<Text className="mb-[30px]">
+						Lorem Ipsum is simply dummy text of the printing and typesetting
+						industry. Lorem Ipsum has been the industry's standard dummy text
+						ever since the 1500s.
+					</Text>
+					<Text className="mb-[30px]">
+						It has survived not only five centuries, but also the leap into
+						electronic typesetting, remaining essentially unchanged.
+					</Text>
+					<div>
+						<h3 class="about-subtitle mb-[24px] text-[2.6rem]">Skills</h3>
+						<div
+							class="grid grid-cols-4 gap-[20px] md:grid-cols-5 lg:grid-cols-6"
+						>
+							<Icon name="catppuccin:html" class="text-[8rem]" />
+							<Icon name="catppuccin:css3" class="text-[8rem]" />
+							<Icon name="catppuccin:javascript" class="text-[8rem]" />
+							<Icon name="catppuccin:javascript-react" class="text-[8rem]" />
+							<Icon name="catppuccin:next" class="text-[8rem]" />
+							<Icon name="catppuccin:astro" class="text-[8rem]" />
+							<Icon name="catppuccin:vite" class="text-[8rem]" />
+						</div>
+					</div>
+				</div>
 			</div>
+			<BlurCircle
+				position="hidden md:block -top-[10%] -left-[16%]"
+				blur="blur-[170px]"
+				size="size-[207px]"
+			/>
+			<BlurCircle
+				position="top-1/2 right-[62%] md:top-0 md:right-0"
+				blur="blur-[110px]"
+				size="size-[170px] md:size-[125px]"
+			>
+				<Circle
+					size="size-[22px]"
+					position="top-3/4 left-1/4 md:left-1/3 md:top-0"
+				/>
+			</BlurCircle>
 		</div>
 	</div>
-	<BlurCircle
-		position="hidden md:block -top-[10%] -left-[16%]"
-		blur="blur-[170px]"
-		size="size-[207px]"
-	/>
-	<BlurCircle
-		position="top-1/2 right-[62%] md:top-0 md:right-0"
-		blur="blur-[110px]"
-		size="size-[170px] md:size-[125px]"
-	>
-		<Circle
-			size="size-[22px]"
-			position="top-3/4 left-1/4 md:left-1/3 md:top-0"
-		/>
-	</BlurCircle>
 </section>
 
-<style>
-	figure {
+<style lang="scss">
+	.about {
+		align-items: center;
+		&-container {
+			@media (min-width: 768px) {
+				gap: 25px;
+			}
+			@media (min-width: 1280px) {
+				gap: 6.5rem;
+			}
+		}
+
+		&-subtitle {
+			font-family: 'Roboto';
+			line-height: initial;
+			padding-bottom: 10px;
+			font-weight: 500;
+			position: relative;
+			text-align: left;
+			color: var(--text);
+
+			&::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 90px;
+				height: 2px;
+				background-color: white;
+			}
+		}
+	}
+
+	.about-image_container {
+		position: relative;
 		&::after {
 			content: '';
 			width: 100%;
@@ -102,64 +120,6 @@ import ViteLogo from '@shared/assets/CatppuccinVite.svg'
 			z-index: 0;
 			background-color: var(--primary);
 			border-radius: 20px;
-		}
-	}
-
-	h1 span {
-		color: var(--primary);
-	}
-
-	h2 {
-		color: var(--text);
-	}
-
-	.about-title {
-		font-weight: 900;
-		font-family: 'Roboto';
-		color: var(--text);
-		text-transform: uppercase;
-		margin-bottom: 36px;
-
-		@media (min-width: 1280px) {
-			line-height: 54px;
-		}
-	}
-
-	.about-description {
-		font-family: 'Cardo';
-		font-weight: 400;
-		color: var(--text);
-		line-height: 19px;
-
-		@media (min-width: 768px) {
-			line-height: normal;
-		}
-	}
-
-	.about-subtitle {
-		font-family: 'Roboto';
-		line-height: initial;
-		font-size: 14px;
-		padding-bottom: 10px;
-		font-weight: 500;
-		position: relative;
-
-		&::after {
-			content: '';
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			width: 90px;
-			height: 2px;
-			background-color: white;
-		}
-
-		@media (min-width: 768px) {
-			font-size: 18px;
-		}
-
-		@media (min-width: 1280px) {
-			font-size: 26px;
 		}
 	}
 </style>

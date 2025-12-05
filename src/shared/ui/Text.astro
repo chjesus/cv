@@ -1,6 +1,5 @@
 ---
-import styles from './Text/module.css'
-interface Props {
+type Props = {
 	className?: string
 }
 
@@ -10,11 +9,13 @@ const { className } = Astro.props
 <p class={className}>
 	<slot />
 </p>
+
 <style>
 	p {
-		font-size: 20px;
-		font-family: 'Roboto';
-		font-weight: 300;
+		font-size: 2rem;
+		font-family: 'Cardo';
+		font-weight: 400;
 		color: var(--text);
+    line-height: normal;
 	}
 </style>

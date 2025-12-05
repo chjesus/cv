@@ -31,10 +31,12 @@ const { title } = Astro.props
 		--secondary-dark: #37474f;
 		--background: #110123;
 		--background-dark: #000000;
+    --bg-white: #ffffff;
 		--text: #ffffff;
 		--text-dark: #000000;
-		--text-card-service: #718096;
-		--text-card-service-secondary: #2d3748;
+		--bg-card-service: #fafafa;
+		--text-card-service-title: #2d3748;
+		--text-card-service-description: #718096;
 		--text-card-portfolio: #454d55;
 		--text-card-portfolio-secondary: #000000;
 		--text-card-testimonial: #f9fafb;
@@ -55,8 +57,6 @@ const { title } = Astro.props
 			var(--accent-card-light) 51%,
 			var(--accent-card-dark) 100%
 		);
-		/* font-family: 'Source Sans 3'; */
-		/* font-style: normal; */
 	}
 
 	* {
@@ -84,7 +84,7 @@ const { title } = Astro.props
 	}
 	@media (min-width: 992px) {
 		html {
-      font-size: 43.75%;
+			font-size: 43.75%;
 		}
 	}
 	@media (min-width: 1200px) {
