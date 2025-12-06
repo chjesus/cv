@@ -1,23 +1,68 @@
 ---
 import { Image } from 'astro:assets'
+
 import ExperienceImage from '@shared/assets/Group.svg'
+
+import Badge from '@shared/ui/Badge.astro'
+import Title from '@shared/ui/Title.astro'
+import Text from '@shared/ui/Text.astro'
+import Strong from '@shared/ui/Strong.astro'
+import Button from '@shared/ui/Button.astro'
+import Input from '@shared/ui/Input.astro'
+import TextArea from '@shared/ui/TextArea.astro'
 ---
 
-<section class="contact relative z py-24 md:py-48">
+<section class="contact py-24 md:py-48">
 	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
-		<div class="grid grid-cols-2">
-			<div></div>
-			<div>
-				<figure>
-					<Image class="mx-auto" src={ExperienceImage} alt="Experience Image" />
-				</figure>
+		<div class="relative">
+			<div class="contact-container grid grid-cols-1 gap-24 md:gap-0">
+				<div class="flex flex-col items-start gap-[20px]">
+					<Badge
+						sFont="text-[18px]"
+						padding="px-16 py-3 mb-[10px]"
+						className="relative"
+					>
+						Let’s contact
+					</Badge>
+					<Title className="md:text-left">
+						Have an Awsome Project Idea? <Strong>Let’s Discuss</Strong>
+					</Title>
+					<Text className="md:text-left">
+						Ready to take your company to the next level? Contact us to discuss
+						your goals and how we can help you achieve them.
+					</Text>
+					<form class="flex w-full flex-col gap-[20px]">
+						<Input type="email" placeholder="Enter Email Address" />
+						<Input type="text" placeholder="Enter Your Name" />
+						<TextArea placeholder="Enter Message" />
+					</form>
+					<Button className="w-full p-[15px] text-[18px]">Send</Button>
+				</div>
+				<div>
+					<Image
+						class="mx-auto h-full w-min md:ml-auto md:mr-0"
+						src={ExperienceImage}
+						alt="Experience Image"
+					/>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-<style>
+<style lang="scss">
 	.contact {
 		background-color: rgba(255, 255, 255, 0.1);
+		&-container {
+			@media (min-width: 768px) {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+			@media (min-width: 1024px) {
+				grid-template-columns: 460px 1fr;
+			}
+			@media (min-width: 1280px) {
+				grid-template-columns: 660px 1fr;
+			}
+		}
 	}
 </style>

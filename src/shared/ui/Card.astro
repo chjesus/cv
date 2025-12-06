@@ -9,7 +9,7 @@ type Props = {
 const { icon, title, description } = Astro.props
 ---
 
-<div class="card p-[18px] gap-[2.4rem]">
+<div class="card gap-[2.4rem] p-[18px]">
 	<span class="card-icon cursor-pointer">
 		<Icon name={icon} class="text-[2.6rem]" />
 	</span>
@@ -19,39 +19,40 @@ const { icon, title, description } = Astro.props
 
 <style lang="scss">
 	.card {
-    display: flex;
+		display: flex;
 		color: var(--text);
 		border-radius: 10px;
 		flex-direction: column;
 		align-items: flex-start;
-		background-color: var(--primary);
-
-		&:nth-child(odd) {
-			background-color: var(--bg-card-service);
-			.card-icon {
-				border: 1px solid var(--primary);
-			}
-			.card-title {
-				color: var(--text-card-service-title);
-			}
-			.card-description {
-				color: var(--text-card-service-description);
-			}
-		}
+		background-color: var(--bg-card-service);
+		cursor: pointer;
+		transition: all 0.3s ease-in-out;
 		&-icon {
 			background-color: var(--bg-white);
 			color: var(--primary);
 			border-radius: 999px;
 			padding: 1.6rem;
+			border: 1px solid var(--primary);
 		}
 		&-title {
 			font-weight: 700;
 			text-align: left;
+			color: var(--text-card-service-title);
 		}
 		&-description {
 			text-align: left;
 			font-weight: 400;
 			line-height: normal;
+			color: var(--text-card-service-description);
+		}
+		&:nth-child(even) {
+			background-color: var(--primary);
+			.card-title {
+				color: var(--text);
+			}
+			.card-description {
+				color: var(--text);
+			}
 		}
 	}
 </style>

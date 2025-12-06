@@ -34,13 +34,14 @@ module.exports = {
 				'plugin:astro/recommended',
 				'plugin:astro/jsx-a11y-recommended',
 			],
-      rules: {
+			rules: {
 				// Reglas específicas para archivos .astro
 			},
 		},
 		{
 			files: ['*.ts', '*.tsx'],
 			rules: {
+				'astro/jsx-a11y/label-has-associated-control': 'off',
 				// Reglas específicas para TypeScript
 			},
 		},

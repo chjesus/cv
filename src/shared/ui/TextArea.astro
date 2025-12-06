@@ -1,0 +1,27 @@
+---
+type Props = {
+	className?: string
+	placeholder?: string
+}
+
+const { className = '', placeholder = '' } = Astro.props
+---
+
+<textarea rows="4" class={className} placeholder={placeholder}></textarea>
+
+<style>
+	textarea {
+		padding: 1.7rem 2rem;
+		border: 1px solid var(--white);
+		background-color: transparent;
+		border-radius: 3.4rem;
+		width: 100%;
+		font-size: 1.4rem;
+		outline: none;
+		color: var(--white);
+		&::placeholder {
+			color: var(--white);
+			font-size: 1.4rem;
+		}
+	}
+</style>

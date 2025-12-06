@@ -3,12 +3,13 @@ type Props = {
 	link?: boolean
 	sFont?: string
 	padding?: string
+	className?: string
 }
 
-const { link, sFont, padding } = Astro.props
+const { link = '', sFont = '', padding = '', className = '' } = Astro.props
 ---
 
-<button class=`${sFont} ${padding} ${ link && 'bg-transparent' }`>
+<button class=`${sFont} ${padding} ${link && 'bg-transparent'} ${className}`>
 	<slot />
 </button>
 
@@ -16,8 +17,8 @@ const { link, sFont, padding } = Astro.props
 	button {
 		display: flex;
 		align-items: center;
+    justify-content: center;
 		gap: 4px;
-		width: fit-content;
 		color: var(--text);
 		font-family: 'Roboto';
 		border-radius: 999px;
