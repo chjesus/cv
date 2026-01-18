@@ -1,0 +1,106 @@
+---
+import { Icon } from 'astro-icon/components'
+
+type Props = {
+	date: string
+	title: string
+	subtitle: string
+	description: string
+}
+
+const { date, title, subtitle, description } = Astro.props
+---
+
+<article class="card_project">
+	<figure class="card_project-image">
+		<img
+			class="size-full"
+			src="https://media.istockphoto.com/id/1226444511/es/vector/ilustraci%C3%B3n-conceptual-de-la-tecnolog%C3%ADa-de-desarrollo-de-sitios-web-m%C3%B3viles-dise%C3%B1o-de.jpg?s=2048x2048&w=is&k=20&c=u2c0gjtgdfQzUY9FaWe_5SWYYOZXLBwntiFvumVl9u4="
+			alt=""
+		/>
+	</figure>
+	<div class="card_project-body grid grid-flow-row grid-cols-1">
+		<div class="card_project-info">
+			<span class="card_project-info_date">{date}</span>
+			<ul class="card_project-info_icon_list">
+				<li class="card_project-info_icon_item">
+					<Icon name="catppuccin:html" />
+				</li>
+				<li class="card_project-info_icon_item">
+					<Icon name="catppuccin:css3" />
+				</li>
+				<li class="card_project-info_icon_item">
+					<Icon name="catppuccin:javascript" />
+				</li>
+			</ul>
+		</div>
+		<div>
+			<h2 class="card_project-title">{title}</h2>
+			<h3 class="card_project-subtitle">{subtitle}</h3>
+		</div>
+		<p class="card_project-description">{description}</p>
+	</div>
+</article>
+
+<style lang="scss">
+	.card_project {
+		background: #e7f3f2;
+		background: var(--odd-card-gradient);
+		border-radius: 22px;
+		overflow: hidden;
+		&:nth-child(even) {
+			background: var(--even-card-gradient);
+		}
+		&-image {
+			&:img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		&-body {
+			padding: 15px;
+			gap: 12px;
+		}
+		&-title {
+			font-size: 2.4rem;
+			font-family: 'Roboto';
+			line-height: normal;
+			font-weight: 600;
+			margin-bottom: 6px;
+		}
+		&-subtitle {
+			font-size: 1.4rem;
+			font-family: 'Roboto';
+			line-height: normal;
+			font-weight: 400;
+			color: var(--text-card-portfolio);
+		}
+		&-description {
+			font-size: 1.6rem;
+			font-family: 'Cardo';
+			line-height: normal;
+			font-weight: 400;
+			color: var(--text-card-portfolio);
+		}
+		&-info {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			&_date {
+				font-size: 1.4rem;
+				font-family: 'Cardo';
+				line-height: normal;
+				font-weight: 400;
+				color: var(--text-card-portfolio);
+			}
+			&_icon_list {
+				display: flex;
+				gap: 5px;
+			}
+			&_icon_item {
+				font-size: 2.4rem;
+			}
+		}
+	}
+</style>

@@ -7,25 +7,22 @@ import About from '@widgets/About.astro'
 import Experience from '@widgets/Experience.astro'
 import Services from '@widgets/Services.astro'
 import Contact from '@widgets/Contact.astro'
-import Projects from '../sections/Projects.astro'
-import Testimonials from '../sections/Testimonials.astro'
-import Footer from '../sections/Footer.astro'
+import Projects from '@widgets/Projects.astro'
+import Testimonials from '@widgets/Testimonials.astro'
+import Footer from '@widgets/Footer.astro'
 ---
 
 <Layout title="Jesus Chacon">
-	<div class="page-container relative overflow-hidden bg-black">
+	<div class="page-container bg-black">
 		<Nav />
 		<Header />
 		<About />
 		<Experience />
 		<Services />
 		<Contact />
-
-		<!-- <div class="overflow-hidden">
-			<Projects />
-			<Testimonials />
-			<Footer />
-		</div> -->
+		<Projects />
+		<Testimonials />
+		<Footer />
 	</div>
 </Layout>
 
@@ -33,5 +30,7 @@ import Footer from '../sections/Footer.astro'
 	.page-container {
 		width: 100%;
 		min-height: 100vh;
+		position: relative;
+		overflow: hidden;
 	}
 </style>

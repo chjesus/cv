@@ -1,14 +1,21 @@
 ---
-interface Props {
-	sFont?: string
-	padding?: string
-	className?: string
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'div'> {
+	fontSize?: string
 }
 
-const { padding, sFont, className } = Astro.props
+const { class: className, fontSize } = Astro.props
 ---
 
-<span class=`badge ${sFont} ${padding} ${className}`>
+<span
+	class:list={[
+		'badge',
+		{ 'default-font-size': !fontSize },
+		fontSize,
+		className,
+	]}
+>
 	<slot />
 </span>
 
@@ -16,9 +23,19 @@ const { padding, sFont, className } = Astro.props
 	.badge {
 		font-family: 'Roboto';
 		color: var(--text-dark);
-		display: inline-block;
 		line-height: initial;
 		background-color: #ffffff;
 		border-radius: 0.68rem;
+		position: relative;
+		z-index: 10;
+		padding: 0.8rem;
+		max-width: 16.2rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 10px;
+	}
+	.default-font-size {
+		font-size: 1.8rem;
 	}
 </style>

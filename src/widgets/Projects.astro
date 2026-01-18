@@ -1,0 +1,36 @@
+---
+import Badge from '@shared/ui/Badge.astro'
+import Title from '@shared/ui/Title.astro'
+import Strong from '@shared/ui/Strong.astro'
+
+import CardProject from '@shared/ui/CardProject.astro'
+
+import { PROJECTS } from '@shared/constants'
+---
+
+<section class="project py-24 md:py-48">
+	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+		<div class="relative">
+			<div class="project-container grid grid-cols-1 gap-[6rem]">
+				<div>
+					<Badge>Portfolio</Badge>
+					<Title className="md:text-left">
+						Explore My Digital <Strong>Portfolio</Strong>
+					</Title>
+				</div>
+				<div class="grid grid-flow-row grid-cols-2 gap-[2.6rem] lg:grid-cols-3">
+					{
+						PROJECTS.map((project) => (
+							<CardProject
+								date={project.date}
+								title={project.title}
+								subtitle={project.subtitle}
+								description={project.description}
+							/>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

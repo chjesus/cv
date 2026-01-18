@@ -1,15 +1,15 @@
 ---
-type Props = {
+import type { HTMLAttributes } from 'astro/types'
+
+interface Props extends HTMLAttributes<'button'> {
 	link?: boolean
-	sFont?: string
-	padding?: string
-	className?: string
+	isFull?: boolean
 }
 
-const { link = '', sFont = '', padding = '', className = '' } = Astro.props
+const { class: className, link = false, isFull = false } = Astro.props
 ---
 
-<button class=`${sFont} ${padding} ${link && 'bg-transparent'} ${className}`>
+<button class:list={[{ 'btn-link': link }, { '!w-full': isFull }, className]}>
 	<slot />
 </button>
 
@@ -17,13 +17,22 @@ const { link = '', sFont = '', padding = '', className = '' } = Astro.props
 	button {
 		display: flex;
 		align-items: center;
-    justify-content: center;
-		gap: 4px;
+		justify-content: center;
 		color: var(--text);
 		font-family: 'Roboto';
 		border-radius: 999px;
-		&:not(.bg-transparent) {
-			background-color: var(--primary);
-		}
+		font-size: 1.8rem;
+		width: 17rem;
+		padding: 1.5rem;
+		background-color: var(--primary);
+	}
+
+	.btn-link {
+		background-color: transparent;
+		font-size: 1.6rem;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 0;
+    width: fit-content;
 	}
 </style>
