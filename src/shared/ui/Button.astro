@@ -4,12 +4,25 @@ import type { HTMLAttributes } from 'astro/types'
 interface Props extends HTMLAttributes<'button'> {
 	link?: boolean
 	isFull?: boolean
+	footerStyle?: boolean
 }
 
-const { class: className, link = false, isFull = false } = Astro.props
+const {
+	class: className,
+	link = false,
+	isFull = false,
+	footerStyle = false,
+} = Astro.props
 ---
 
-<button class:list={[{ 'btn-link': link }, { '!w-full': isFull }, className]}>
+<button
+	class:list={[
+		{ 'btn-link': link },
+		{ '!w-full': isFull },
+		{ 'btn-footer': footerStyle },
+		className,
+	]}
+>
 	<slot />
 </button>
 
@@ -30,9 +43,17 @@ const { class: className, link = false, isFull = false } = Astro.props
 	.btn-link {
 		background-color: transparent;
 		font-size: 1.6rem;
-    justify-content: flex-start;
-    gap: 4px;
-    padding: 0;
-    width: fit-content;
+		justify-content: flex-start;
+		gap: 4px;
+		padding: 0;
+		width: fit-content;
+	}
+
+	.btn-footer {
+		background-color: var(--bg-white);
+		color: var(--text-dark);
+		font-size: 2.4rem;
+		font-family: 'Roboto';
+		font-weight: 500;
 	}
 </style>

@@ -1,1 +1,233 @@
-<footer></footer>
+---
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+
+import Container from '@app/layout/ui/Container.astro'
+import Logo from '@shared/assets/logo_white_svg.svg'
+import Button from '@shared/ui/Button.astro'
+---
+
+<footer class="footer pt-24 md:pt-20 lg:pt-48">
+	<Container isFooter={true}>
+		<div class="relative">
+			<div class="footer-container gap-x-10 gap-y-12 lg:gap-y-0">
+				<div class="justify-self-center md:col-span-3 md:justify-self-start">
+					<h1 class="footer-title mb-0 md:mb-20 lg:mb-44">
+						Lets Connect there
+					</h1>
+				</div>
+				<div class="row-start-3 md:row-start-auto md:justify-self-end">
+					<Button footerStyle={true} class="mx-auto mb-0 md:mb-20 lg:mb-44">
+						Hire me
+					</Button>
+				</div>
+				<div class="md:col-span-2 md:self-start">
+					<Image
+						class="mx-auto object-cover md:m-0"
+						src={Logo}
+						alt="Logo Jesus DEV"
+					/>
+					<p class="footer-description mt-6 md:mt-0">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
+						interdum ligula a dignissim. Lorem ipsum dolor sit amet, consectetur
+						adipiscing elit. Sed lobortis orci elementum egestas lobortis.
+					</p>
+				</div>
+				<div class="row-start-6 md:col-span-2 md:row-start-3 md:self-start">
+					<div class="footer-social_media_list">
+						<a href="/" class="footer-social_media_item">
+							<Icon name="mingcute:whatsapp-fill" />
+						</a>
+						<a href="/" class="footer-social_media_item">
+							<Icon name="mingcute:social-x-line" />
+						</a>
+						<a href="/" class="footer-social_media_item">
+							<Icon name="mingcute:instagram-fill" />
+						</a>
+					</div>
+				</div>
+				<div class="flex gap-14 md:row-span-2">
+					<ul class="footer-list">
+						<li class="footer-list_item">Navigation</li>
+						<li class="footer-list_item">home</li>
+						<li class="footer-list_item">about us</li>
+						<li class="footer-list_item">service</li>
+						<li class="footer-list_item">portfolio</li>
+						<li class="footer-list_item">project</li>
+					</ul>
+					<ul class="footer-list">
+						<li class="footer-list_item">Contact</li>
+						<li class="footer-list_item">+91 7738443636</li>
+						<li class="footer-list_item">jesus_chacon@gmail.com</li>
+						<li class="footer-list_item">Portfolio-jesus.com</li>
+					</ul>
+				</div>
+				<div class="flex flex-col gap-11">
+					<h2 class="footer-subtitle">Get the latest information</h2>
+					<label class="flex" for="email">
+						<input
+							type="email"
+							placeholder="Email Address"
+							class="footer-input"
+							id="email"
+							name="email"
+							aria-label="Email Address"
+						/>
+						<span class="footer-input_icon">
+							<Icon name="iconamoon:send-fill" />
+						</span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</Container>
+	<div class="footer-bottom py-8">
+		<Container>
+			<div class="grid grid-cols-1 justify-between md:grid-cols-2">
+				<span class="footer-bottom__item md:!justify-self-start">
+					Copyright© 2026 Jesus Chacon. All Rights Reserved.
+				</span>
+				<span class="footer-bottom__item md:!justify-self-end">
+					User Terms & Conditions | Privacy Policy
+				</span>
+			</div>
+		</Container>
+	</div>
+</footer>
+
+<style lang="scss">
+	.footer {
+		background-color: rgba($color: #ffffff, $alpha: 0.1);
+		border-radius: 10px 10px 0 0;
+		&-container {
+			display: grid;
+			align-items: center;
+			grid-template-columns: 1fr;
+			@media (min-width: 768px) {
+				grid-template-columns: 1fr 1fr auto 1fr;
+			}
+		}
+		&-title {
+			color: #ffffff;
+			font-size: 4rem;
+			font-family: 'Roboto';
+			font-weight: 500;
+			@media (min-width: 768px) {
+				font-size: 6.4rem;
+			}
+		}
+		&-subtitle {
+			font-family: 'Roboto';
+			font-size: 2.8rem;
+			font-weight: 500;
+			color: var(--text);
+			@media (min-width: 768px) {
+				font-size: 1.9rem;
+			}
+		}
+		&-description {
+			color: var(--text-secondary);
+			font-size: 2rem;
+			font-weight: 500;
+			font-family: 'Cardo';
+			text-align: center;
+			@media (min-width: 768px) {
+				font-size: 1.6rem;
+				text-align: left;
+			}
+		}
+		&-list {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+			&_item {
+				font-family: 'Cardo';
+				font-size: 2.2rem;
+				color: var(--text-secondary);
+				font-weight: 500;
+				text-transform: capitalize;
+				cursor: pointer;
+				@media (min-width: 768px) {
+					font-size: 1.5rem;
+				}
+				&:first-child {
+					font-size: 2.8rem;
+					color: var(--text);
+					font-family: 'Roboto';
+					margin-bottom: 0.6rem;
+					@media (min-width: 768px) {
+						font-size: 1.9rem;
+					}
+				}
+			}
+		}
+		&-social_media_list {
+			display: flex;
+			gap: 0.6rem;
+			justify-content: center;
+			@media (min-width: 768px) {
+				justify-content: flex-start;
+			}
+		}
+		&-social_media_item {
+			font-size: 4.3rem;
+			color: var(--text);
+
+			@media (min-width: 768px) {
+				font-size: 3rem;
+			}
+		}
+		&-input {
+			padding: 1.5rem;
+			border-radius: 1rem 0 0 1rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			line-height: initial;
+			width: 100%;
+			font-size: 1.6rem;
+			&::placeholder {
+				font-size: 1.6rem;
+				font-weight: 500;
+				color: var(--text-dark);
+				font-family: 'Cardo';
+			}
+			&:focus {
+				outline: none;
+			}
+			&_icon {
+				color: white;
+				background-color: var(--primary);
+				font-size: 2.5rem;
+				padding: 1.4rem;
+				cursor: pointer;
+				border-radius: 0 1rem 1rem 0;
+			}
+			/* Frame 331 */
+
+			/* Auto layout */
+
+			// gap: 6.88px;
+
+			// width: 177.39px;
+			// height: 35.07px;
+
+			// /* Inside auto layout */
+			// flex: none;
+			// order: 0;
+			// flex-grow: 0;
+		}
+		&-bottom {
+			border-top: 1px solid rgba($color: #ffffff, $alpha: 0.1);
+			margin-top: 6rem;
+			font-size: 1.4rem;
+			color: var(--text-secondary);
+			font-family: 'Cardo';
+			&__item {
+				color: var(--text);
+				font-size: 2rem;
+				justify-self: center;
+			}
+		}
+	}
+</style>

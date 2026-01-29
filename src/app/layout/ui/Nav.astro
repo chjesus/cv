@@ -2,10 +2,11 @@
 import { Image } from 'astro:assets'
 import Logo from '@shared/assets/logo.png'
 import Bars from '@shared/ui/icons/Bars.astro'
+import Container from '@app/layout/ui/Container.astro'
 ---
 
 <nav class="fixed top-[12px] z-20 w-full">
-	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+	<Container>
 		<div
 			class="rounded-full bg-white px-12 py-4 md:h-[58px] md:px-4 xl:h-[82px]"
 		>
@@ -36,7 +37,7 @@ import Bars from '@shared/ui/icons/Bars.astro'
 				</div>
 			</div>
 		</div>
-	</div>
+	</Container>
 </nav>
 
 <style>

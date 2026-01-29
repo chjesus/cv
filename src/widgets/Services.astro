@@ -4,10 +4,11 @@ import Title from '@shared/ui/Title.astro'
 import Strong from '@shared/ui/Strong.astro'
 import Text from '@shared/ui/Text.astro'
 import Card from '@shared/ui/Card.astro'
+import Container from '@app/layout/ui/Container.astro'
 ---
 
 <section class="services py-24 md:py-48">
-	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+	<Container>
 		<div class="relative text-center">
 			<Badge>Our Services</Badge>
 			<Title className="my-[12px]">
@@ -36,5 +37,5 @@ import Card from '@shared/ui/Card.astro'
 				/>
 			</div>
 		</div>
-	</div>
+	</Container>
 </section>

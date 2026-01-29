@@ -2,14 +2,14 @@
 import Badge from '@shared/ui/Badge.astro'
 import Title from '@shared/ui/Title.astro'
 import Strong from '@shared/ui/Strong.astro'
-
+import Container from '@app/layout/ui/Container.astro'
 import CardProject from '@shared/ui/CardProject.astro'
 
 import { PROJECTS } from '@shared/constants'
 ---
 
 <section class="project py-24 md:py-48">
-	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+	<Container>
 		<div class="relative">
 			<div class="project-container grid grid-cols-1 gap-[6rem]">
 				<div>
@@ -32,5 +32,5 @@ import { PROJECTS } from '@shared/constants'
 				</div>
 			</div>
 		</div>
-	</div>
+	</Container>
 </section>

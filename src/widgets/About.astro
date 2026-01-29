@@ -9,10 +9,11 @@ import Title from '@shared/ui/Title.astro'
 import Strong from '@shared/ui/Strong.astro'
 import Text from '@shared/ui/Text.astro'
 import PhotoProfile from '@shared/assets/foto.png'
+import Container from '@app/layout/ui/Container.astro'
 ---
 
 <section class="about">
-	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+	<Container>
 		<div class="relative lg:px-[35px]">
 			<div class="about-container grid grid-cols-1 md:grid-cols-[auto_1fr]">
 				<div class="order-2 mx-auto md:order-1">
@@ -70,7 +71,7 @@ import PhotoProfile from '@shared/assets/foto.png'
 				/>
 			</BlurCircle>
 		</div>
-	</div>
+	</Container>
 </section>
 
 <style lang="scss">

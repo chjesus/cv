@@ -7,10 +7,11 @@ import BlurCircle from '@shared/ui/BlurCircle.astro'
 import Circle from '@shared/ui/Circle.astro'
 import Button from '@shared/ui/Button.astro'
 import Badge from '@shared/ui/Badge.astro'
+import Container from '@app/layout/ui/Container.astro'
 ---
 
 <header class="header flex py-36 md:py-48">
-	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+	<Container>
 		<div class="relative">
 			<div class="grid grid-cols-1 md:grid-cols-2">
 				<div class="flex flex-col items-center justify-center md:items-start">
@@ -59,7 +60,7 @@ import Badge from '@shared/ui/Badge.astro'
 				/>
 			</BlurCircle>
 		</div>
-	</div>
+	</Container>
 </header>
 
 <style lang="scss">

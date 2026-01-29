@@ -10,12 +10,13 @@ import Strong from '@shared/ui/Strong.astro'
 import Button from '@shared/ui/Button.astro'
 import Input from '@shared/ui/Input.astro'
 import TextArea from '@shared/ui/TextArea.astro'
+import Container from '@app/layout/ui/Container.astro'
 ---
 
 <section class="contact py-24 md:py-48">
-	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+	<Container>
 		<div class="relative">
-			<div class="contact-container grid grid-cols-1 gap-24 md:gap-0">
+			<div class="contact-container grid grid-cols-1 gap-24 md:gap-16">
 				<div class="flex flex-col items-start gap-[20px]">
 					<Badge>Let’s contact</Badge>
 					<Title className="md:text-left">
@@ -41,7 +42,7 @@ import TextArea from '@shared/ui/TextArea.astro'
 				</div>
 			</div>
 		</div>
-	</div>
+	</Container>
 </section>
 
 <style lang="scss">

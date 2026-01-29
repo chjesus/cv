@@ -9,6 +9,7 @@ import Title from '@shared/ui/Title.astro'
 import SubTitle from '@shared/ui/SubTitle.astro'
 import Text from '@shared/ui/Text.astro'
 import Strong from '@shared/ui/Strong.astro'
+import Container from '@app/layout/ui/Container.astro'
 
 const experienceWorkList = [
 	{
@@ -48,7 +49,7 @@ const experienceEducationList = [
 ---
 
 <section class="experience py-24 md:py-48">
-	<div class="mx-auto max-w-screen-xl px-[20px] lg:px-[70px] xl:px-0">
+	<Container>
 		<div class="relative">
 			<div class="text-center md:text-left">
 				<Badge>Experience</Badge>
@@ -140,7 +141,7 @@ const experienceEducationList = [
 				/>
 			</BlurCircle>
 		</div>
-	</div>
+	</Container>
 </section>
 
 <style lang="scss">
