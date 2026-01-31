@@ -17,7 +17,7 @@ import Container from '@app/layout/ui/Container.astro'
 		<div class="relative lg:px-[35px]">
 			<div class="about-container grid grid-cols-1 md:grid-cols-[auto_1fr]">
 				<div class="order-2 mx-auto md:order-1">
-					<figure class="about-image_container md:w-[322px] xl:w-[460px]">
+					<figure class="about-image relative">
 						<Image
 							class="relative z-10 w-full"
 							src={PhotoProfile}
@@ -26,32 +26,28 @@ import Container from '@app/layout/ui/Container.astro'
 					</figure>
 				</div>
 				<div class="order-1 text-center md:order-2 md:text-left">
-					<Badge>About me</Badge>
-					<Title className="mb-[36px] uppercase">
+					<Badge class="mx-auto md:mx-0">About me</Badge>
+					<Title class="mb-14 uppercase">
 						<Strong>Jesus</Strong> Chacon
 					</Title>
-					<Text className="mb-[30px]">
+					<Text class="mb-12">
 						Lorem Ipsum is simply dummy text of the printing and typesetting
 						industry. Lorem Ipsum has been the industry's standard dummy text
 						ever since the 1500s.
 					</Text>
-					<Text className="mb-[30px]">
+					<Text class="mb-12">
 						It has survived not only five centuries, but also the leap into
 						electronic typesetting, remaining essentially unchanged.
 					</Text>
-					<div>
-						<h3 class="about-subtitle mb-[24px] text-[2.6rem]">Skills</h3>
-						<div
-							class="grid grid-cols-4 gap-[20px] md:grid-cols-5 lg:grid-cols-6"
-						>
-							<Icon name="catppuccin:html" class="text-[8rem]" />
-							<Icon name="catppuccin:css3" class="text-[8rem]" />
-							<Icon name="catppuccin:javascript" class="text-[8rem]" />
-							<Icon name="catppuccin:javascript-react" class="text-[8rem]" />
-							<Icon name="catppuccin:next" class="text-[8rem]" />
-							<Icon name="catppuccin:astro" class="text-[8rem]" />
-							<Icon name="catppuccin:vite" class="text-[8rem]" />
-						</div>
+					<h3 class="about-subtitle mb-10">Skills</h3>
+					<div class="about-icon__list">
+						<Icon name="catppuccin:html" class="text-9xl" />
+						<Icon name="catppuccin:css3" class="text-9xl" />
+						<Icon name="catppuccin:javascript" class="text-9xl" />
+						<Icon name="catppuccin:javascript-react" class="text-9xl" />
+						<Icon name="catppuccin:next" class="text-9xl" />
+						<Icon name="catppuccin:astro" class="text-9xl" />
+						<Icon name="catppuccin:vite" class="text-9xl" />
 					</div>
 				</div>
 			</div>
@@ -86,6 +82,28 @@ import Container from '@app/layout/ui/Container.astro'
 			}
 		}
 
+		&-image {
+			@media (min-width: 768px) {
+				width: 40rem;
+			}
+
+			@media (min-width: 1280px) {
+				width: 46rem;
+			}
+
+			&::after {
+				content: '';
+				width: 100%;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 50%;
+				z-index: 0;
+				background-color: var(--primary);
+				border-radius: 20px;
+			}
+		}
+
 		&-subtitle {
 			font-family: 'Roboto';
 			line-height: initial;
@@ -94,6 +112,11 @@ import Container from '@app/layout/ui/Container.astro'
 			position: relative;
 			text-align: left;
 			color: var(--text);
+			font-size: 2rem;
+
+			@media (min-width: 768px) {
+				font-size: 2.6rem;
+			}
 
 			&::after {
 				content: '';
@@ -105,20 +128,19 @@ import Container from '@app/layout/ui/Container.astro'
 				background-color: white;
 			}
 		}
-	}
 
-	.about-image_container {
-		position: relative;
-		&::after {
-			content: '';
-			width: 100%;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			height: 50%;
-			z-index: 0;
-			background-color: var(--primary);
-			border-radius: 20px;
+		&-icon__list {
+			gap: 2rem;
+			display: grid;
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+
+			@media (min-width: 768px) {
+				grid-template-columns: repeat(5, minmax(0, 1fr));
+			}
+
+			@media (min-width: 1280px) {
+				grid-template-columns: repeat(6, min-content);
+			}
 		}
 	}
 </style>

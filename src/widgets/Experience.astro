@@ -2,6 +2,11 @@
 import { Image } from 'astro:assets'
 import ExperienceImage from '@shared/assets/Group.svg'
 
+import {
+	EXPERIENCE_WORK_LIST,
+	EXPERIENCE_EDUCATION_LIST,
+} from '@shared/constants'
+
 import Badge from '@shared/ui/Badge.astro'
 import BlurCircle from '@shared/ui/BlurCircle.astro'
 import Circle from '@shared/ui/Circle.astro'
@@ -10,55 +15,19 @@ import SubTitle from '@shared/ui/SubTitle.astro'
 import Text from '@shared/ui/Text.astro'
 import Strong from '@shared/ui/Strong.astro'
 import Container from '@app/layout/ui/Container.astro'
-
-const experienceWorkList = [
-	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
-	},
-	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
-	},
-	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
-	},
-]
-
-const experienceEducationList = [
-	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
-	},
-	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
-	},
-	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
-	},
-]
 ---
 
 <section class="experience py-24 md:py-48">
 	<Container>
 		<div class="relative">
 			<div class="text-center md:text-left">
-				<Badge>Experience</Badge>
+				<Badge class="mx-auto md:mx-0">Experience</Badge>
 			</div>
 			<div class="experience-header grid grid-cols-1">
-				<Title className="md:text-left">
+				<Title class="md:text-left">
 					Check <Strong>Experience</Strong> and Work!
 				</Title>
-				<Text className="md:text-left">
+				<Text class="py-10 md:text-left">
 					Embark on a journey through my professional evolution, where every
 					project tells a story of growth, expertise, and passion.
 				</Text>
@@ -70,17 +39,17 @@ const experienceEducationList = [
 					</SubTitle>
 					<ul class="experience-list px-8 md:px-0">
 						{
-							experienceWorkList.map((item) => (
+							EXPERIENCE_WORK_LIST.map(({ info, period, company }) => (
 								<li class="experience-list_item text-center md:text-left">
-									{item.info}
+									{info}
 									<span class="experience-list_item_age py-[10px] md:py-[18px]">
-										{item.period}
+										{period}
 										<a
 											class="experience-list_item_link"
 											target="_blank"
 											href="/"
 										>
-											{item.company}
+											{company}
 										</a>
 									</span>
 								</li>
@@ -92,17 +61,17 @@ const experienceEducationList = [
 					<SubTitle className="text-center md:text-left">Education</SubTitle>
 					<ul class="experience-list px-8 md:px-0">
 						{
-							experienceEducationList.map((item) => (
+							EXPERIENCE_EDUCATION_LIST.map(({ info, period, company }) => (
 								<li class="experience-list_item text-center md:text-left">
-									{item.info}
-									<span class="experience-list_item_age py-[10px] md:py-[18px]">
-										{item.period}
+									{info}
+									<span class="experience-list_item_age py-6 md:py-8">
+										{period}
 										<a
 											class="experience-list_item_link"
 											target="_blank"
 											href="/"
 										>
-											{item.company}
+											{company}
 										</a>
 									</span>
 								</li>
@@ -110,15 +79,13 @@ const experienceEducationList = [
 						}
 					</ul>
 				</div>
-				<div>
-					<figure class="mx-auto xl:w-[300px]">
-						<Image
-							class="mx-auto size-full"
-							src={ExperienceImage}
-							alt="Experience Image"
-						/>
-					</figure>
-				</div>
+				<figure class="mx-auto xl:w-[30rem]">
+					<Image
+						class="mx-auto size-full"
+						src={ExperienceImage}
+						alt="Experience Image"
+					/>
+				</figure>
 			</div>
 			<BlurCircle
 				position="-top-[5%] right-[80%] md:-top-[30%] md:-left-[10%] z-0"
