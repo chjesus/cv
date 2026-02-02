@@ -26,7 +26,7 @@ const {
 	<slot />
 </button>
 
-<style>
+<style lang="scss">
 	button {
 		display: flex;
 		align-items: center;
@@ -50,10 +50,16 @@ const {
 	}
 
 	.btn-footer {
-		background-color: var(--bg-white);
-		color: var(--text-dark);
+		background-color: transparent;
+		border: 1px solid var(--bg-white);
+		color: var(--text);
 		font-size: 2.4rem;
 		font-family: 'Roboto';
 		font-weight: 500;
+    transition: all 0.3s;
+		&:hover {
+			background-color: var(--bg-white);
+			color: var(--text-dark);
+		}
 	}
 </style>

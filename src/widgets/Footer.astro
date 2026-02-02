@@ -214,26 +214,16 @@ import Button from '@shared/ui/Button.astro'
 				cursor: pointer;
 				border-radius: 0 1rem 1rem 0;
 			}
-			/* Frame 331 */
-
-			/* Auto layout */
-
-			// gap: 6.88px;
-
-			// width: 177.39px;
-			// height: 35.07px;
-
-			// /* Inside auto layout */
-			// flex: none;
-			// order: 0;
-			// flex-grow: 0;
 		}
 		&-bottom {
 			border-top: 1px solid rgba($color: #ffffff, $alpha: 0.1);
-			margin-top: 6rem;
+			margin-top: 3rem;
 			font-size: 1.4rem;
 			color: var(--text-secondary);
 			font-family: 'Cardo';
+      @media (min-width: 768px) {
+        margin-top: 6rem;
+      }
 			&__item {
 				color: var(--text);
 				font-size: 2rem;
