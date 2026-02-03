@@ -11,6 +11,8 @@ import Button from '@shared/ui/Button.astro'
 import Input from '@shared/ui/Input.astro'
 import TextArea from '@shared/ui/TextArea.astro'
 import Container from '@app/layout/ui/Container.astro'
+
+import AnimationFade from '@app/layout/ui/AnimationFade'
 ---
 
 <section class="contact py-24 md:py-48">
@@ -33,13 +35,13 @@ import Container from '@app/layout/ui/Container.astro'
 					</form>
 					<Button isFull={true}>Send</Button>
 				</div>
-				<div>
+				<AnimationFade client:visible>
 					<Image
 						class="mx-auto h-full w-min md:ml-auto md:mr-0"
 						src={ExperienceImage}
 						alt="Experience Image"
 					/>
-				</div>
+				</AnimationFade>
 			</div>
 		</div>
 	</Container>

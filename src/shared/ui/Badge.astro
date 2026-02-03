@@ -1,21 +1,8 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
-
-interface Props extends HTMLAttributes<'div'> {
-	fontSize?: string
-}
-
-const { class: className, fontSize } = Astro.props
+const { class: className } = Astro.props
 ---
 
-<span
-	class:list={[
-		'badge',
-		{ 'default-font-size': !fontSize },
-		fontSize,
-		className,
-	]}
->
+<span class:list={['badge', className]}>
 	<slot />
 </span>
 
@@ -34,8 +21,6 @@ const { class: className, fontSize } = Astro.props
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 10px;
-	}
-	.default-font-size {
 		font-size: 1.8rem;
 	}
 </style>

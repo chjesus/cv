@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config'
 
 import icon from 'astro-icon';
 
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
     server: { port: 8080, host: true, open: true },
@@ -19,5 +21,5 @@ export default defineConfig({
             },
         },
     },
-    integrations: [tailwind(), icon()],
+    integrations: [tailwind(), icon(), react()],
 })

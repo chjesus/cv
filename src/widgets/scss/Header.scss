@@ -1,0 +1,43 @@
+.header {
+	width: 100%;
+
+	@media (min-width: 1280px) {
+		align-items: center;
+		min-height: 100vh;
+	}
+
+	&-image {
+    width: 100%;
+		@media (min-width: 768px) {
+			max-width: 37.5rem;
+		}
+
+		@media (min-width: 1280px) {
+			max-width: 47rem;
+		}
+	}
+}
+
+.header-title {
+	font-weight: 900;
+	font-size: 4rem;
+	font-family: 'Roboto';
+	line-height: normal;
+	color: var(--text);
+
+	strong {
+		color: var(--primary);
+	}
+
+	@media (min-width: 768px) {
+		font-size: 4.5rem;
+	}
+
+	@media (min-width: 998px) {
+		font-size: 5rem;
+	}
+
+	@media (min-width: 1280px) {
+		font-size: 6.2rem;
+	}
+}

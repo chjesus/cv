@@ -2,41 +2,55 @@
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 
-import HeaderImage from '@shared/assets/amico.svg'
 import BlurCircle from '@shared/ui/BlurCircle.astro'
+import HeaderImage from '@shared/assets/amico.svg'
 import Circle from '@shared/ui/Circle.astro'
 import Button from '@shared/ui/Button.astro'
 import Badge from '@shared/ui/Badge.astro'
-import Container from '@app/layout/ui/Container.astro'
 import Text from '@shared/ui/Text.astro'
+
+import Container from '@app/layout/ui/Container.astro'
+import AnimationFade from '@app/layout/ui/AnimationFade'
 ---
 
 <header class="header flex py-36 md:py-48">
 	<Container>
 		<div class="relative">
 			<div class="grid grid-cols-1 md:grid-cols-2">
-				<div class="header-inner flex flex-col">
-					<Badge fontSize="text-[1.5rem]">Hello There</Badge>
-					<h1 class="header-title text-center md:text-left">
-						<strong>Experience the Mastery</strong>
-						Explore my Website Creations.
-					</h1>
-					<Text class="py-10 text-center">
-						Welcome to my portfolio of captivating digital experiences. Explore
-						my work and let's create something extraordinary together.
-					</Text>
-					<div class="grid auto-cols-max grid-flow-col gap-10">
-						<Button>Hire me</Button>
-						<Button link={true}>
-							View Portfolio
-							<Icon name="formkit:arrowright" />
-						</Button>
-					</div>
+				<div class="header-inner flex flex-col justify-center">
+					<AnimationFade tranlasteX={-50} client:visible>
+						<div class="flex justify-center md:justify-start">
+							<Badge class="!text-[1.5rem]">Hello There</Badge>
+						</div>
+						<h1 class="header-title text-center md:text-left">
+							<strong>Experience the Mastery</strong>
+							Explore my Website Creations.
+						</h1>
+					</AnimationFade>
+					<AnimationFade tranlasteX={-50} delay={0.6} client:visible>
+						<Text class="py-10 text-center md:text-left">
+							Welcome to my portfolio of captivating digital experiences.
+							Explore my work and let's create something extraordinary together.
+						</Text>
+					</AnimationFade>
+					<AnimationFade tranlasteX={-50} client:visible>
+						<div class="flex justify-center md:justify-start">
+							<div class="grid auto-cols-max grid-flow-col gap-10">
+								<Button>Hire me</Button>
+								<Button link={true}>
+									View Portfolio
+									<Icon name="formkit:arrowright" />
+								</Button>
+							</div>
+						</div>
+					</AnimationFade>
 				</div>
-				<div class="header-image flex">
-					<figure class="mt-12 w-full lg:mt-0">
-						<Image src={HeaderImage} alt="Amico" />
-					</figure>
+				<div class="flex items-center justify-center md:justify-end">
+					<AnimationFade tranlasteX={50} client:visible>
+						<figure class="header-image mt-12 lg:mt-0">
+							<Image src={HeaderImage} alt="Amico" />
+						</figure>
+					</AnimationFade>
 				</div>
 			</div>
 			<BlurCircle
@@ -61,64 +75,5 @@ import Text from '@shared/ui/Text.astro'
 </header>
 
 <style lang="scss">
-	.header {
-		width: 100%;
-
-		@media (min-width: 1280px) {
-			align-items: center;
-			min-height: 100vh;
-		}
-
-		&-inner {
-			align-items: center;
-			justify-content: center;
-			@media (min-width: 768px) {
-				align-items: flex-start;
-			}
-		}
-
-		&-image {
-			align-items: center;
-			justify-content: center;
-			@media (min-width: 768px) {
-				justify-content: flex-end;
-			}
-		}
-	}
-
-	.header-title {
-		font-weight: 900;
-		font-size: 4rem;
-		font-family: 'Roboto';
-		line-height: normal;
-		color: var(--text);
-
-		strong {
-			color: var(--primary);
-		}
-
-		@media (min-width: 768px) {
-			font-size: 4.5rem;
-		}
-
-		@media (min-width: 998px) {
-			font-size: 5rem;
-		}
-
-		@media (min-width: 1280px) {
-			font-size: 6.2rem;
-		}
-	}
-
-	@media (min-width: 768px) {
-		figure {
-			max-width: 37.5rem;
-		}
-	}
-
-	@media (min-width: 1280px) {
-		figure {
-			max-width: 47rem;
-		}
-	}
+	@import './scss/Header.scss';
 </style>
