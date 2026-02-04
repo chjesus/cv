@@ -23,16 +23,16 @@ import Container from '@app/layout/ui/Container.astro'
 			<div class="text-center md:text-left">
 				<Badge class="mx-auto md:mx-0">Experience</Badge>
 			</div>
-			<div class="experience-header grid grid-cols-1">
-				<Title class="md:text-left">
+			<div class="experience-header mb-10 grid">
+				<Title class="text-center md:text-left">
 					Check <Strong>Experience</Strong> and Work!
 				</Title>
-				<Text class="py-10 md:text-left">
+				<Text class="py-10 text-center md:text-left">
 					Embark on a journey through my professional evolution, where every
 					project tells a story of growth, expertise, and passion.
 				</Text>
 			</div>
-			<div class="experience-body grid grid-cols-1">
+			<div class="experience-body grid gap-10">
 				<div class="self-start">
 					<SubTitle className="text-center md:text-left">
 						Work <Strong>Experience</Strong>
@@ -42,7 +42,7 @@ import Container from '@app/layout/ui/Container.astro'
 							EXPERIENCE_WORK_LIST.map(({ info, period, company }) => (
 								<li class="experience-list_item text-center md:text-left">
 									{info}
-									<span class="experience-list_item_age py-[10px] md:py-[18px]">
+									<span class="experience-list_item_age py-6 md:py-9">
 										{period}
 										<a
 											class="experience-list_item_link"
@@ -64,7 +64,7 @@ import Container from '@app/layout/ui/Container.astro'
 							EXPERIENCE_EDUCATION_LIST.map(({ info, period, company }) => (
 								<li class="experience-list_item text-center md:text-left">
 									{info}
-									<span class="experience-list_item_age py-6 md:py-8">
+									<span class="experience-list_item_age py-6 md:py-9">
 										{period}
 										<a
 											class="experience-list_item_link"
@@ -112,95 +112,5 @@ import Container from '@app/layout/ui/Container.astro'
 </section>
 
 <style lang="scss">
-	.experience {
-		&-header {
-			text-align: center;
-			align-items: center;
-			margin-bottom: 25px;
-			row-gap: 10px;
-
-			@media (min-width: 768px) {
-				row-gap: initial;
-				column-gap: 16px;
-				grid-template-columns: 360px 1fr;
-			}
-
-			@media (min-width: 1024px) {
-				row-gap: initial;
-				column-gap: 130px;
-				grid-template-columns: 360px 1fr;
-			}
-
-			@media (min-width: 1280px) {
-				row-gap: initial;
-				column-gap: 190px;
-				grid-template-columns: 460px 1fr;
-			}
-		}
-
-		&-body {
-			row-gap: 40px;
-			align-items: center;
-
-			@media (min-width: 768px) {
-				grid-template-columns: repeat(3, minmax(0, 1fr));
-				gap: 16px;
-			}
-
-			@media (min-width: 1280px) {
-				gap: 28px;
-			}
-		}
-
-		&-list {
-			font-size: 1.8rem;
-			color: var(--text);
-			font-weight: 400;
-
-			&_item {
-				margin-top: 16px;
-				font-size: inherit;
-				font-family: 'Roboto';
-				font-weight: inherit;
-				position: relative;
-
-				&::after {
-					content: '';
-					position: absolute;
-					bottom: 0;
-					left: 50%;
-					transform: translateX(-50%);
-					width: 90px;
-					height: 1px;
-					background-color: white;
-					@media (min-width: 768px) {
-						left: 0;
-						height: 2px;
-						transform: initial;
-					}
-				}
-				&:last-child {
-					&::after {
-						width: initial;
-						height: initial;
-					}
-				}
-				&_age {
-					font-size: 1.5rem;
-					font-family: 'Cardo';
-					font-weight: inherit;
-					display: block;
-				}
-				&_link {
-					font-size: 1.6rem;
-					font-family: 'Cardo';
-					font-weight: inherit;
-					transition: all 0.3s;
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-			}
-		}
-	}
+	@import './scss/Experience.scss';
 </style>
