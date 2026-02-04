@@ -32,7 +32,7 @@ const { icon, title, description } = Astro.props
 			color: var(--primary);
 			border-radius: 999px;
 			padding: 1.6rem;
-			border: 1px solid var(--primary);
+			border: 2px solid var(--primary);
 		}
 		&-title {
 			font-weight: 700;
@@ -45,7 +45,7 @@ const { icon, title, description } = Astro.props
 			line-height: normal;
 			color: var(--text-card-service-description);
 		}
-		&:nth-child(even) {
+		&:hover {
 			background-color: var(--primary);
 			.card-title {
 				color: var(--text);
@@ -53,6 +53,11 @@ const { icon, title, description } = Astro.props
 			.card-description {
 				color: var(--text);
 			}
+      .card-icon {
+        background-color: var(--bg-white-hover);
+        color: var(--primary-hover);
+        border-color: var(--primary-hover);
+      }
 		}
 	}
 </style>

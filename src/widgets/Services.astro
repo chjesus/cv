@@ -1,40 +1,50 @@
 ---
+import Text from '@shared/ui/Text.astro'
+import Card from '@shared/ui/Card.astro'
 import Badge from '@shared/ui/Badge.astro'
 import Title from '@shared/ui/Title.astro'
 import Strong from '@shared/ui/Strong.astro'
-import Text from '@shared/ui/Text.astro'
-import Card from '@shared/ui/Card.astro'
 import Container from '@app/layout/ui/Container.astro'
+
+import AnimationFade from '@app/layout/ui/AnimationFade'
 ---
 
 <section class="services py-24 md:py-48">
 	<Container>
 		<div class="relative text-center">
-			<Badge class="mx-auto">Our Services</Badge>
-			<Title class="my-6">
-				<Strong>Services</Strong> That we Provide
-			</Title>
-			<Text class="mx-auto mb-14 max-w-7xl lg:mb-32">
-				Innovative and reliable, our service delivers seamless solutions
-				tailored to meet your needs. Elevate your experience with cutting-edge
-				features and exceptional customer satisfaction.
-			</Text>
+			<AnimationFade tranlasteY={50} client:visible>
+				<Badge class="mx-auto">Our Services</Badge>
+				<Title class="my-6">
+					<Strong>Services</Strong> That we Provide
+				</Title>
+				<Text class="mx-auto mb-14 max-w-7xl lg:mb-32">
+					Innovative and reliable, our service delivers seamless solutions
+					tailored to meet your needs. Elevate your experience with cutting-edge
+					features and exceptional customer satisfaction.
+				</Text>
+			</AnimationFade>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-				<Card
-					icon="mdi:application-braces-outline"
-					title="Web Design & Development"
-					description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
-				/>
-				<Card
-					icon="mdi:application-braces-outline"
-					title="Mobile App Development"
-					description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
-				/>
-				<Card
-					icon="mdi:application-braces-outline"
-					title="Software Development"
-					description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
-				/>
+				<AnimationFade tranlasteY={50} delay={0} client:visible>
+					<Card
+						icon="mdi:application-braces-outline"
+						title="Web Design & Development"
+						description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
+					/>
+				</AnimationFade>
+				<AnimationFade tranlasteY={50} delay={0.3} client:visible>
+					<Card
+						icon="mdi:application-braces-outline"
+						title="Mobile App Development"
+						description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
+					/>
+				</AnimationFade>
+				<AnimationFade tranlasteY={50} delay={0.6} client:visible>
+					<Card
+						icon="mdi:application-braces-outline"
+						title="Software Development"
+						description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
+					/>
+				</AnimationFade>
 			</div>
 		</div>
 	</Container>

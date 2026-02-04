@@ -7,84 +7,98 @@ import {
 	EXPERIENCE_EDUCATION_LIST,
 } from '@shared/constants'
 
-import Badge from '@shared/ui/Badge.astro'
-import BlurCircle from '@shared/ui/BlurCircle.astro'
-import Circle from '@shared/ui/Circle.astro'
-import Title from '@shared/ui/Title.astro'
-import SubTitle from '@shared/ui/SubTitle.astro'
 import Text from '@shared/ui/Text.astro'
+import Badge from '@shared/ui/Badge.astro'
+import Title from '@shared/ui/Title.astro'
+import Circle from '@shared/ui/Circle.astro'
 import Strong from '@shared/ui/Strong.astro'
+import SubTitle from '@shared/ui/SubTitle.astro'
+import BlurCircle from '@shared/ui/BlurCircle.astro'
 import Container from '@app/layout/ui/Container.astro'
+
+import AnimationFade from '@app/layout/ui/AnimationFade'
 ---
 
 <section class="experience py-24 md:py-48">
 	<Container>
 		<div class="relative">
 			<div class="text-center md:text-left">
-				<Badge class="mx-auto md:mx-0">Experience</Badge>
+				<AnimationFade tranlasteX={-50} client:visible>
+					<Badge class="mx-auto md:mx-0">Experience</Badge>
+				</AnimationFade>
 			</div>
 			<div class="experience-header mb-10 grid">
-				<Title class="text-center md:text-left">
-					Check <Strong>Experience</Strong> and Work!
-				</Title>
-				<Text class="py-10 text-center md:text-left">
-					Embark on a journey through my professional evolution, where every
-					project tells a story of growth, expertise, and passion.
-				</Text>
+				<AnimationFade tranlasteX={-50} client:visible>
+					<Title class="text-center md:text-left">
+						Check <Strong>Experience</Strong> and Work!
+					</Title>
+				</AnimationFade>
+				<AnimationFade tranlasteX={50} client:visible>
+					<Text class="py-10 text-center md:text-left">
+						Embark on a journey through my professional evolution, where every
+						project tells a story of growth, expertise, and passion.
+					</Text>
+				</AnimationFade>
 			</div>
 			<div class="experience-body grid gap-10">
 				<div class="self-start">
-					<SubTitle className="text-center md:text-left">
-						Work <Strong>Experience</Strong>
-					</SubTitle>
-					<ul class="experience-list px-8 md:px-0">
-						{
-							EXPERIENCE_WORK_LIST.map(({ info, period, company }) => (
-								<li class="experience-list_item text-center md:text-left">
-									{info}
-									<span class="experience-list_item_age py-6 md:py-9">
-										{period}
-										<a
-											class="experience-list_item_link"
-											target="_blank"
-											href="/"
-										>
-											{company}
-										</a>
-									</span>
-								</li>
-							))
-						}
-					</ul>
+					<AnimationFade tranlasteY={50} delay={0} client:visible>
+						<SubTitle className="text-center md:text-left">
+							Work <Strong>Experience</Strong>
+						</SubTitle>
+						<ul class="experience-list px-8 md:px-0">
+							{
+								EXPERIENCE_WORK_LIST.map(({ info, period, company }) => (
+									<li class="experience-list_item text-center md:text-left">
+										{info}
+										<span class="experience-list_item_age py-6 md:py-9">
+											{period}
+											<a
+												class="experience-list_item_link"
+												target="_blank"
+												href="/"
+											>
+												{company}
+											</a>
+										</span>
+									</li>
+								))
+							}
+						</ul>
+					</AnimationFade>
 				</div>
 				<div class="self-start">
-					<SubTitle className="text-center md:text-left">Education</SubTitle>
-					<ul class="experience-list px-8 md:px-0">
-						{
-							EXPERIENCE_EDUCATION_LIST.map(({ info, period, company }) => (
-								<li class="experience-list_item text-center md:text-left">
-									{info}
-									<span class="experience-list_item_age py-6 md:py-9">
-										{period}
-										<a
-											class="experience-list_item_link"
-											target="_blank"
-											href="/"
-										>
-											{company}
-										</a>
-									</span>
-								</li>
-							))
-						}
-					</ul>
+					<AnimationFade tranlasteY={50} delay={0.3} client:visible>
+						<SubTitle className="text-center md:text-left">Education</SubTitle>
+						<ul class="experience-list px-8 md:px-0">
+							{
+								EXPERIENCE_EDUCATION_LIST.map(({ info, period, company }) => (
+									<li class="experience-list_item text-center md:text-left">
+										{info}
+										<span class="experience-list_item_age py-6 md:py-9">
+											{period}
+											<a
+												class="experience-list_item_link"
+												target="_blank"
+												href="/"
+											>
+												{company}
+											</a>
+										</span>
+									</li>
+								))
+							}
+						</ul>
+					</AnimationFade>
 				</div>
 				<figure class="mx-auto xl:w-[30rem]">
-					<Image
-						class="mx-auto size-full"
-						src={ExperienceImage}
-						alt="Experience Image"
-					/>
+          <AnimationFade tranlasteY={50} delay={0.6} client:visible>
+            <Image
+              class="mx-auto size-full"
+              src={ExperienceImage}
+              alt="Experience Image"
+            />
+          </AnimationFade>
 				</figure>
 			</div>
 			<BlurCircle
