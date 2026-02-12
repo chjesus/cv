@@ -1,46 +1,49 @@
 ---
 import { Icon } from 'astro-icon/components'
+import AnimationFade from '@app/layout/ui/AnimationFade'
 
 type Props = {
 	date: string
 	title: string
 	subtitle: string
 	description: string
+  delay?: number
 }
 
-const { date, title, subtitle, description } = Astro.props
+const { date, title, subtitle, description, delay } = Astro.props
 ---
-
-<article class="card_project">
-	<figure class="card_project-image">
-		<img
-			class="size-full"
-			src="https://media.istockphoto.com/id/1226444511/es/vector/ilustraci%C3%B3n-conceptual-de-la-tecnolog%C3%ADa-de-desarrollo-de-sitios-web-m%C3%B3viles-dise%C3%B1o-de.jpg?s=2048x2048&w=is&k=20&c=u2c0gjtgdfQzUY9FaWe_5SWYYOZXLBwntiFvumVl9u4="
-			alt=""
-		/>
-	</figure>
-	<div class="card_project-body grid grid-flow-row grid-cols-1">
-		<div class="card_project-info">
-			<span class="card_project-info_date">{date}</span>
-			<ul class="card_project-info_icon_list">
-				<li class="card_project-info_icon_item">
-					<Icon name="catppuccin:html" />
-				</li>
-				<li class="card_project-info_icon_item">
-					<Icon name="catppuccin:css3" />
-				</li>
-				<li class="card_project-info_icon_item">
-					<Icon name="catppuccin:javascript" />
-				</li>
-			</ul>
-		</div>
-		<div>
-			<h2 class="card_project-title">{title}</h2>
-			<h3 class="card_project-subtitle">{subtitle}</h3>
-		</div>
-		<p class="card_project-description">{description}</p>
-	</div>
-</article>
+<AnimationFade tranlasteY={50} delay={delay} client:visible>
+  <article class="card_project">
+    <figure class="card_project-image">
+      <img
+        class="size-full"
+        src="https://media.istockphoto.com/id/1226444511/es/vector/ilustraci%C3%B3n-conceptual-de-la-tecnolog%C3%ADa-de-desarrollo-de-sitios-web-m%C3%B3viles-dise%C3%B1o-de.jpg?s=2048x2048&w=is&k=20&c=u2c0gjtgdfQzUY9FaWe_5SWYYOZXLBwntiFvumVl9u4="
+        alt=""
+      />
+    </figure>
+    <div class="card_project-body grid grid-flow-row grid-cols-1">
+      <div class="card_project-info">
+        <span class="card_project-info_date">{date}</span>
+        <ul class="card_project-info_icon_list">
+          <li class="card_project-info_icon_item">
+            <Icon name="catppuccin:html" />
+          </li>
+          <li class="card_project-info_icon_item">
+            <Icon name="catppuccin:css3" />
+          </li>
+          <li class="card_project-info_icon_item">
+            <Icon name="catppuccin:javascript" />
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="card_project-title">{title}</h2>
+        <h3 class="card_project-subtitle">{subtitle}</h3>
+      </div>
+      <p class="card_project-description">{description}</p>
+    </div>
+  </article>
+</AnimationFade>
 
 <style lang="scss">
 	.card_project {

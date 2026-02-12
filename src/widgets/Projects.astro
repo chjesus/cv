@@ -6,6 +6,8 @@ import Container from '@app/layout/ui/Container.astro'
 import CardProject from '@shared/ui/CardProject.astro'
 
 import { PROJECTS } from '@shared/constants'
+
+import AnimationFade from '@app/layout/ui/AnimationFade'
 ---
 
 <section class="portfolio py-24 md:py-48">
@@ -13,19 +15,22 @@ import { PROJECTS } from '@shared/constants'
 		<div class="relative">
 			<div class="portfolio-container grid grid-cols-1">
 				<div>
-					<Badge>Portfolio</Badge>
-					<Title className="md:text-left">
-						Explore My Digital <Strong>Portfolio</Strong>
-					</Title>
+					<AnimationFade tranlasteY={50} client:visible>
+						<Badge>Portfolio</Badge>
+						<Title className="md:text-left">
+							Explore My Digital <Strong>Portfolio</Strong>
+						</Title>
+					</AnimationFade>
 				</div>
 				<div class="portfolio-project_list grid grid-flow-row">
 					{
-						PROJECTS.map((project) => (
+						PROJECTS.map((project, index) => (
 							<CardProject
 								date={project.date}
 								title={project.title}
 								subtitle={project.subtitle}
 								description={project.description}
+								delay={parseFloat((index * 0.1).toFixed(1))}
 							/>
 						))
 					}
@@ -36,20 +41,5 @@ import { PROJECTS } from '@shared/constants'
 </section>
 
 <style lang="scss">
-  .portfolio {
-    &-container {
-      gap: 6rem;
-    }
-  }
-	.portfolio-project_list {
-		gap: 1.5rem;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		@media (min-width: 768px) {
-			gap: 2rem;
-		}
-		@media (min-width: 1280px) {
-			gap: 2.6rem;
-			grid-template-columns: repeat(3, minmax(0, 1fr));
-		}
-	}
+	@import './scss/Portfolio.scss';
 </style>
