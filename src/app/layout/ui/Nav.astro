@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+
 import Logo from '@shared/assets/logo.png'
-import Bars from '@shared/ui/icons/Bars.astro'
 import Container from '@app/layout/ui/Container.astro'
 ---
 
@@ -28,7 +29,7 @@ import Container from '@app/layout/ui/Container.astro'
 					</figure>
 				</div>
 				<div class="ml-auto cursor-pointer md:hidden">
-					<Bars />
+					<Icon name="heroicons:bars-3-center-left-16-solid" />
 				</div>
 				<div class="hidden grid-cols-3 gap-x-2 md:grid">
 					<div class="nav-item rounded-full">Portfolio</div>
