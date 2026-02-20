@@ -6,63 +6,35 @@ import Logo from '@shared/assets/logo.png'
 import Container from '@app/layout/ui/Container.astro'
 ---
 
-<nav class="fixed top-[12px] z-20 w-full">
+<nav class="nav fixed w-full">
 	<Container>
-		<div
-			class="rounded-full bg-white px-12 py-4 md:h-[58px] md:px-4 xl:h-[82px]"
-		>
-			<div
-				class="grid h-full grid-cols-[auto_auto] md:grid-cols-[1fr_auto_1fr] md:gap-x-[60px] lg:gap-x-[100px]"
-			>
-				<div class="hidden grid-cols-3 gap-x-2 md:grid">
-					<div class="nav-item rounded-full">Home</div>
-					<div class="nav-item rounded-full">About</div>
-					<div class="nav-item rounded-full">Services</div>
-				</div>
-				<div class="text-center md:m-auto">
-					<figure class="cursor-pointer">
-						<Image
-							class="w-[84px] object-cover md:w-[125px] lg:w-[145px] xl:w-[200px]"
-							src={Logo}
-							alt="Logo Jesus DEV"
-						/>
-					</figure>
-				</div>
-				<div class="ml-auto cursor-pointer md:hidden">
-					<Icon name="heroicons:bars-3-center-left-16-solid" />
-				</div>
-				<div class="hidden grid-cols-3 gap-x-2 md:grid">
-					<div class="nav-item rounded-full">Portfolio</div>
-					<div class="nav-item rounded-full">My projects</div>
-					<div class="nav-item rounded-full">Contact us</div>
-				</div>
+		<div class="nav-container md:gap-x-18 px-12 py-4 md:px-4 lg:gap-x-36">
+			<div class="hidden gap-x-2 md:grid md:grid-cols-3">
+				<div class="nav-item rounded-full">Home</div>
+				<div class="nav-item rounded-full">About</div>
+				<div class="nav-item rounded-full">Services</div>
+			</div>
+			<div class="text-center md:m-auto">
+				<figure class="lg:cursor-pointer">
+					<Image
+						class="w-[84px] object-cover md:w-[125px] lg:w-[145px] xl:w-[200px]"
+						src={Logo}
+						alt="Logo Jesus DEV"
+					/>
+				</figure>
+			</div>
+			<div class="ml-auto md:hidden">
+				<Icon class="text-5xl" name="heroicons:bars-3-center-left-16-solid" />
+			</div>
+			<div class="hidden gap-x-2 md:grid md:grid-cols-3">
+				<div class="nav-item rounded-full">Portfolio</div>
+				<div class="nav-item rounded-full">My projects</div>
+				<div class="nav-item rounded-full">Contact us</div>
 			</div>
 		</div>
 	</Container>
 </nav>
 
-<style>
-	.nav-item {
-		font-weight: 700;
-		cursor: pointer;
-		transition: all 0.3s;
-		text-align: center;
-		font-weight: 600;
-		font-family: 'Source Sans 3';
-		color: var(--text-dark);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		&:hover {
-			background-color: var(--secondary);
-		}
-
-		@media (min-width: 768px) {
-			font-size: 14px;
-		}
-		@media (min-width: 1280px) {
-			font-size: 20px;
-		}
-	}
+<style lang="scss">
+	@import './scss/Nav.scss';
 </style>
