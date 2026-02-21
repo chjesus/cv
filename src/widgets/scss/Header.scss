@@ -7,7 +7,7 @@
 	}
 
 	&-image {
-    width: 100%;
+		width: 100%;
 		@media (min-width: 768px) {
 			max-width: 37.5rem;
 		}
@@ -23,7 +23,7 @@
 	font-size: 4rem;
 	font-family: 'Roboto';
 	line-height: normal;
-	color: var(--text);
+	color: var(--text-white);
 
 	strong {
 		color: var(--primary);

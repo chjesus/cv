@@ -1,0 +1,37 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<dialog id="menu" class="modal items-start">
+	<div class="modal-box p-18 relative mt-24 w-9/12 max-w-5xl bg-white">
+		<form method="dialog" class="absolute right-6 top-6">
+			<button class="outline-none">
+				<Icon name="mdi:close" class="text-6xl text-black" />
+			</button>
+		</form>
+		<ol class="menu flex">
+			<li class="menu-item">Home</li>
+			<li class="menu-item">About</li>
+			<li class="menu-item">Services</li>
+			<li class="menu-item">Portfolio</li>
+			<li class="menu-item">My Projects</li>
+			<li class="menu-item">Contact us</li>
+		</ol>
+	</div>
+	<form method="dialog" class="modal-backdrop">
+		<button class="outline-none">close</button>
+	</form>
+</dialog>
+
+<style lang="scss">
+	.menu {
+		width: 100%;
+		gap: 30px;
+		&-item {
+			font-size: 3rem;
+			font-weight: 500;
+			color: var(--text-dark);
+			padding: 0;
+		}
+	}
+</style>

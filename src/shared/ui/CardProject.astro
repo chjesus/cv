@@ -8,13 +8,14 @@ type Props = {
 	subtitle: string
 	description: string
 	delay?: number
+	type: 'even' | 'odd'
 }
 
-const { date, title, subtitle, description, delay } = Astro.props
+const { date, title, subtitle, description, delay, type } = Astro.props
 ---
 
 <AnimationFade tranlasteY={50} delay={delay} client:visible>
-	<article class="card_project">
+	<article class=`card_project ${type}`>
 		<figure class="card_project-image">
 			<img
 				class="size-full object-cover"
@@ -43,14 +44,16 @@ const { date, title, subtitle, description, delay } = Astro.props
 <style lang="scss">
 	.card_project {
 		background: #e7f3f2;
-		background: var(--odd-card-gradient);
 		border-radius: 1.3rem;
 		overflow: hidden;
+		&.even {
+			background: var(--even-card-gradient);
+		}
+		&.odd {
+			background: var(--odd-card-gradient);
+		}
 		@media (min-width: 768px) {
 			border-radius: 2.2rem;
-		}
-		&:nth-child(even) {
-			background: var(--even-card-gradient);
 		}
 		&-image {
 			height: 120px;
@@ -70,19 +73,20 @@ const { date, title, subtitle, description, delay } = Astro.props
 			overflow: hidden;
 			text-overflow: ellipsis;
 			white-space: nowrap;
+			color: var(--text-card-portfolio-primary);
 		}
 		&-subtitle {
 			font-size: 1.4rem;
 			font-family: 'Roboto';
 			font-weight: 400;
-			color: var(--text-card-portfolio);
+			color: var(--text-card-portfolio-primary);
 		}
 		&-description {
 			font-size: 1.6rem;
 			font-family: 'Cardo';
 			line-height: normal;
 			font-weight: 400;
-			color: var(--text-card-portfolio);
+			color: var(--text-card-portfolio-secondary);
 		}
 		&-info {
 			justify-content: space-between;
@@ -92,7 +96,7 @@ const { date, title, subtitle, description, delay } = Astro.props
 				font-family: 'Cardo';
 				line-height: normal;
 				font-weight: 400;
-				color: var(--text-card-portfolio);
+				color: var(--text-card-portfolio-secondary);
 			}
 		}
 	}

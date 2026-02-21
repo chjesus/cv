@@ -24,7 +24,11 @@ import Container from '@app/layout/ui/Container.astro'
 				</figure>
 			</div>
 			<div class="ml-auto md:hidden">
-				<Icon class="text-5xl" name="heroicons:bars-3-center-left-16-solid" />
+				<Icon
+					class="text-5xl text-black"
+					onclick="menu.showModal()"
+					name="heroicons:bars-3-center-left-16-solid"
+				/>
 			</div>
 			<div class="hidden gap-x-2 md:grid md:grid-cols-3">
 				<div class="nav-item rounded-full">Portfolio</div>
@@ -36,5 +40,5 @@ import Container from '@app/layout/ui/Container.astro'
 </nav>
 
 <style lang="scss">
-	@import './scss/Nav.scss';
+	@use './scss/Nav.scss';
 </style>

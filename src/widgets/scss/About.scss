@@ -1,6 +1,6 @@
 .about {
-  &-container {
-    align-items: center;
+	&-container {
+		align-items: center;
 		@media (min-width: 768px) {
 			gap: 3rem;
 		}
@@ -38,7 +38,7 @@
 		font-weight: 500;
 		position: relative;
 		text-align: left;
-		color: var(--text);
+		color: var(--text-white);
 		font-size: 2rem;
 
 		@media (min-width: 768px) {

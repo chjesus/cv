@@ -6,7 +6,7 @@ const { class: className } = Astro.props
 	<slot />
 </span>
 
-<style>
+<style lang="scss">
 	.badge {
 		font-family: 'Roboto';
 		color: var(--text-dark);
@@ -21,6 +21,8 @@ const { class: className } = Astro.props
 		justify-content: center;
 		align-items: center;
 		margin-bottom: 10px;
+    height: fit-content;
+    width: initial;
 		font-size: 1.8rem;
 	}
 </style>

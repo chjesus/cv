@@ -31,7 +31,7 @@ const {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: var(--text);
+		color: var(--text-white);
 		font-family: 'Roboto';
 		border-radius: 999px;
 		font-size: 1.8rem;
@@ -52,11 +52,13 @@ const {
 	.btn-footer {
 		background-color: transparent;
 		border: 1px solid var(--bg-white);
-		color: var(--text);
+		color: var(--text-white);
 		font-size: 2.4rem;
 		font-family: 'Roboto';
 		font-weight: 500;
-    transition: all 0.3s;
+		transition: all 0.3s;
+    line-height: initial;
+    cursor: pointer;
 		&:hover {
 			background-color: var(--bg-white);
 			color: var(--text-dark);

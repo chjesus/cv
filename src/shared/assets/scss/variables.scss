@@ -1,0 +1,38 @@
+:root {
+	--primary: #5104a3;
+	--primary-dark: #1e013d;
+
+	--secondary: #d8d8d8;
+	--secondary-dark: #37474f;
+
+	--bg: #110123;
+
+	--bg-white: #ffffff;
+	--bg-dark: #000000;
+
+	--text-white: #ffffff;
+	--text-dark: #000000;
+	--text-secondary: #fcfcfd;
+
+	--white: #ffffff;
+
+	--bg-card-service: #fafafa;
+	--text-card-service-title: #2d3748;
+	--text-card-service-description: #718096;
+
+	/* Portfolio */
+	--text-card-portfolio-primary: #000000;
+	--text-card-portfolio-secondary: #454d55;
+	--odd-card-gradient: linear-gradient(
+		40deg,
+		#e7f3f2 0%,
+		#ebf4f8 51%,
+		#dfeef9 100%
+	);
+	--even-card-gradient: linear-gradient(
+		40deg,
+		#f5e9f1 0%,
+		#ebf4f8 51%,
+		#f7e3e2 100%
+	);
+}

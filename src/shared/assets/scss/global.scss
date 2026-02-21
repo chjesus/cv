@@ -1,73 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap');
-
-:root {
-	--primary: #5104a3;
-	--primary-dark: #1e013d;
-	--secondary: #d8d8d8;
-	--secondary-dark: #37474f;
-	--background: #110123;
-	--background-dark: #000000;
-	--bg-white: #ffffff;
-	--text: #ffffff;
-	--white: #ffffff;
-	--text-dark: #000000;
-	--bg-card-service: #fafafa;
-	--text-card-service-title: #2d3748;
-	--text-card-service-description: #718096;
-	--text-secondary: #fcfcfd;
-
-	/*  */
-	--text-card-portfolio: #454d55;
-	--text-card-portfolio-secondary: #000000;
-	--text-card-testimonial: #f9fafb;
-	--text-card-testimonial-secondary: #fcfcfd;
-	--accent-light: var(--primary);
-	--accent-dark: var(--primary-dark);
-	--accent-gradient: linear-gradient(
-		0deg,
-		var(--accent-light) 0%,
-		var(--accent-light) 100%
-	);
-
-	/* Background card impar */
-	--odd-card: #e7f3f2;
-	--odd-card-light: #ebf4f8;
-	--odd-card-dark: #dfeef9;
-	--odd-card-gradient: linear-gradient(
-		45deg,
-		var(--odd-card) 0%,
-		var(--odd-card-light) 51%,
-		var(--odd-card-dark) 100%
-	);
-
-	/* Background card impar */
-	--even-card: #f5e9f1;
-	--even-card-light: #ebf4f8;
-	--even-card-dark: #f7e3e2;
-	--even-card-gradient: linear-gradient(
-		45deg,
-		var(--even-card) 0%,
-		var(--even-card-light) 51%,
-		var(--even-card-dark) 100%
-	);
-}
-
 * {
 	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
 }
 
 html {
 	font-size: 43.75%;
 }
+
 @media (min-width: 600px) {
 	html {
 		font-size: 50%;
 	}
 }
+
 @media (min-width: 992px) {
 	html {
 		font-size: 56.25%;
