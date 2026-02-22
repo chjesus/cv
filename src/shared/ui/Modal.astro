@@ -9,14 +9,26 @@ import { Icon } from 'astro-icon/components'
 				<Icon name="mdi:close" class="text-6xl text-black" />
 			</button>
 		</form>
-		<ol class="menu flex">
-			<li class="menu-item">Home</li>
-			<li class="menu-item">About</li>
-			<li class="menu-item">Services</li>
-			<li class="menu-item">Portfolio</li>
-			<li class="menu-item">My Projects</li>
-			<li class="menu-item">Contact us</li>
-		</ol>
+		<div class="menu flex">
+			<li class="menu-item">
+				<a class="p-0" href="#home" onclick="menu.close()">Home</a>
+			</li>
+			<li class="menu-item">
+				<a class="p-0" href="#about" onclick="menu.close()">About</a>
+			</li>
+			<li class="menu-item">
+				<a class="p-0" href="#experience" onclick="menu.close()">Experience</a>
+			</li>
+			<li class="menu-item">
+				<a class="p-0" href="#services" onclick="menu.close()">Services</a>
+			</li>
+			<li class="menu-item">
+				<a class="p-0" href="#portfolio" onclick="menu.close()">My Projects</a>
+			</li>
+			<li class="menu-item">
+				<a class="p-0" href="#contact" onclick="menu.close()">Contact us</a>
+			</li>
+		</div>
 	</div>
 	<form method="dialog" class="modal-backdrop">
 		<button class="outline-none">close</button>

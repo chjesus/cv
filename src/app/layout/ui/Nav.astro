@@ -10,18 +10,20 @@ import Container from '@app/layout/ui/Container.astro'
 	<Container>
 		<div class="nav-container md:gap-x-18 px-12 py-4 md:px-4 lg:gap-x-36">
 			<div class="hidden gap-x-2 md:grid md:grid-cols-3">
-				<div class="nav-item rounded-full">Home</div>
-				<div class="nav-item rounded-full">About</div>
-				<div class="nav-item rounded-full">Services</div>
+				<a class="nav-item rounded-full" href="#home">Home</a>
+				<a class="nav-item rounded-full" href="#about">About</a>
+				<a class="nav-item rounded-full" href="#experience">Experience</a>
 			</div>
 			<div class="text-center md:m-auto">
-				<figure class="lg:cursor-pointer">
-					<Image
-						class="w-[84px] object-cover md:w-[125px] lg:w-[145px] xl:w-[200px]"
-						src={Logo}
-						alt="Logo Jesus DEV"
-					/>
-				</figure>
+				<a href="/">
+					<figure class="lg:cursor-pointer">
+						<Image
+							class="w-[84px] object-cover md:w-[125px] lg:w-[145px] xl:w-[200px]"
+							src={Logo}
+							alt="Logo Jesus DEV"
+						/>
+					</figure>
+				</a>
 			</div>
 			<div class="ml-auto md:hidden">
 				<Icon
@@ -31,9 +33,9 @@ import Container from '@app/layout/ui/Container.astro'
 				/>
 			</div>
 			<div class="hidden gap-x-2 md:grid md:grid-cols-3">
-				<div class="nav-item rounded-full">Portfolio</div>
-				<div class="nav-item rounded-full">My projects</div>
-				<div class="nav-item rounded-full">Contact us</div>
+				<a class="nav-item rounded-full" href="#services">Services</a>
+				<a class="nav-item rounded-full" href="#portfolio">My projects</a>
+				<a class="nav-item rounded-full" href="#contact">Contact us</a>
 			</div>
 		</div>
 	</Container>

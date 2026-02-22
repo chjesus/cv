@@ -19,7 +19,7 @@ import Container from '@app/layout/ui/Container.astro'
 import AnimationFade from '@app/layout/ui/AnimationFade'
 ---
 
-<section class="experience py-24 md:py-48">
+<section class="experience py-24 md:py-48" id="experience">
 	<Container>
 		<div class="relative">
 			<div class="text-center md:text-left">
@@ -92,13 +92,13 @@ import AnimationFade from '@app/layout/ui/AnimationFade'
 					</AnimationFade>
 				</div>
 				<figure class="mx-auto xl:w-[30rem]">
-          <AnimationFade tranlasteY={50} delay={0.6} client:visible>
-            <Image
-              class="mx-auto size-full"
-              src={ExperienceImage}
-              alt="Experience Image"
-            />
-          </AnimationFade>
+					<AnimationFade tranlasteY={50} delay={0.6} client:visible>
+						<Image
+							class="mx-auto size-full"
+							src={ExperienceImage}
+							alt="Experience Image"
+						/>
+					</AnimationFade>
 				</figure>
 			</div>
 			<BlurCircle

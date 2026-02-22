@@ -15,7 +15,7 @@ import Container from '@app/layout/ui/Container.astro'
 import AnimationFade from '@app/layout/ui/AnimationFade'
 ---
 
-<section class="contact py-24 md:py-48">
+<section class="contact py-24 md:py-48" id="contact">
 	<Container>
 		<div class="relative">
 			<div class="contact-container grid grid-cols-1 gap-24 md:gap-16">
@@ -25,20 +25,20 @@ import AnimationFade from '@app/layout/ui/AnimationFade'
 					</AnimationFade>
 					<AnimationFade tranlasteX={-50} client:visible>
 						<div class="flex flex-col gap-[20px]">
-              <Title class="text-center md:text-left">
-                Have an Awsome Project Idea? <Strong>Let’s Discuss</Strong>
-              </Title>
-              <Text class="text-center md:text-left">
-                Ready to take your company to the next level? Contact us to
-                discuss your goals and how we can help you achieve them.
-              </Text>
-              <form class="flex w-full flex-col gap-[20px]">
-                <Input type="email" placeholder="Enter Email Address" />
-                <Input type="text" placeholder="Enter Your Name" />
-                <TextArea placeholder="Enter Message" />
-              </form>
-              <Button isFull={true}>Send</Button>
-            </div>
+							<Title class="text-center md:text-left">
+								Have an Awsome Project Idea? <Strong>Let’s Discuss</Strong>
+							</Title>
+							<Text class="text-center md:text-left">
+								Ready to take your company to the next level? Contact us to
+								discuss your goals and how we can help you achieve them.
+							</Text>
+							<form class="flex w-full flex-col gap-[20px]">
+								<Input type="email" placeholder="Enter Email Address" />
+								<Input type="text" placeholder="Enter Your Name" />
+								<TextArea placeholder="Enter Message" />
+							</form>
+							<Button isFull={true}>Send</Button>
+						</div>
 					</AnimationFade>
 				</div>
 				<AnimationFade tranlasteX={50} client:visible>
