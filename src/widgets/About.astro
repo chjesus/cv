@@ -15,7 +15,7 @@ import AnimationFade from '@app/layout/ui/AnimationFade'
 const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 ---
 
-<section class="about pt-40 pb-40" id="about">
+<section class="about pb-40 pt-40" id="about">
 	<Container>
 		<div class="relative lg:px-14">
 			<div class="about-container grid grid-cols-1 md:grid-cols-[auto_1fr]">
@@ -23,10 +23,10 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 					<AnimationFade tranlasteY={50} client:visible>
 						<figure class="about-image relative">
 							<Image
-								class="relative z-10 w-full"
+								class="relative z-10 w-full cursor-pointer"
 								src={`${PUBLIC_URL_BUCKET}/img/foto.png`}
 								alt="Foto de perfil"
-                inferSize={true}
+								inferSize={true}
 							/>
 						</figure>
 					</AnimationFade>

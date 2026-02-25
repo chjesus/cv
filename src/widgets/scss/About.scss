@@ -10,6 +10,15 @@
 	}
 
 	&-image {
+		img {
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
+			transition: filter 0.4s ease-in-out;
+			&:hover {
+				-webkit-filter: grayscale(0%);
+				filter: grayscale(0%);
+			}
+		}
 		@media (min-width: 768px) {
 			width: 40rem;
 		}
