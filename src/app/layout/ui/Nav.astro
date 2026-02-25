@@ -2,8 +2,9 @@
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 
-import Logo from '@shared/assets/logo.png'
 import Container from '@app/layout/ui/Container.astro'
+
+const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 ---
 
 <nav class="nav fixed w-full">
@@ -19,8 +20,9 @@ import Container from '@app/layout/ui/Container.astro'
 					<figure class="lg:cursor-pointer">
 						<Image
 							class="w-[84px] object-cover md:w-[125px] lg:w-[145px] xl:w-[200px]"
-							src={Logo}
+							src={`${PUBLIC_URL_BUCKET}/img/logo.png`}
 							alt="Logo Jesus DEV"
+              inferSize={true}
 						/>
 					</figure>
 				</a>

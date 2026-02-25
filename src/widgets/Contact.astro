@@ -1,8 +1,6 @@
 ---
 import { Image } from 'astro:assets'
 
-import ExperienceImage from '@shared/assets/Group.svg'
-
 import Badge from '@shared/ui/Badge.astro'
 import Title from '@shared/ui/Title.astro'
 import Text from '@shared/ui/Text.astro'
@@ -13,6 +11,8 @@ import TextArea from '@shared/ui/TextArea.astro'
 import Container from '@app/layout/ui/Container.astro'
 
 import AnimationFade from '@app/layout/ui/AnimationFade'
+
+const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 ---
 
 <section class="contact py-24 md:py-48" id="contact">
@@ -44,8 +44,9 @@ import AnimationFade from '@app/layout/ui/AnimationFade'
 				<AnimationFade tranlasteX={50} client:visible>
 					<Image
 						class="mx-auto h-full w-min md:ml-auto md:mr-0"
-						src={ExperienceImage}
+						src={`${PUBLIC_URL_BUCKET}/img/contact_img.svg`}
 						alt="Experience Image"
+            inferSize={true}
 					/>
 				</AnimationFade>
 			</div>
