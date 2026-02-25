@@ -2,16 +2,17 @@
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 
-import Badge from '@shared/ui/Badge.astro'
-import Circle from '@shared/ui/Circle.astro'
-import BlurCircle from '@shared/ui/BlurCircle.astro'
-import Title from '@shared/ui/Title.astro'
-import Strong from '@shared/ui/Strong.astro'
 import Text from '@shared/ui/Text.astro'
-import PhotoProfile from '@shared/assets/foto.png'
+import Badge from '@shared/ui/Badge.astro'
+import Title from '@shared/ui/Title.astro'
+import Circle from '@shared/ui/Circle.astro'
+import Strong from '@shared/ui/Strong.astro'
+import BlurCircle from '@shared/ui/BlurCircle.astro'
 import Container from '@app/layout/ui/Container.astro'
 
 import AnimationFade from '@app/layout/ui/AnimationFade'
+
+const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 ---
 
 <section class="about pt-40 pb-40" id="about">
@@ -23,8 +24,9 @@ import AnimationFade from '@app/layout/ui/AnimationFade'
 						<figure class="about-image relative">
 							<Image
 								class="relative z-10 w-full"
-								src={PhotoProfile}
+								src={`${PUBLIC_URL_BUCKET}/img/foto.png`}
 								alt="Foto de perfil"
+                inferSize={true}
 							/>
 						</figure>
 					</AnimationFade>
