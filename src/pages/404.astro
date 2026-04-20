@@ -1,25 +1,115 @@
 ---
+import Nav from '@app/layout/ui/Nav.astro'
 import Layout from '@app/layout/Layout.astro'
 import Container from '@app/layout/ui/Container.astro'
+import AnimationFade from '@app/layout/ui/AnimationFade.astro'
+import BlurCircle from '@shared/ui/BlurCircle.astro'
+import Circle from '@shared/ui/Circle.astro'
+import Button from '@shared/ui/Button.astro'
 ---
 
 <Layout title="404 - Página no encontrada">
-	<section class="flex min-h-screen items-center justify-center">
-		<Container>
-			<div class="text-center">
-				<h1 class="mb-6 font-['Roboto'] text-[8rem] font-black text-white">
-					404
-				</h1>
-				<p class="mb-10 font-['Cardo'] text-[2rem] text-white/70">
-					La página que buscas no existe o fue movida.
-				</p>
-				<a
-					href="/"
-					class="inline-block rounded-full bg-[var(--primary)] px-12 py-5 font-['Roboto'] text-[1.6rem] font-semibold text-white transition-colors hover:bg-[var(--primary-hover)]"
-				>
-					Volver al inicio
-				</a>
-			</div>
-		</Container>
-	</section>
+	<main class="page-container bg-black">
+		<Nav />
+		<section class="not-found flex min-h-screen items-center justify-center">
+			<Container>
+				<div class="relative text-center">
+					<AnimationFade translateY={-30}>
+						<h1 class="not-found__title">4<span class="not-found__zero">0</span>4</h1>
+					</AnimationFade>
+					<AnimationFade translateY={30} delay={0.4}>
+						<p class="not-found__subtitle">
+							Oops! La página que buscas no existe.
+						</p>
+						<p class="not-found__description">
+							Puede que haya sido movida o que el enlace sea incorrecto.
+						</p>
+					</AnimationFade>
+					<AnimationFade translateY={30} delay={0.7}>
+						<a href="/" class="not-found__btn">
+							<Button>Volver al inicio</Button>
+						</a>
+					</AnimationFade>
+
+					<BlurCircle
+						position="-top-[20%] -left-[10%] md:-top-[40%] md:-left-[5%]"
+						blur="blur-[100px]"
+						size="size-[150px] md:size-[200px]"
+					>
+						<Circle
+							size="size-[14px]"
+							position="top-3/4 left-1/4"
+						/>
+					</BlurCircle>
+					<BlurCircle
+						position="-bottom-[20%] -right-[5%] md:-bottom-[30%] md:right-[10%]"
+						blur="blur-[120px]"
+						size="size-[120px] md:size-[180px]"
+					>
+						<Circle
+							size="size-[10px] md:size-[18px]"
+							position="top-1/4 left-3/4"
+						/>
+					</BlurCircle>
+				</div>
+			</Container>
+		</section>
+	</main>
 </Layout>
+
+<style lang="scss">
+	.page-container {
+		width: 100%;
+		min-height: 100vh;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.not-found {
+		padding-top: 8rem;
+
+		&__title {
+			font-family: 'Roboto';
+			font-weight: 900;
+			font-size: 12rem;
+			line-height: 1;
+			color: var(--text-white);
+			margin-bottom: 2rem;
+
+			@media (min-width: 768px) {
+				font-size: 18rem;
+			}
+		}
+
+		&__zero {
+			color: var(--primary);
+		}
+
+		&__subtitle {
+			font-family: 'Roboto';
+			font-weight: 700;
+			font-size: 2.4rem;
+			color: var(--text-white);
+			margin-bottom: 1.2rem;
+
+			@media (min-width: 768px) {
+				font-size: 3rem;
+			}
+		}
+
+		&__description {
+			font-family: 'Cardo';
+			font-size: 1.6rem;
+			color: var(--secondary);
+			margin-bottom: 4rem;
+
+			@media (min-width: 768px) {
+				font-size: 1.8rem;
+			}
+		}
+
+		&__btn {
+			display: inline-block;
+		}
+	}
+</style>
