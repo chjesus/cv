@@ -7,11 +7,12 @@ type Props = {
 	title: string
 	subtitle: string
 	description: string
+	imageAlt?: string
 	delay?: number
 	type: 'even' | 'odd'
 }
 
-const { date, title, subtitle, description, delay, type } = Astro.props
+const { date, title, subtitle, description, imageAlt, delay, type } = Astro.props
 ---
 
 <AnimationFade translateY={50} delay={delay} client:visible>
@@ -20,7 +21,7 @@ const { date, title, subtitle, description, delay, type } = Astro.props
 			<img
 				class="size-full object-cover"
 				src="https://media.istockphoto.com/id/1226444511/es/vector/ilustraci%C3%B3n-conceptual-de-la-tecnolog%C3%ADa-de-desarrollo-de-sitios-web-m%C3%B3viles-dise%C3%B1o-de.jpg?s=2048x2048&w=is&k=20&c=u2c0gjtgdfQzUY9FaWe_5SWYYOZXLBwntiFvumVl9u4="
-				alt=""
+				alt={imageAlt || title}
 			/>
 		</figure>
 		<div class="flex flex-col gap-3 p-4 md:gap-5 md:p-6">

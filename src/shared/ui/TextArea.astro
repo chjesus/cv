@@ -1,13 +1,14 @@
 ---
 type Props = {
-	className?: string
+	class?: string
+	name?: string
 	placeholder?: string
 }
 
-const { className = '', placeholder = '' } = Astro.props
+const { class: className = '', name, placeholder = '' } = Astro.props
 ---
 
-<textarea rows="4" class={className} placeholder={placeholder}></textarea>
+<textarea rows="4" name={name} class:list={[className]} placeholder={placeholder}></textarea>
 
 <style>
 	textarea {
