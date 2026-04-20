@@ -2,17 +2,17 @@ import { motion } from 'motion/react'
 
 type AnimatedBoxProps = {
 	children: React.ReactNode
-	tranlasteX?: number
-	tranlasteY?: number
+	translateX?: number
+	translateY?: number
 	delay?: number
 }
 
 const AnimationFade = (props: AnimatedBoxProps) => {
-	const { children, tranlasteX = 0, tranlasteY = 0, delay = 0.3 } = props
+	const { children, translateX = 0, translateY = 0, delay = 0.3 } = props
 
 	return (
 		<motion.div
-			initial={{ x: tranlasteX, y: tranlasteY, opacity: 0 }}
+			initial={{ x: translateX, y: translateY, opacity: 0 }}
 			whileInView={{ x: 0, y: 0, opacity: 1 }}
 			transition={{
 				duration: 0.8,

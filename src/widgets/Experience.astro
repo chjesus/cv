@@ -24,17 +24,17 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 	<Container>
 		<div class="relative">
 			<div class="text-center md:text-left">
-				<AnimationFade tranlasteX={-50} client:visible>
+				<AnimationFade translateX={-50} client:visible>
 					<Badge class="mx-auto md:mx-0">Experience</Badge>
 				</AnimationFade>
 			</div>
 			<div class="experience-header mb-10 grid">
-				<AnimationFade tranlasteX={-50} client:visible>
+				<AnimationFade translateX={-50} client:visible>
 					<Title class="text-center md:text-left">
 						Check <Strong>Experience</Strong> and Work!
 					</Title>
 				</AnimationFade>
-				<AnimationFade tranlasteX={50} client:visible>
+				<AnimationFade translateX={50} client:visible>
 					<Text class="py-10 text-center md:text-left">
 						Embark on a journey through my professional evolution, where every
 						project tells a story of growth, expertise, and passion.
@@ -43,7 +43,7 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 			</div>
 			<div class="experience-body grid gap-10">
 				<div class="self-start">
-					<AnimationFade tranlasteY={50} delay={0} client:visible>
+					<AnimationFade translateY={50} delay={0} client:visible>
 						<SubTitle className="text-center md:text-left">
 							Work <Strong>Experience</Strong>
 						</SubTitle>
@@ -54,35 +54,37 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 										{info}
 										<span class="experience-list_item_age py-6 md:py-9">
 											{period}
-											<a
-												class="experience-list_item_link"
-												target="_blank"
-												href="/"
-											>
-												{company}
-											</a>
-										</span>
-									</li>
-								))
-							}
-						</ul>
-					</AnimationFade>
-				</div>
-				<div class="self-start">
-					<AnimationFade tranlasteY={50} delay={0.3} client:visible>
-						<SubTitle className="text-center md:text-left">Education</SubTitle>
-						<ul class="experience-list px-8 md:px-0">
-							{
-								EXPERIENCE_EDUCATION_LIST.map(({ info, period, company }) => (
-									<li class="experience-list_item text-center md:text-left">
-										{info}
-										<span class="experience-list_item_age py-6 md:py-9">
-											{period}
-											<a
-												class="experience-list_item_link"
-												target="_blank"
-												href="/"
-											>
+										<a
+											class="experience-list_item_link"
+											target="_blank"
+											rel="noopener noreferrer"
+											href="/"
+										>
+											{company}
+										</a>
+									</span>
+								</li>
+							))
+						}
+					</ul>
+				</AnimationFade>
+			</div>
+			<div class="self-start">
+				<AnimationFade translateY={50} delay={0.3} client:visible>
+					<SubTitle className="text-center md:text-left">Education</SubTitle>
+					<ul class="experience-list px-8 md:px-0">
+						{
+							EXPERIENCE_EDUCATION_LIST.map(({ info, period, company }) => (
+								<li class="experience-list_item text-center md:text-left">
+									{info}
+									<span class="experience-list_item_age py-6 md:py-9">
+										{period}
+										<a
+											class="experience-list_item_link"
+											target="_blank"
+											rel="noopener noreferrer"
+											href="/"
+										>
 												{company}
 											</a>
 										</span>
@@ -93,7 +95,7 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 					</AnimationFade>
 				</div>
 				<figure class="mx-auto xl:w-[30rem]">
-					<AnimationFade tranlasteY={50} delay={0.6} client:visible>
+					<AnimationFade translateY={50} delay={0.6} client:visible>
 						<Image
 							class="mx-auto size-full"
 							src={`${PUBLIC_URL_BUCKET}/img/experience_img.svg`}

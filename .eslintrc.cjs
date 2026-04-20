@@ -1,4 +1,5 @@
 module.exports = {
+	ignorePatterns: ['dist/', 'node_modules/', '.astro/'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaVersion: 'latest',

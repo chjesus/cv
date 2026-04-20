@@ -14,7 +14,7 @@ type Props = {
 const { date, title, subtitle, description, delay, type } = Astro.props
 ---
 
-<AnimationFade tranlasteY={50} delay={delay} client:visible>
+<AnimationFade translateY={50} delay={delay} client:visible>
 	<article class=`card_project ${type}`>
 		<figure class="card_project-image">
 			<img

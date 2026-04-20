@@ -23,7 +23,7 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 					</Button>
 				</div>
 				<div class="md:col-span-2 md:self-start">
-					<AnimationFade tranlasteX={-50} delay={0} client:visible>
+					<AnimationFade translateX={-50} delay={0} client:visible>
 						<Image
 							class="mx-auto object-cover md:m-0"
 							src={`${PUBLIC_URL_BUCKET}/img/logo_white.svg`}
@@ -39,11 +39,12 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 					</AnimationFade>
 				</div>
 				<div class="row-start-6 md:col-span-2 md:row-start-3 md:self-start">
-					<AnimationFade tranlasteX={-50} delay={0} client:visible>
+					<AnimationFade translateX={-50} delay={0} client:visible>
 						<div class="footer-social_media_list">
 							<a
 								href="https://github.com/chjesus"
 								target="_blank"
+								rel="noopener noreferrer"
 								class="footer-social_media_item"
                 aria-label="Perfil de github"
 							>
@@ -53,6 +54,7 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 								class="footer-social_media_item"
 								href="https://x.com/ch__jesus"
 								target="_blank"
+								rel="noopener noreferrer"
 								aria-label="Perfil de x"
 							>
 								<Icon name="mingcute:social-x-fill" />
@@ -61,6 +63,7 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 								class="footer-social_media_item"
 								href="https://www.linkedin.com/in/jesus-chacon-510643162/"
 								target="_blank"
+								rel="noopener noreferrer"
 								aria-label="Perfil de linkedin"
 							>
 								<Icon name="mingcute:linkedin-fill" />
@@ -69,7 +72,7 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 					</AnimationFade>
 				</div>
 				<div class="self-start md:row-span-2">
-					<AnimationFade tranlasteX={-50} delay={0.3} client:visible>
+					<AnimationFade translateX={-50} delay={0.3} client:visible>
 						<div class="flex gap-14">
 							<ul class="footer-list">
 								<li class="footer-list_item">Navigation</li>
@@ -99,7 +102,7 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 					</AnimationFade>
 				</div>
 				<div class="self-start">
-					<AnimationFade tranlasteX={-50} delay={0.6} client:visible>
+					<AnimationFade translateX={-50} delay={0.6} client:visible>
 						<div class="flex flex-col gap-11">
 							<h2 class="footer-subtitle">Get the latest information</h2>
 							<label class="flex" for="email">

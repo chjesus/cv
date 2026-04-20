@@ -19,7 +19,7 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 		<div class="relative">
 			<div class="grid grid-cols-1 md:grid-cols-2">
 				<div class="header-inner flex flex-col justify-center">
-					<AnimationFade tranlasteX={-50} client:visible>
+					<AnimationFade translateX={-50} client:visible>
 						<div class="flex justify-center md:justify-start">
 							<Badge class="!text-[1.5rem]">Hello There</Badge>
 						</div>
@@ -28,13 +28,13 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 							Explore my Website Creations.
 						</h1>
 					</AnimationFade>
-					<AnimationFade tranlasteX={-50} delay={0.6} client:visible>
+					<AnimationFade translateX={-50} delay={0.6} client:visible>
 						<Text class="py-10 text-center md:text-left">
 							Welcome to my portfolio of captivating digital experiences.
 							Explore my work and let's create something extraordinary together.
 						</Text>
 					</AnimationFade>
-					<AnimationFade tranlasteX={-50} client:visible>
+					<AnimationFade translateX={-50} client:visible>
 						<div class="flex justify-center md:justify-start">
 							<div class="grid auto-cols-max grid-flow-col gap-10">
 								<Button>Hire me</Button>
@@ -47,7 +47,7 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 					</AnimationFade>
 				</div>
 				<div class="flex items-center justify-center md:justify-end">
-					<AnimationFade tranlasteX={50} client:visible>
+					<AnimationFade translateX={50} client:visible>
 						<figure class="header-image mt-12 lg:mt-0">
 							<Image
 								src={`${PUBLIC_URL_BUCKET}/img/header_img.svg`}
