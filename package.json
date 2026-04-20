@@ -14,7 +14,6 @@
     "lint:fix": "eslint --ext .astro,.ts,.js,.tsx . --fix"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.7.2",
     "@astrojs/vercel": "^9.0.4",
     "@iconify-json/catppuccin": "^1.2.17",
@@ -26,15 +25,10 @@
     "@tailwindcss/vite": "^4.2.0",
     "astro": "^5.15.4",
     "astro-icon": "^1.1.5",
-    "motion": "^12.30.0",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
     "tailwindcss": "^4.2.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.5",
-    "@types/react": "^19.2.10",
-    "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "astro-eslint-parser": "^1.2.2",
