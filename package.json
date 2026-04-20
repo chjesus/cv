@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "prettier:start": "prettier --write .",
+    "prettier:check": "prettier --check .",
     "lint:start": "eslint --ext .astro,.ts,.js,.tsx .",
     "lint:fix": "eslint --ext .astro,.ts,.js,.tsx . --fix"
   },

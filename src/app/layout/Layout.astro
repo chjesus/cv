@@ -5,26 +5,44 @@ import '@shared/assets/scss/lib.css'
 
 interface Props {
 	title: string
+	description?: string
+	image?: string
 }
 
-const { title } = Astro.props
+const DEFAULT_DESCRIPTION =
+	'Soy Jesús Chacón, Ingeniero en Informática y Desarrollador Front-end. Apasionado por crear experiencias de usuario excepcionales y código limpio.'
+
+const { title, description = DEFAULT_DESCRIPTION, image } = Astro.props
+const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta
 			name="keywords"
 			content="Jesús Chacón, Frontend Developer, Ingeniero en Informática, Desarrollo Frontend, JavaScript, React, Astro JS, Next.js, Tailwind CSS, TypeScript, Vercel, Git, SEO, Google Analytics, diseño UX/UI, soluciones web personalizadas, creación de experiencias web, optimización web, Desarrollador Web, Experiencia de Usuario, Código Limpio"
 		/>
-		<meta
-			name="description"
-			content="Soy Jesús Chacón, Ingeniero en Informática y Desarrollador Front-end. Apasionado por crear experiencias de usuario excepcionales y código limpio."
-		/>
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href={canonicalURL.href} />
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalURL.href} />
+		{image && <meta property="og:image" content={image} />}
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		{image && <meta name="twitter:image" content={image} />}
+
 		<title>{title}</title>
 	</head>
 	<body>

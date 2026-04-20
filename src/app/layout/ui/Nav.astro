@@ -27,13 +27,19 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					</figure>
 				</a>
 			</div>
-			<div class="ml-auto md:hidden">
+		<div class="ml-auto md:hidden">
+			<button
+				type="button"
+				class="cursor-pointer border-none bg-transparent p-0"
+				aria-label="Abrir menú de navegación"
+				id="menu-open-btn"
+			>
 				<Icon
 					class="text-5xl text-black"
-					onclick="menu.showModal()"
 					name="heroicons:bars-3-center-left-16-solid"
 				/>
-			</div>
+			</button>
+		</div>
 			<div class="hidden gap-x-2 md:grid md:grid-cols-3">
 				<a class="nav-item rounded-full" href="#services">Services</a>
 				<a class="nav-item rounded-full" href="#portfolio">My projects</a>

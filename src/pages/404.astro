@@ -1,0 +1,25 @@
+---
+import Layout from '@app/layout/Layout.astro'
+import Container from '@app/layout/ui/Container.astro'
+---
+
+<Layout title="404 - Página no encontrada">
+	<section class="flex min-h-screen items-center justify-center">
+		<Container>
+			<div class="text-center">
+				<h1 class="mb-6 font-['Roboto'] text-[8rem] font-black text-white">
+					404
+				</h1>
+				<p class="mb-10 font-['Cardo'] text-[2rem] text-white/70">
+					La página que buscas no existe o fue movida.
+				</p>
+				<a
+					href="/"
+					class="inline-block rounded-full bg-[var(--primary)] px-12 py-5 font-['Roboto'] text-[1.6rem] font-semibold text-white transition-colors hover:bg-[var(--primary-hover)]"
+				>
+					Volver al inicio
+				</a>
+			</div>
+		</Container>
+	</section>
+</Layout>
