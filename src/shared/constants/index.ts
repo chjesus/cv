@@ -1,4 +1,24 @@
-export const PROJECTS = [
+export type Project = {
+	id: number
+	date: string
+	title: string
+	subtitle: string
+	description: string
+	url?: string
+	imageUrl?: string
+	imageAlt?: string
+	technologies?: string[]
+}
+
+export type ExperienceItem = {
+	info: string
+	period: string
+	company: string
+	companyUrl?: string
+	location?: string
+}
+
+export const PROJECTS: Project[] = [
 	{
 		id: 1,
 		date: 'May-July 2017',
@@ -49,7 +69,7 @@ export const PROJECTS = [
 	},
 ]
 
-export const EXPERIENCE_WORK_LIST = [
+export const EXPERIENCE_WORK_LIST: ExperienceItem[] = [
 	{
 		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 		period: '2020 - 2021',
@@ -67,7 +87,7 @@ export const EXPERIENCE_WORK_LIST = [
 	},
 ]
 
-export const EXPERIENCE_EDUCATION_LIST = [
+export const EXPERIENCE_EDUCATION_LIST: ExperienceItem[] = [
 	{
 		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
 		period: '2020 - 2021',

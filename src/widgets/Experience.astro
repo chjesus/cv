@@ -15,7 +15,7 @@ import SubTitle from '@shared/ui/SubTitle.astro'
 import BlurCircle from '@shared/ui/BlurCircle.astro'
 import Container from '@app/layout/ui/Container.astro'
 
-import AnimationFade from '@app/layout/ui/AnimationFade'
+import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 
 import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 ---
@@ -24,17 +24,17 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 	<Container>
 		<div class="relative">
 			<div class="text-center md:text-left">
-				<AnimationFade translateX={-50} client:visible>
+				<AnimationFade translateX={-50}>
 					<Badge class="mx-auto md:mx-0">Experience</Badge>
 				</AnimationFade>
 			</div>
 			<div class="experience-header mb-10 grid">
-				<AnimationFade translateX={-50} client:visible>
+				<AnimationFade translateX={-50}>
 					<Title class="text-center md:text-left">
 						Check <Strong>Experience</Strong> and Work!
 					</Title>
 				</AnimationFade>
-				<AnimationFade translateX={50} client:visible>
+				<AnimationFade translateX={50}>
 					<Text class="py-10 text-center md:text-left">
 						Embark on a journey through my professional evolution, where every
 						project tells a story of growth, expertise, and passion.
@@ -43,7 +43,7 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 			</div>
 			<div class="experience-body grid gap-10">
 				<div class="self-start">
-					<AnimationFade translateY={50} delay={0} client:visible>
+					<AnimationFade translateY={50} delay={0}>
 <SubTitle class="text-center md:text-left">
 						Work <Strong>Experience</Strong>
 					</SubTitle>
@@ -70,7 +70,7 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 				</AnimationFade>
 			</div>
 			<div class="self-start">
-				<AnimationFade translateY={50} delay={0.3} client:visible>
+				<AnimationFade translateY={50} delay={0.3}>
 					<SubTitle class="text-center md:text-left">Education</SubTitle>
 					<ul class="experience-list px-8 md:px-0">
 						{
@@ -95,12 +95,13 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					</AnimationFade>
 				</div>
 				<figure class="mx-auto xl:w-[30rem]">
-					<AnimationFade translateY={50} delay={0.6} client:visible>
+					<AnimationFade translateY={50} delay={0.6}>
 						<Image
 							class="mx-auto size-full"
 							src={`${PUBLIC_URL_BUCKET}/img/experience_img.svg`}
 							alt="Experience Image"
-              inferSize={true}
+							width={480}
+							height={480}
 						/>
 					</AnimationFade>
 				</figure>

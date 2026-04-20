@@ -1,4 +1,4 @@
-import { motion } from 'motion/react'
+import { motion, useReducedMotion } from 'motion/react'
 
 type AnimatedBoxProps = {
 	children: React.ReactNode
@@ -9,6 +9,11 @@ type AnimatedBoxProps = {
 
 const AnimationFade = (props: AnimatedBoxProps) => {
 	const { children, translateX = 0, translateY = 0, delay = 0.3 } = props
+	const prefersReduced = useReducedMotion()
+
+	if (prefersReduced) {
+		return <>{children}</>
+	}
 
 	return (
 		<motion.div
