@@ -4,51 +4,82 @@ import Container from '@app/layout/ui/Container.astro'
 import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 import BlurCircle from '@shared/ui/BlurCircle.astro'
 import Circle from '@shared/ui/Circle.astro'
-import Button from '@shared/ui/Button.astro'
 ---
 
 <Layout title="404 - Página no encontrada">
 	<main class="page-container bg-black">
-		<section class="not-found flex min-h-screen items-center justify-center">
+		<section
+			class="not-found relative flex min-h-screen items-center justify-center overflow-hidden"
+		>
+			<div
+				class="blur-float blur-float--1 blur-orb blur-orb--top-left"
+				aria-hidden="true"
+			>
+				<BlurCircle position="inset-0" blur="blur-[100px]" size="size-full">
+					<Circle size="size-[14px]" position="top-3/4 left-1/4" />
+				</BlurCircle>
+			</div>
+			<div
+				class="blur-float blur-float--3 blur-orb blur-orb--mid-right"
+				aria-hidden="true"
+			>
+				<BlurCircle position="inset-0" blur="blur-[80px]" size="size-full">
+					<Circle
+						size="size-[8px] md:size-[12px]"
+						position="top-1/2 left-1/3"
+					/>
+				</BlurCircle>
+			</div>
+			<div
+				class="blur-float blur-float--4 blur-orb blur-orb--center"
+				aria-hidden="true"
+			>
+				<BlurCircle position="inset-0" blur="blur-[140px]" size="size-full">
+					<Circle
+						size="size-[12px] md:size-[18px]"
+						position="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+					/>
+				</BlurCircle>
+			</div>
+
+			<!-- Contenido -->
 			<Container>
-				<div class="relative text-center">
+				<div class="not-found__content relative z-10 text-center">
 					<AnimationFade translateY={-30}>
-						<h1 class="not-found__title">4<span class="not-found__zero">0</span>4</h1>
+						<p class="not-found__eyebrow">Error 404</p>
+						<p class="not-found__title" aria-hidden="true">
+							4<span class="not-found__zero">0</span>4
+						</p>
 					</AnimationFade>
 					<AnimationFade translateY={30} delay={0.4}>
+						<h1 class="not-found__heading">Página no encontrada</h1>
 						<p class="not-found__subtitle">
-							Oops! La página que buscas no existe.
+							Parece que este enlace no existe, cambió de lugar o fue eliminado.
 						</p>
 						<p class="not-found__description">
-							Puede que haya sido movida o que el enlace sea incorrecto.
+							Mientras tanto, puedes volver al inicio, revisar mis proyectos
+							destacados o escribirme directamente.
 						</p>
 					</AnimationFade>
 					<AnimationFade translateY={30} delay={0.7}>
-						<a href="/" class="not-found__btn">
-							<Button>Volver al inicio</Button>
-						</a>
+						<div class="not-found__actions">
+							<a href="/" class="not-found__btn not-found__btn--primary">
+								Volver al inicio
+							</a>
+							<a
+								href="/#portfolio"
+								class="not-found__btn not-found__btn--secondary"
+							>
+								Ver proyectos
+							</a>
+							<a
+								href="/#contact"
+								class="not-found__btn not-found__btn--secondary"
+							>
+								Contactarme
+							</a>
+						</div>
 					</AnimationFade>
-
-					<BlurCircle
-						position="-top-[20%] -left-[10%] md:-top-[40%] md:-left-[5%]"
-						blur="blur-[100px]"
-						size="size-[150px] md:size-[200px]"
-					>
-						<Circle
-							size="size-[14px]"
-							position="top-3/4 left-1/4"
-						/>
-					</BlurCircle>
-					<BlurCircle
-						position="-bottom-[20%] -right-[5%] md:-bottom-[30%] md:right-[10%]"
-						blur="blur-[120px]"
-						size="size-[120px] md:size-[180px]"
-					>
-						<Circle
-							size="size-[10px] md:size-[18px]"
-							position="top-1/4 left-3/4"
-						/>
-					</BlurCircle>
 				</div>
 			</Container>
 		</section>
@@ -63,51 +94,185 @@ import Button from '@shared/ui/Button.astro'
 		overflow: hidden;
 	}
 
+	.blur-orb {
+		position: absolute;
+		pointer-events: none;
+	}
+
+	.blur-orb--top-left {
+		top: 10vh;
+		left: 5vw;
+		width: clamp(120px, 20vw, 250px);
+		height: clamp(120px, 20vw, 250px);
+	}
+
+	.blur-orb--mid-right {
+		top: 25vh;
+		right: 10vw;
+		width: clamp(80px, 12vw, 150px);
+		height: clamp(80px, 12vw, 150px);
+	}
+
+	.blur-orb--center {
+		top: 50%;
+		left: 50%;
+		width: clamp(180px, 28vw, 360px);
+		height: clamp(180px, 28vw, 360px);
+		transform: translate(-50%, -50%);
+		z-index: 0;
+		opacity: 0.85;
+	}
+
+	.blur-float {
+		animation: float 6s ease-in-out infinite;
+		will-change: transform;
+
+		&--1 {
+			animation-duration: 7s;
+			animation-delay: 0s;
+		}
+
+		&--3 {
+			animation-duration: 6s;
+			animation-delay: -4s;
+		}
+
+		&--4 {
+			animation-duration: 9s;
+			animation-delay: -1s;
+		}
+	}
+
+	@keyframes float {
+		0%,
+		100% {
+			transform: translateY(0) scale(1);
+		}
+		25% {
+			transform: translateY(-15px) scale(1.05);
+		}
+		50% {
+			transform: translateY(8px) scale(0.95);
+		}
+		75% {
+			transform: translateY(-8px) scale(1.02);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.blur-float {
+			animation: none;
+		}
+	}
+
 	.not-found {
 		padding-top: 8rem;
+
+		&__content {
+			max-width: 72rem;
+			margin: 0 auto;
+		}
+
+		&__eyebrow {
+			font-family: 'Roboto';
+			font-size: 1.4rem;
+			font-weight: 500;
+			letter-spacing: 0.28rem;
+			text-transform: uppercase;
+			color: var(--primary);
+			margin-bottom: 1.6rem;
+		}
 
 		&__title {
 			font-family: 'Roboto';
 			font-weight: 900;
-			font-size: 12rem;
+			font-size: clamp(9rem, 20vw, 18rem);
 			line-height: 1;
 			color: var(--text-white);
-			margin-bottom: 2rem;
-
-			@media (min-width: 768px) {
-				font-size: 18rem;
-			}
+			margin-bottom: 1.6rem;
 		}
 
 		&__zero {
 			color: var(--primary);
 		}
 
-		&__subtitle {
+		&__heading {
 			font-family: 'Roboto';
 			font-weight: 700;
-			font-size: 2.4rem;
+			font-size: clamp(3.2rem, 5vw, 4.8rem);
+			line-height: 1.1;
+			color: var(--text-white);
+			margin-bottom: 1.6rem;
+		}
+
+		&__subtitle {
+			font-family: 'Cardo';
+			font-size: clamp(2rem, 3vw, 2.6rem);
+			line-height: 1.5;
 			color: var(--text-white);
 			margin-bottom: 1.2rem;
-
-			@media (min-width: 768px) {
-				font-size: 3rem;
-			}
 		}
 
 		&__description {
 			font-family: 'Cardo';
-			font-size: 1.6rem;
+			font-size: 1.8rem;
+			line-height: 1.7;
 			color: var(--secondary);
 			margin-bottom: 4rem;
+		}
+
+		&__actions {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			gap: 1.2rem;
 
 			@media (min-width: 768px) {
-				font-size: 1.8rem;
+				flex-direction: row;
+				flex-wrap: wrap;
 			}
 		}
 
 		&__btn {
 			display: inline-block;
+			min-width: 18rem;
+			padding: 1.4rem 2.4rem;
+			border-radius: 999px;
+			font-family: 'Roboto';
+			font-size: 1.6rem;
+			font-weight: 500;
+			text-align: center;
+			transition:
+				transform 0.25s ease,
+				background-color 0.25s ease,
+				color 0.25s ease,
+				border-color 0.25s ease;
+
+			&:hover {
+				transform: translateY(-2px);
+			}
+
+			&:focus-visible {
+				outline: 2px solid var(--text-white);
+				outline-offset: 4px;
+			}
+		}
+
+		&__btn--primary {
+			background-color: var(--primary);
+			color: var(--text-white);
+		}
+
+		&__btn--secondary {
+			border: 1px solid rgba(255, 255, 255, 0.18);
+			background-color: rgba(255, 255, 255, 0.04);
+			color: var(--text-white);
+			backdrop-filter: blur(8px);
+
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
 		}
 	}
 </style>
