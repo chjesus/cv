@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config'
 import icon from 'astro-icon'
-import react from '@astrojs/react'
+import sitemap from '@astrojs/sitemap'
 
 import tailwindcss from '@tailwindcss/vite'
 
@@ -8,6 +8,7 @@ import vercel from '@astrojs/vercel'
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://portfolio-jesus.com',
 	server: { port: 8080, host: true, open: true },
 	output: 'server',
 	vite: {
@@ -18,12 +19,11 @@ export default defineConfig({
 				'@pages': '/src/pages',
 				'@shared': '/src/shared',
 				'@widgets': '/src/widgets',
-				'@features': '/src/features',
 				'@entities': '/src/entities',
 			},
 		},
 		plugins: [tailwindcss()],
 	},
-	integrations: [icon(), react()],
+	integrations: [icon(), sitemap()],
 	adapter: vercel(),
 })

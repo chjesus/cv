@@ -7,7 +7,7 @@ import CardProject from '@shared/ui/CardProject.astro'
 
 import { PROJECTS } from '@shared/constants'
 
-import AnimationFade from '@app/layout/ui/AnimationFade'
+import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 ---
 
 <section class="portfolio py-24 md:py-48" id="portfolio">
@@ -15,9 +15,9 @@ import AnimationFade from '@app/layout/ui/AnimationFade'
 		<div class="relative">
 			<div class="portfolio-container grid grid-cols-1">
 				<div>
-					<AnimationFade tranlasteY={50} client:visible>
+					<AnimationFade translateY={50}>
 						<Badge>Portfolio</Badge>
-						<Title className="md:text-left">
+						<Title class="md:text-left">
 							Explore My Digital <Strong>Portfolio</Strong>
 						</Title>
 					</AnimationFade>

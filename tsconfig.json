@@ -21,8 +21,6 @@
       "@entities/*": [
         "entities/*"
       ]
-    },
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    }
   }
 }

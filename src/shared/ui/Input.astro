@@ -1,14 +1,15 @@
 ---
 type Props = {
-	className?: string
+	class?: string
+	name?: string
 	placeholder?: string
 	type: 'text' | 'email' | 'password' | 'number'
 }
 
-const { className = '', type, placeholder = '' } = Astro.props
+const { class: className = '', type, name, placeholder = '' } = Astro.props
 ---
 
-<input type={type} class={className} placeholder={placeholder} />
+<input type={type} name={name} class:list={[className]} placeholder={placeholder} />
 
 <style>
 	input {

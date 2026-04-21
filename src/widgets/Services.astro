@@ -6,13 +6,13 @@ import Title from '@shared/ui/Title.astro'
 import Strong from '@shared/ui/Strong.astro'
 import Container from '@app/layout/ui/Container.astro'
 
-import AnimationFade from '@app/layout/ui/AnimationFade'
+import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 ---
 
 <section class="services py-24 md:py-48" id="services">
 	<Container>
 		<div class="relative text-center">
-			<AnimationFade tranlasteY={50} client:visible>
+			<AnimationFade translateY={50}>
 				<Badge class="mx-auto">Our Services</Badge>
 				<Title class="my-6">
 					<Strong>Services</Strong> That we Provide
@@ -24,21 +24,21 @@ import AnimationFade from '@app/layout/ui/AnimationFade'
 				</Text>
 			</AnimationFade>
 			<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-				<AnimationFade tranlasteY={50} delay={0} client:visible>
+				<AnimationFade translateY={50} delay={0}>
 					<Card
 						icon="mdi:application-braces-outline"
 						title="Web Design & Development"
 						description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
 					/>
 				</AnimationFade>
-				<AnimationFade tranlasteY={50} delay={0.3} client:visible>
+				<AnimationFade translateY={50} delay={0.3}>
 					<Card
 						icon="mdi:application-braces-outline"
 						title="Mobile App Development"
 						description="A Website is an extension of yourself and we can help you to express it properly. Your website is your number one marketing asset because we live in a digital age."
 					/>
 				</AnimationFade>
-				<AnimationFade tranlasteY={50} delay={0.6} client:visible>
+				<AnimationFade translateY={50} delay={0.6}>
 					<Card
 						icon="mdi:application-braces-outline"
 						title="Software Development"

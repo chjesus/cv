@@ -10,9 +10,9 @@ import Strong from '@shared/ui/Strong.astro'
 import BlurCircle from '@shared/ui/BlurCircle.astro'
 import Container from '@app/layout/ui/Container.astro'
 
-import AnimationFade from '@app/layout/ui/AnimationFade'
+import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 
-const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
+import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 ---
 
 <section class="about pb-40 pt-40" id="about">
@@ -20,25 +20,26 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 		<div class="relative lg:px-14">
 			<div class="about-container grid grid-cols-1 md:grid-cols-[auto_1fr]">
 				<div class="order-2 mx-auto md:order-1">
-					<AnimationFade tranlasteY={50} client:visible>
+					<AnimationFade translateY={50}>
 						<figure class="about-image relative">
 							<Image
 								class="relative z-10 w-full cursor-pointer"
 								src={`${PUBLIC_URL_BUCKET}/img/foto.png`}
 								alt="Foto de perfil"
-								inferSize={true}
+								width={400}
+								height={400}
 							/>
 						</figure>
 					</AnimationFade>
 				</div>
 				<div class="order-1 text-center md:order-2 md:text-left">
-					<AnimationFade tranlasteX={50} client:visible>
+					<AnimationFade translateX={50}>
 						<Badge class="mx-auto md:mx-0">About me</Badge>
 						<Title class="mb-14 uppercase">
 							<Strong>Jesus</Strong> Chacon
 						</Title>
 					</AnimationFade>
-					<AnimationFade tranlasteX={50} delay={0.6} client:visible>
+					<AnimationFade translateX={50} delay={0.6}>
 						<Text class="mb-12">
 							Lorem Ipsum is simply dummy text of the printing and typesetting
 							industry. Lorem Ipsum has been the industry's standard dummy text
@@ -49,7 +50,7 @@ const PUBLIC_URL_BUCKET = import.meta.env.PUBLIC_URL_BUCKET
 							electronic typesetting, remaining essentially unchanged.
 						</Text>
 					</AnimationFade>
-					<AnimationFade tranlasteX={50} client:visible>
+					<AnimationFade translateX={50}>
 						<h3 class="about-subtitle mb-10">Skills</h3>
 						<div class="about-icon__list grid gap-6">
 							<Icon name="catppuccin:html" class="text-9xl" />
