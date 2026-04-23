@@ -3,6 +3,8 @@ import Text from '@shared/ui/Text.astro'
 import Card from '@shared/ui/Card.astro'
 import Badge from '@shared/ui/Badge.astro'
 import Title from '@shared/ui/Title.astro'
+import Circle from '@shared/ui/Circle.astro'
+import FloatingBlurCircle from '@shared/ui/FloatingBlurCircle.astro'
 import Strong from '@shared/ui/Strong.astro'
 import Container from '@app/layout/ui/Container.astro'
 
@@ -46,6 +48,30 @@ import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 					/>
 				</AnimationFade>
 			</div>
+			<FloatingBlurCircle
+				duration="7.25s"
+				delay="-1s"
+				position="hidden md:block -top-[8%] right-[12%]"
+				blur="blur-[90px]"
+				size="size-[110px] md:size-[125px]"
+			>
+				<Circle
+					size="size-[14px]"
+					position="top-3/4 left-1/4 md:left-[60%] md:top-[60%]"
+				/>
+			</FloatingBlurCircle>
+			<FloatingBlurCircle
+				duration="8.25s"
+				delay="-3.5s"
+				position="bottom-[8%] -left-[6%] md:bottom-[4%] md:left-[2%]"
+				blur="blur-[110px]"
+				size="size-[170px] md:size-[125px]"
+			>
+				<Circle
+					size="size-[22px]"
+					position="top-3/4 left-1/4 md:left-1/3 md:top-0"
+				/>
+			</FloatingBlurCircle>
 		</div>
 	</Container>
 </section>
