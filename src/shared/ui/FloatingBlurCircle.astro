@@ -1,6 +1,4 @@
 ---
-import BlurCircle from '@shared/ui/BlurCircle.astro'
-
 type Props = {
 	blur: string
 	size: string
@@ -13,31 +11,34 @@ type Props = {
 const {
 	blur,
 	size,
-	position,
-	index,
+	position = '',
+	index = '',
 	duration = '6s',
 	delay = '0s',
 } = Astro.props
 ---
 
-<div
-	class="floating-blur-circle"
-	style={{
-		'--floating-blur-duration': duration,
-		'--floating-blur-delay': delay,
-	}}
-	aria-hidden="true"
->
-	<BlurCircle blur={blur} size={size} position={position} index={index}>
-		<slot />
-	</BlurCircle>
+<div class=`absolute pointer-events-none ${position} ${index}` aria-hidden="true">
+	<div
+		class="floating-blur-circle relative"
+		style={{
+			'--floating-blur-duration': duration,
+			'--floating-blur-delay': delay,
+		}}
+	>
+		<div class=`relative ${size}`>
+			<div class=`blur_color absolute inset-0 h-full w-full ${blur}`></div>
+			<slot />
+		</div>
+	</div>
 </div>
 
 <style lang="scss">
+	.blur_color {
+		background-color: var(--primary);
+	}
+
 	.floating-blur-circle {
-		position: absolute;
-		inset: 0;
-		pointer-events: none;
 		animation: floating-blur 6s ease-in-out infinite;
 		animation-duration: var(--floating-blur-duration);
 		animation-delay: var(--floating-blur-delay);
