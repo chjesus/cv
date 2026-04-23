@@ -20,9 +20,45 @@ const { class: className = '', name, placeholder = '' } = Astro.props
 		font-size: 1.4rem;
 		outline: none;
 		color: var(--text-white);
+		transition:
+			border-color 0.3s ease,
+			box-shadow 0.3s ease,
+			background-color 0.3s ease,
+			transform 0.3s ease;
+		box-shadow: 0 0 0 rgba(214, 75, 62, 0);
+
+		&:hover {
+			border-color: color-mix(in srgb, var(--primary) 55%, var(--white) 45%);
+			background-color: rgba(255, 255, 255, 0.02);
+			box-shadow: 0 10px 24px rgba(214, 75, 62, 0.08);
+			transform: translateY(-1px);
+		}
+
+		&:focus,
+		&:focus-visible {
+			border-color: color-mix(in srgb, var(--primary) 72%, var(--white) 28%);
+			background-color: rgba(255, 255, 255, 0.03);
+			box-shadow:
+				0 12px 28px rgba(214, 75, 62, 0.1),
+				0 0 0 3px rgba(214, 75, 62, 0.12);
+			transform: translateY(-1px);
+		}
+
 		&::placeholder {
 			color: var(--text-white);
 			font-size: 1.4rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		textarea {
+			transition: none;
+
+			&:hover,
+			&:focus,
+			&:focus-visible {
+				transform: none;
+			}
 		}
 	}
 </style>
