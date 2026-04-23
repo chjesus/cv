@@ -1,0 +1,71 @@
+---
+import BlurCircle from '@shared/ui/BlurCircle.astro'
+
+type Props = {
+	blur: string
+	size: string
+	index?: string
+	position?: string
+	duration?: string
+	delay?: string
+}
+
+const {
+	blur,
+	size,
+	position,
+	index,
+	duration = '6s',
+	delay = '0s',
+} = Astro.props
+---
+
+<div
+	class="floating-blur-circle"
+	style={{
+		'--floating-blur-duration': duration,
+		'--floating-blur-delay': delay,
+	}}
+	aria-hidden="true"
+>
+	<BlurCircle blur={blur} size={size} position={position} index={index}>
+		<slot />
+	</BlurCircle>
+</div>
+
+<style lang="scss">
+	.floating-blur-circle {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		animation: floating-blur 6s ease-in-out infinite;
+		animation-duration: var(--floating-blur-duration);
+		animation-delay: var(--floating-blur-delay);
+		will-change: transform;
+	}
+
+	@keyframes floating-blur {
+		0%,
+		100% {
+			transform: translateY(0) scale(1);
+		}
+
+		25% {
+			transform: translateY(-15px) scale(1.05);
+		}
+
+		50% {
+			transform: translateY(8px) scale(0.95);
+		}
+
+		75% {
+			transform: translateY(-8px) scale(1.02);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.floating-blur-circle {
+			animation: none;
+		}
+	}
+</style>

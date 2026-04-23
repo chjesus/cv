@@ -2,8 +2,8 @@
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 
-import BlurCircle from '@shared/ui/BlurCircle.astro'
 import Circle from '@shared/ui/Circle.astro'
+import FloatingBlurCircle from '@shared/ui/FloatingBlurCircle.astro'
 import Button from '@shared/ui/Button.astro'
 import Badge from '@shared/ui/Badge.astro'
 import Text from '@shared/ui/Text.astro'
@@ -59,14 +59,18 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					</AnimationFade>
 				</div>
 			</div>
-			<BlurCircle
+			<FloatingBlurCircle
+				duration="7s"
+				delay="0s"
 				position="hidden md:block top-1/3 left-2/4"
 				blur="blur-[100px]"
 				size="size-[110px]"
 			>
 				<Circle size="size-[8px]" position="left-1/3 top-0" />
-			</BlurCircle>
-			<BlurCircle
+			</FloatingBlurCircle>
+			<FloatingBlurCircle
+				duration="8.5s"
+				delay="-2s"
 				position="top-[40%] md:-top-[20%] -right-48 md:-right-[10%]"
 				blur="blur-[80px] md:blur-[210px]"
 				size="size-[110px] lg:size-[188px] xl:size-[265px]"
@@ -75,7 +79,7 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					size="size-[19px] md:size-[24px]"
 					position="left-4 md:left-3/4 top-1/2"
 				/>
-			</BlurCircle>
+			</FloatingBlurCircle>
 		</div>
 	</Container>
 </header>

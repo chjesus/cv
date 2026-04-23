@@ -7,7 +7,7 @@ import Badge from '@shared/ui/Badge.astro'
 import Title from '@shared/ui/Title.astro'
 import Circle from '@shared/ui/Circle.astro'
 import Strong from '@shared/ui/Strong.astro'
-import BlurCircle from '@shared/ui/BlurCircle.astro'
+import FloatingBlurCircle from '@shared/ui/FloatingBlurCircle.astro'
 import Container from '@app/layout/ui/Container.astro'
 
 import AnimationFade from '@app/layout/ui/AnimationFade.astro'
@@ -64,12 +64,16 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					</AnimationFade>
 				</div>
 			</div>
-			<BlurCircle
+			<FloatingBlurCircle
+				duration="7s"
+				delay="-1s"
 				position="hidden md:block -top-[10%] -left-[16%]"
 				blur="blur-[170px]"
 				size="size-[207px]"
 			/>
-			<BlurCircle
+			<FloatingBlurCircle
+				duration="8.5s"
+				delay="-3s"
 				position="top-1/2 right-[62%] md:top-0 md:right-0"
 				blur="blur-[110px]"
 				size="size-[170px] md:size-[125px]"
@@ -78,7 +82,7 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					size="size-[22px]"
 					position="top-3/4 left-1/4 md:left-1/3 md:top-0"
 				/>
-			</BlurCircle>
+			</FloatingBlurCircle>
 		</div>
 	</Container>
 </section>

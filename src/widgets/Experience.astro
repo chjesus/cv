@@ -12,7 +12,7 @@ import Title from '@shared/ui/Title.astro'
 import Circle from '@shared/ui/Circle.astro'
 import Strong from '@shared/ui/Strong.astro'
 import SubTitle from '@shared/ui/SubTitle.astro'
-import BlurCircle from '@shared/ui/BlurCircle.astro'
+import FloatingBlurCircle from '@shared/ui/FloatingBlurCircle.astro'
 import Container from '@app/layout/ui/Container.astro'
 
 import AnimationFade from '@app/layout/ui/AnimationFade.astro'
@@ -44,9 +44,9 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 			<div class="experience-body grid gap-10">
 				<div class="self-start">
 					<AnimationFade translateY={50} delay={0}>
-<SubTitle class="text-center md:text-left">
-						Work <Strong>Experience</Strong>
-					</SubTitle>
+						<SubTitle class="text-center md:text-left">
+							Work <Strong>Experience</Strong>
+						</SubTitle>
 						<ul class="experience-list px-8 md:px-0">
 							{
 								EXPERIENCE_WORK_LIST.map(({ info, period, company }) => (
@@ -54,37 +54,37 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 										{info}
 										<span class="experience-list_item_age py-6 md:py-9">
 											{period}
-										<a
-											class="experience-list_item_link"
-											target="_blank"
-											rel="noopener noreferrer"
-											href="/"
-										>
-											{company}
-										</a>
-									</span>
-								</li>
-							))
-						}
-					</ul>
-				</AnimationFade>
-			</div>
-			<div class="self-start">
-				<AnimationFade translateY={50} delay={0.3}>
-					<SubTitle class="text-center md:text-left">Education</SubTitle>
-					<ul class="experience-list px-8 md:px-0">
-						{
-							EXPERIENCE_EDUCATION_LIST.map(({ info, period, company }) => (
-								<li class="experience-list_item text-center md:text-left">
-									{info}
-									<span class="experience-list_item_age py-6 md:py-9">
-										{period}
-										<a
-											class="experience-list_item_link"
-											target="_blank"
-											rel="noopener noreferrer"
-											href="/"
-										>
+											<a
+												class="experience-list_item_link"
+												target="_blank"
+												rel="noopener noreferrer"
+												href="/"
+											>
+												{company}
+											</a>
+										</span>
+									</li>
+								))
+							}
+						</ul>
+					</AnimationFade>
+				</div>
+				<div class="self-start">
+					<AnimationFade translateY={50} delay={0.3}>
+						<SubTitle class="text-center md:text-left">Education</SubTitle>
+						<ul class="experience-list px-8 md:px-0">
+							{
+								EXPERIENCE_EDUCATION_LIST.map(({ info, period, company }) => (
+									<li class="experience-list_item text-center md:text-left">
+										{info}
+										<span class="experience-list_item_age py-6 md:py-9">
+											{period}
+											<a
+												class="experience-list_item_link"
+												target="_blank"
+												rel="noopener noreferrer"
+												href="/"
+											>
 												{company}
 											</a>
 										</span>
@@ -106,7 +106,9 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					</AnimationFade>
 				</figure>
 			</div>
-			<BlurCircle
+			<FloatingBlurCircle
+				duration="7s"
+				delay="-2s"
 				position="-top-[5%] right-[80%] md:-top-[30%] md:-left-[10%] z-0"
 				blur="blur-[90px]"
 				size="size-[110px] md:size-[125px]"
@@ -115,8 +117,10 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					size="size-[14px]"
 					position="top-3/4 left-1/4 md:left-[60%] md:top-[60%]"
 				/>
-			</BlurCircle>
-			<BlurCircle
+			</FloatingBlurCircle>
+			<FloatingBlurCircle
+				duration="6s"
+				delay="-4s"
 				position="top-[45%] right-[5%] md:top-[20%] md:-right-[10%]"
 				blur="blur-[100px]"
 				size="size-0 md:size-[125px]"
@@ -125,7 +129,7 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					size="size-[12px] md:size-[24px]"
 					position="top-3/4 left-1/4 md:left-1/3 md:top-0"
 				/>
-			</BlurCircle>
+			</FloatingBlurCircle>
 		</div>
 	</Container>
 </section>
