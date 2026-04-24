@@ -47,6 +47,11 @@ const { date, title, subtitle, description, imageAlt, delay, type } = Astro.prop
 		background: #e7f3f2;
 		border-radius: 1.3rem;
 		overflow: hidden;
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease,
+			filter 0.3s ease;
+		box-shadow: 0 0 0 rgba(214, 75, 62, 0);
 		&.even {
 			background: var(--even-card-gradient);
 		}
@@ -56,8 +61,35 @@ const { date, title, subtitle, description, imageAlt, delay, type } = Astro.prop
 		@media (min-width: 768px) {
 			border-radius: 2.2rem;
 		}
+
+		&:hover {
+			transform: translateY(-4px);
+			box-shadow:
+				0 18px 36px rgba(0, 0, 0, 0.12),
+				0 0 24px rgba(214, 75, 62, 0.08);
+			filter: saturate(1.02);
+
+			.card_project-image img {
+				transform: scale(1.025);
+			}
+
+			.card_project-title {
+				color: color-mix(
+					in srgb,
+					var(--text-card-portfolio-primary) 82%,
+					var(--primary) 18%
+				);
+			}
+		}
+
 		&-image {
 			height: 120px;
+			overflow: hidden;
+
+			img {
+				transition: transform 0.45s ease;
+			}
+
 			@media (min-width: 768px) {
 				height: 200px;
 			}
@@ -75,6 +107,7 @@ const { date, title, subtitle, description, imageAlt, delay, type } = Astro.prop
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			color: var(--text-card-portfolio-primary);
+			transition: color 0.3s ease;
 		}
 		&-subtitle {
 			font-size: 1.4rem;
@@ -98,6 +131,22 @@ const { date, title, subtitle, description, imageAlt, delay, type } = Astro.prop
 				line-height: normal;
 				font-weight: 400;
 				color: var(--text-card-portfolio-secondary);
+			}
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.card_project,
+		.card_project-image img,
+		.card_project-title {
+			transition: none;
+		}
+
+		.card_project:hover {
+			transform: none;
+
+			.card_project-image img {
+				transform: none;
 			}
 		}
 	}
