@@ -1,13 +1,12 @@
 ---
 import { Image } from 'astro:assets'
+import LOGO_FOOTER from '@shared/assets/img/logo_white.svg'
 import { Icon } from 'astro-icon/components'
 
 import Container from '@app/layout/ui/Container.astro'
 import Button from '@shared/ui/Button.astro'
 
 import AnimationFade from '@app/layout/ui/AnimationFade.astro'
-
-import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 ---
 
 <footer class="footer">
@@ -26,7 +25,7 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					<AnimationFade translateX={-50} delay={0}>
 						<Image
 							class="mx-auto object-cover md:m-0"
-							src={`${PUBLIC_URL_BUCKET}/img/logo_white.svg`}
+							src={LOGO_FOOTER}
 							alt="Logo Jesus DEV"
 							width={200}
 							height={60}

@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import imageHeader from '@shared/assets/img/header.svg'
 import { Icon } from 'astro-icon/components'
 
 import Circle from '@shared/ui/Circle.astro'
@@ -11,7 +12,6 @@ import Text from '@shared/ui/Text.astro'
 import Container from '@app/layout/ui/Container.astro'
 import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 
-import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 ---
 
 <header class="header flex pt-36 md:pt-0" id="home">
@@ -50,7 +50,7 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 					<AnimationFade translateX={50}>
 						<figure class="header-image mt-12 lg:mt-0">
 							<Image
-								src={`${PUBLIC_URL_BUCKET}/img/header_img.svg`}
+								src={imageHeader}
 								alt="Amico"
 								width={500}
 								height={500}

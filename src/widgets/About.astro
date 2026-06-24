@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets'
+import PHOTO_PROFILE from '@shared/assets/img/photo_profile.png'
 import { Icon } from 'astro-icon/components'
 
 import Text from '@shared/ui/Text.astro'
@@ -12,7 +13,6 @@ import Container from '@app/layout/ui/Container.astro'
 
 import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 
-import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 ---
 
 <section class="about pb-40 pt-40" id="about">
@@ -24,7 +24,7 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 						<figure class="about-image relative">
 							<Image
 								class="relative z-10 w-full cursor-pointer"
-								src={`${PUBLIC_URL_BUCKET}/img/foto.png`}
+								src={PHOTO_PROFILE}
 								alt="Foto de perfil"
 								width={400}
 								height={400}

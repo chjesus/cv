@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-
+import CONTACT_IMG from '@shared/assets/img/contact.svg'
 import Badge from '@shared/ui/Badge.astro'
 import Title from '@shared/ui/Title.astro'
 import Text from '@shared/ui/Text.astro'
@@ -12,7 +12,6 @@ import Container from '@app/layout/ui/Container.astro'
 
 import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 
-import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 ---
 
 <section class="contact py-24 md:py-48" id="contact">
@@ -44,7 +43,7 @@ import { PUBLIC_URL_BUCKET } from '@shared/constants/env'
 				<AnimationFade translateX={50}>
 					<Image
 						class="mx-auto h-full w-min md:ml-auto md:mr-0"
-						src={`${PUBLIC_URL_BUCKET}/img/contact_img.svg`}
+						src={CONTACT_IMG}
 						alt="Contact Image"
 						width={500}
 						height={500}
