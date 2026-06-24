@@ -25,5 +25,11 @@ export default defineConfig({
 		plugins: [tailwindcss()],
 	},
 	integrations: [icon(), sitemap()],
-	adapter: vercel(),
+  adapter: vercel(),
+  image: {
+    service: {
+      // Forzar a Astro a usar el optimizador nativo de Vercel en la nube
+      entrypoint: 'astro/assets/services/vercel'
+    }
+  }
 })
