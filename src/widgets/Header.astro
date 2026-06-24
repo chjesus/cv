@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets'
-import imageHeader from '@shared/assets/img/header.svg'
+import IMAGEHEADER from '@shared/assets/img/header.svg'
 import { Icon } from 'astro-icon/components'
 
 import Circle from '@shared/ui/Circle.astro'
@@ -48,13 +47,8 @@ import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 				</div>
 				<div class="flex items-center justify-center md:justify-end">
 					<AnimationFade translateX={50}>
-						<figure class="header-image mt-12 lg:mt-0">
-							<Image
-								src={imageHeader}
-								alt="Amico"
-								width={500}
-								height={500}
-							/>
+						<figure class="header-image mt-12 lg:mt-0 w-full">
+              <IMAGEHEADER class="h-auto w-full"/>
 						</figure>
 					</AnimationFade>
 				</div>
