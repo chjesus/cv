@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import LOGO_FOOTER from '@shared/assets/img/logo_white.svg'
+import LOGOFOOTER from '@shared/assets/img/logo_white.svg'
 import { Icon } from 'astro-icon/components'
 
 import Container from '@app/layout/ui/Container.astro'
@@ -23,13 +23,7 @@ import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 				</div>
 				<div class="md:col-span-2 md:self-start">
 					<AnimationFade translateX={-50} delay={0}>
-						<Image
-							class="mx-auto object-cover md:m-0"
-							src={LOGO_FOOTER}
-							alt="Logo Jesus DEV"
-							width={200}
-							height={60}
-						/>
+            <LOGOFOOTER class="mx-auto object-cover md:m-0"/>
 						<p class="footer-description mt-6 md:mt-0">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
 							congue interdum ligula a dignissim. Lorem ipsum dolor sit amet,

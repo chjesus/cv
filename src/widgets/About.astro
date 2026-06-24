@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets'
-import PHOTO_PROFILE from '@shared/assets/img/photo_profile.png'
 import { Icon } from 'astro-icon/components'
 
 import Text from '@shared/ui/Text.astro'
@@ -22,9 +20,9 @@ import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 				<div class="order-2 mx-auto md:order-1">
 					<AnimationFade translateY={50}>
 						<figure class="about-image relative">
-							<Image
+							<img
 								class="relative z-10 w-full cursor-pointer"
-								src={PHOTO_PROFILE}
+								src="/img/profile.png"
 								alt="Foto de perfil"
 								width={400}
 								height={400}
