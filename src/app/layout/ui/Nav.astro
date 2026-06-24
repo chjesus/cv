@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets'
-import LOGO from '@shared/assets/img/logo.png'
 import { Icon } from 'astro-icon/components'
 
 import Container from '@app/layout/ui/Container.astro'
@@ -18,9 +16,9 @@ import Container from '@app/layout/ui/Container.astro'
 			<div class="text-center md:m-auto">
 				<a href="/">
 					<figure class="lg:cursor-pointer">
-						<Image
+						<img
 							class="w-[84px] object-cover md:w-[125px] lg:w-[145px] xl:w-[200px]"
-							src={LOGO}
+							src="/img/logo.png"
 							alt="Logo Jesus DEV"
 							width={200}
 							height={60}
