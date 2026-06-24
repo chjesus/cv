@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets'
-import CONTACT_IMG from '@shared/assets/img/contact.svg'
+import IMGCONTACT from '@shared/assets/img/contact.svg'
 import Badge from '@shared/ui/Badge.astro'
 import Title from '@shared/ui/Title.astro'
 import Text from '@shared/ui/Text.astro'
@@ -41,13 +40,7 @@ import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 					</AnimationFade>
 				</div>
 				<AnimationFade translateX={50}>
-					<Image
-						class="mx-auto h-full w-min md:ml-auto md:mr-0"
-						src={CONTACT_IMG}
-						alt="Contact Image"
-						width={500}
-						height={500}
-					/>
+					<IMGCONTACT class="mx-auto w-full h-full" />
 				</AnimationFade>
 			</div>
 		</div>

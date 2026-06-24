@@ -1,6 +1,5 @@
 ---
-import { Image } from 'astro:assets'
-import EXPERIENCE_IMG from '@shared/assets/img/experience.svg'
+import EXPERIENCEIMG from '@shared/assets/img/experience.svg'
 
 import {
 	EXPERIENCE_WORK_LIST,
@@ -94,15 +93,9 @@ import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 						</ul>
 					</AnimationFade>
 				</div>
-				<figure class="mx-auto xl:w-[30rem]">
+				<figure class="mx-auto xl:w-[32rem]">
 					<AnimationFade translateY={50} delay={0.6}>
-						<Image
-							class="mx-auto size-full"
-							src={EXPERIENCE_IMG}
-							alt="Experience Image"
-							width={480}
-							height={480}
-						/>
+						<EXPERIENCEIMG class="h-auto w-full" />
 					</AnimationFade>
 				</figure>
 			</div>
