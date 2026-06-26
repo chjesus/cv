@@ -1,47 +1,69 @@
 ---
-import IMGCONTACT from '@shared/assets/img/contact.svg'
-import Badge from '@shared/ui/Badge.astro'
-import Title from '@shared/ui/Title.astro'
-import Text from '@shared/ui/Text.astro'
-import Strong from '@shared/ui/Strong.astro'
-import Button from '@shared/ui/Button.astro'
-import Input from '@shared/ui/Input.astro'
-import TextArea from '@shared/ui/TextArea.astro'
+import { Icon } from 'astro-icon/components'
+
 import Container from '@app/layout/ui/Container.astro'
-
-import AnimationFade from '@app/layout/ui/AnimationFade.astro'
-
 ---
 
-<section class="contact py-24 md:py-48" id="contact">
-	<Container>
-		<div class="relative">
-			<div class="contact-container grid grid-cols-1 gap-24 md:gap-16">
-				<div class="flex flex-col md:items-start">
-					<AnimationFade translateX={-50}>
-						<Badge class="m-auto">Let’s contact</Badge>
-					</AnimationFade>
-					<AnimationFade translateX={-50}>
-						<div class="flex flex-col gap-[20px]">
-							<Title class="text-center md:text-left">
-								Have an Awsome Project Idea? <Strong>Let’s Discuss</Strong>
-							</Title>
-							<Text class="text-center md:text-left">
-								Ready to take your company to the next level? Contact us to
-								discuss your goals and how we can help you achieve them.
-							</Text>
-							<form class="flex w-full flex-col gap-[20px]">
-								<Input type="email" placeholder="Enter Email Address" />
-								<Input type="text" placeholder="Enter Your Name" />
-								<TextArea placeholder="Enter Message" />
-							</form>
-							<Button isFull={true} class="btn-hero-hover">Send</Button>
-						</div>
-					</AnimationFade>
+<section class="premium-section contact" id="contact">
+	<Container class="!max-w-[1280px]">
+		<div
+			class="contact-grid grid grid-cols-[minmax(0,7fr)_minmax(36rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1"
+		>
+			<div class="contact-copy flex flex-col items-start gap-[2.4rem]">
+				<span class="premium-badge">Contact</span>
+				<h2 class="premium-title">
+					Let's Build Something <span class="text-luminous">Exceptional</span>
+				</h2>
+				<p class="premium-copy">
+					Have a project in mind or want to discuss opportunities? I'm currently
+					available for freelance work and full-time positions.
+				</p>
+
+				<form class="contact-form grid w-full gap-[2.4rem]">
+					<label class="grid gap-[0.8rem]">
+						<span>Name</span>
+						<input
+							id="name"
+							name="name"
+							type="text"
+							placeholder="John Doe"
+							required
+						/>
+					</label>
+					<label class="grid gap-[0.8rem]">
+						<span>Email</span>
+						<input
+							id="email"
+							name="email"
+							type="email"
+							placeholder="john@example.com"
+							required
+						/>
+					</label>
+					<label class="grid gap-[0.8rem]">
+						<span>Message</span>
+						<textarea
+							id="message"
+							name="message"
+							placeholder="Tell me about your project..."
+							required></textarea>
+					</label>
+					<button class="btn-primary-premium justify-self-start" type="submit"
+						>Send Message</button
+					>
+				</form>
+			</div>
+
+			<div
+				class="contact-visual relative grid aspect-square place-items-center max-[900px]:hidden"
+				aria-hidden="true"
+			>
+				<div class="contact-visual__glow"></div>
+				<div
+					class="contact-visual__card glass-card grid aspect-square w-[74%] place-items-center"
+				>
+					<Icon name="heroicons:envelope-20-solid" />
 				</div>
-				<AnimationFade translateX={50}>
-					<IMGCONTACT class="mx-auto w-full h-full" />
-				</AnimationFade>
 			</div>
 		</div>
 	</Container>

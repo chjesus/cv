@@ -2,79 +2,57 @@
 import IMAGEHEADER from '@shared/assets/img/header.svg'
 import { Icon } from 'astro-icon/components'
 
-import Circle from '@shared/ui/Circle.astro'
-import FloatingBlurCircle from '@shared/ui/FloatingBlurCircle.astro'
-import Button from '@shared/ui/Button.astro'
-import Badge from '@shared/ui/Badge.astro'
-import Text from '@shared/ui/Text.astro'
-
 import Container from '@app/layout/ui/Container.astro'
-import AnimationFade from '@app/layout/ui/AnimationFade.astro'
-
+import HeroLanguage from '@widgets/ui/HeroLanguage.astro'
 ---
 
-<header class="header flex pt-36 md:pt-0" id="home">
-	<Container>
-		<div class="relative">
-			<div class="grid grid-cols-1 md:grid-cols-2">
-				<div class="header-inner flex flex-col justify-center">
-					<AnimationFade translateX={-50}>
-						<div class="flex justify-center md:justify-start">
-							<Badge class="!text-[1.5rem]">Hello There</Badge>
-						</div>
-						<h1 class="header-title text-center md:text-left">
-							<strong>Experience the Mastery</strong>
-							Explore my Website Creations.
-						</h1>
-					</AnimationFade>
-					<AnimationFade translateX={-50} delay={0.6}>
-						<Text class="py-10 text-center md:text-left">
-							Welcome to my portfolio of captivating digital experiences.
-							Explore my work and let's create something extraordinary together.
-						</Text>
-					</AnimationFade>
-					<AnimationFade translateX={-50}>
-						<div class="flex justify-center md:justify-start">
-							<div class="grid auto-cols-max grid-flow-col gap-10">
-								<Button class="btn-hero-hover">Hire me</Button>
-								<Button link={true}>
-									View Portfolio
-									<Icon name="formkit:arrowright" />
-								</Button>
-							</div>
-						</div>
-					</AnimationFade>
-				</div>
-				<div class="flex items-center justify-center md:justify-end">
-					<AnimationFade translateX={50}>
-						<figure class="header-image mt-12 lg:mt-0 w-full">
-              <IMAGEHEADER class="h-auto w-full" />
-						</figure>
-					</AnimationFade>
+<header
+	class="premium-section hero flex min-h-[92rem] items-center pt-[13rem] max-[900px]:min-h-0 max-[900px]:pt-[15rem] max-[900px]:text-left"
+	id="home"
+>
+	<Container class="hero-shell !max-w-[1280px]">
+		<div class="hero-glow" aria-hidden="true"></div>
+		<div
+			class="hero-grid relative grid grid-cols-[minmax(0,7fr)_minmax(34rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1"
+		>
+			<div
+				class="hero-copy relative z-[1] flex flex-col items-start gap-[2.4rem]"
+			>
+				<span class="premium-badge">Hello There</span>
+				<h1 class="premium-display">
+					Engineering <br />
+					<span class="text-luminous">Mastery</span> into <br />
+					Website Creations
+				</h1>
+				<p class="premium-copy hero-description mt-[1.6rem] max-w-[60rem]">
+					I build high-performance, scalable web applications with a focus on
+					exceptional user experiences and robust architecture. Senior Dev
+					Portfolio. Built with Quiet Confidence.
+				</p>
+				<div class="hero-actions mt-[1.6rem] flex flex-wrap gap-[1.6rem]">
+					<a class="btn-primary-premium" href="#contact">
+						Hire me <Icon name="formkit:arrowright" />
+					</a>
+					<a class="btn-secondary-premium" href="#portfolio">View Portfolio</a>
 				</div>
 			</div>
-			<FloatingBlurCircle
-				duration="7s"
-				delay="0s"
-				position="hidden md:block top-1/3 left-2/4"
-				blur="blur-[100px]"
-				size="size-[110px]"
+
+			<div
+				class="hero-visual relative h-[50rem] max-[900px]:hidden"
+				aria-label="Developer workspace illustration"
 			>
-				<Circle size="size-[8px]" position="left-1/3 top-0" />
-			</FloatingBlurCircle>
-			<FloatingBlurCircle
-				duration="8.5s"
-				delay="-2s"
-				position="top-[40%] md:-top-[20%] -right-48 md:-right-[10%]"
-				blur="blur-[80px] md:blur-[210px]"
-				size="size-[110px] lg:size-[188px] xl:size-[265px]"
-			>
-				<Circle
-					size="size-[19px] md:size-[24px]"
-					position="left-4 md:left-3/4 top-1/2"
-				/>
-			</FloatingBlurCircle>
+				<div
+					class="hero-visual__inner glass-card absolute inset-0 grid place-items-center"
+				>
+					<div class="hero-visual__wash"></div>
+					<IMAGEHEADER
+						class="hero-visual__image relative z-[1] h-auto max-h-[88%] w-[92%] object-contain"
+					/>
+				</div>
+			</div>
 		</div>
+
+		<HeroLanguage />
 	</Container>
 </header>
 

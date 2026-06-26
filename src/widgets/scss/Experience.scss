@@ -1,81 +1,39 @@
 .experience {
-	&-header {
-		align-items: center;
-		row-gap: 1.5rem;
-		grid-template-columns: repeat(1, minmax(0, 1fr));
+	&-item {
+		&__icon {
+			border-radius: 999px;
+			font-size: 1.85rem;
+			line-height: 1;
 
-		@media (min-width: 768px) {
-			row-gap: initial;
-			column-gap: 2rem;
-			grid-template-columns: 360px 1fr;
+			svg {
+				width: 1.85rem;
+				height: 1.85rem;
+			}
+
+			&.is-work {
+				background: rgba(208, 188, 255, 0.1);
+				color: var(--primary);
+			}
+
+			&.is-education {
+				background: rgba(251, 171, 255, 0.1);
+				color: var(--magenta-spark);
+			}
 		}
 
-		@media (min-width: 1024px) {
-			column-gap: 10rem;
-			grid-template-columns: 420px 1fr;
+		h3 {
+			margin: 0;
+			color: var(--text-primary);
+			font-family: 'Sora', sans-serif;
+			font-size: 1.8rem;
+			font-weight: 700;
 		}
 
-		@media (min-width: 1280px) {
-			column-gap: 19rem;
-			grid-template-columns: 460px 1fr;
-		}
-	}
-
-	&-body {
-		row-gap: 5rem;
-		align-items: center;
-		grid-template-columns: repeat(1, minmax(0, 1fr));
-
-		@media (min-width: 768px) {
-			grid-template-columns: repeat(3, minmax(0, 1fr));
-		}
-	}
-
-	&-list {
-		font-size: 1.8rem;
-		font-weight: 400;
-		color: var(--text-white);
-
-		&_item {
-			margin-top: 16px;
-			font-size: inherit;
-			font-family: 'Roboto';
-			font-weight: inherit;
-			position: relative;
-
-			&::after {
-				content: '';
-				position: absolute;
-				transform: translateX(-50%);
-				width: 90px;
-				height: 2px;
-				background-color: white;
-
-				@media (min-width: 768px) {
-					transform: initial;
-				}
-			}
-			&:last-child {
-				&::after {
-					width: initial;
-					height: initial;
-				}
-			}
-			&_age {
-				font-size: 1.5rem;
-				font-family: 'Cardo';
-				font-weight: 400;
-				display: block;
-			}
-			&_link {
-				font-size: 1.6rem;
-				font-family: 'Cardo';
-				font-weight: 700;
-				transition: all 0.3s;
-				&:hover {
-					text-decoration: underline;
-				}
-			}
+		p {
+			margin: 0.8rem 0 0;
+			color: var(--text-muted);
+			font-size: 1.6rem;
+			line-height: 1.6;
 		}
 	}
 }

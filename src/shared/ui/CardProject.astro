@@ -1,153 +1,41 @@
 ---
-import { Icon } from 'astro-icon/components'
-import AnimationFade from '@app/layout/ui/AnimationFade.astro'
-
 type Props = {
 	date: string
 	title: string
 	subtitle: string
 	description: string
 	imageAlt?: string
-	delay?: number
 	type: 'even' | 'odd'
 }
 
-const { date, title, subtitle, description, imageAlt, delay, type } = Astro.props
+const { date, title, subtitle, imageAlt, type } = Astro.props
 ---
 
-<AnimationFade translateY={50} delay={delay}>
-	<article class=`card_project ${type}`>
-		<figure class="card_project-image">
-			<img
-				class="size-full object-cover"
-				src="https://media.istockphoto.com/id/1226444511/es/vector/ilustraci%C3%B3n-conceptual-de-la-tecnolog%C3%ADa-de-desarrollo-de-sitios-web-m%C3%B3viles-dise%C3%B1o-de.jpg?s=2048x2048&w=is&k=20&c=u2c0gjtgdfQzUY9FaWe_5SWYYOZXLBwntiFvumVl9u4="
-				alt={imageAlt || title}
-			/>
-		</figure>
-		<div class="flex flex-col gap-3 p-4 md:gap-5 md:p-6">
-			<div class="card_project-info flex">
-				<span class="card_project-info_date">{date}</span>
-				<div class="flex gap-2">
-					<Icon name="catppuccin:html" class="text-5xl" />
-					<Icon name="catppuccin:css3" class="text-5xl" />
-					<Icon name="catppuccin:javascript" class="text-5xl" />
-				</div>
-			</div>
-			<div>
-				<h2 class="card_project-title">{title}</h2>
-				<h3 class="card_project-subtitle">{subtitle}</h3>
-			</div>
-			<p class="card_project-description">{description}</p>
+<article class:list={['card-project glass-card min-h-full', type]}>
+	<figure class="card-project__image relative m-0 aspect-video overflow-hidden">
+		<img
+			class="h-full w-full object-cover"
+			src="https://media.istockphoto.com/id/1226444511/es/vector/ilustraci%C3%B3n-conceptual-de-la-tecnolog%C3%ADa-de-desarrollo-de-sitios-web-m%C3%B3viles-dise%C3%B1o-de.jpg?s=2048x2048&w=is&k=20&c=u2c0gjtgdfQzUY9FaWe_5SWYYOZXLBwntiFvumVl9u4="
+			alt={imageAlt || title}
+		/>
+		<div class="absolute inset-0"></div>
+	</figure>
+	<div
+		class="card-project__body relative z-[1] flex flex-col items-start p-[2.4rem]"
+	>
+		<span class="card-project__date">{date}</span>
+		<h3>{title}</h3>
+		<p>{subtitle}</p>
+		<div
+			class="card-project__tech mt-0 flex gap-[0.8rem]"
+			aria-label="Technologies"
+		>
+			<span class="grid h-[2.4rem] w-[2.4rem] place-items-center">NX</span>
+			<span class="grid h-[2.4rem] w-[2.4rem] place-items-center">TW</span>
 		</div>
-	</article>
-</AnimationFade>
+	</div>
+</article>
 
 <style lang="scss">
-	.card_project {
-		background: #e7f3f2;
-		border-radius: 1.3rem;
-		overflow: hidden;
-		transition:
-			transform 0.3s ease,
-			box-shadow 0.3s ease,
-			filter 0.3s ease;
-		box-shadow: 0 0 0 rgba(214, 75, 62, 0);
-		&.even {
-			background: var(--even-card-gradient);
-		}
-		&.odd {
-			background: var(--odd-card-gradient);
-		}
-		@media (min-width: 768px) {
-			border-radius: 2.2rem;
-		}
-
-		&:hover {
-			transform: translateY(-4px);
-			box-shadow:
-				0 18px 36px rgba(0, 0, 0, 0.12),
-				0 0 24px rgba(214, 75, 62, 0.08);
-			filter: saturate(1.02);
-
-			.card_project-image img {
-				transform: scale(1.025);
-			}
-
-			.card_project-title {
-				color: color-mix(
-					in srgb,
-					var(--text-card-portfolio-primary) 82%,
-					var(--primary) 18%
-				);
-			}
-		}
-
-		&-image {
-			height: 120px;
-			overflow: hidden;
-
-			img {
-				transition: transform 0.45s ease;
-			}
-
-			@media (min-width: 768px) {
-				height: 200px;
-			}
-			@media (min-width: 1280px) {
-				height: 292px;
-			}
-		}
-		&-title {
-			font-size: 2.4rem;
-			font-family: 'Roboto';
-			font-weight: 600;
-			line-height: initial;
-			margin-bottom: 2px;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			color: var(--text-card-portfolio-primary);
-			transition: color 0.3s ease;
-		}
-		&-subtitle {
-			font-size: 1.4rem;
-			font-family: 'Roboto';
-			font-weight: 400;
-			color: var(--text-card-portfolio-primary);
-		}
-		&-description {
-			font-size: 1.6rem;
-			font-family: 'Cardo';
-			line-height: normal;
-			font-weight: 400;
-			color: var(--text-card-portfolio-secondary);
-		}
-		&-info {
-			justify-content: space-between;
-			align-items: center;
-			&_date {
-				font-size: 1.4rem;
-				font-family: 'Cardo';
-				line-height: normal;
-				font-weight: 400;
-				color: var(--text-card-portfolio-secondary);
-			}
-		}
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.card_project,
-		.card_project-image img,
-		.card_project-title {
-			transition: none;
-		}
-
-		.card_project:hover {
-			transform: none;
-
-			.card_project-image img {
-				transform: none;
-			}
-		}
-	}
+	@use './scss/CardProject.scss';
 </style>

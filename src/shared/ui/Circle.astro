@@ -9,15 +9,5 @@ const { size, position } = Astro.props
 <div class=`circle ${size} ${position}`></div>
 
 <style lang="scss">
-	.circle {
-		position: absolute;
-		border-radius: 9999px;
-		z-index: 2;
-		background: linear-gradient(
-			180deg,
-			var(--primary) 0%,
-			var(--primary-dark) 100%
-		);
-		transform: scaleY(-1);
-	}
+	@use './scss/Circle.scss';
 </style>

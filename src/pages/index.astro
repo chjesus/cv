@@ -9,21 +9,23 @@ import Contact from '@widgets/Contact.astro'
 import Services from '@widgets/Services.astro'
 import Projects from '@widgets/Projects.astro'
 import Experience from '@widgets/Experience.astro'
-import Modal from '@shared/ui/Modal.astro'
+import Stats from '@widgets/Stats.astro'
+import Testimonials from '@widgets/Testimonials.astro'
 ---
 
 <Layout title="Jesus Chacon | Frontend Developer">
-	<main class="page-container bg-black">
+	<main class="page-container">
 		<Nav />
 		<Header />
+		<Stats />
 		<About />
 		<Experience />
 		<Services />
-		<Contact />
 		<Projects />
+		<Contact />
+		<Testimonials />
 		<Footer />
 	</main>
-	<Modal />
 </Layout>
 
 <style>

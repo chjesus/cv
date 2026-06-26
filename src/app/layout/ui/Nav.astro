@@ -1,52 +1,173 @@
 ---
 import { Icon } from 'astro-icon/components'
-
+import LOGOHEADER from '@shared/assets/img/logo_white.svg'
+import LOGOHEADERMOBILE from '@shared/assets/img/logo_mobile.svg'
 import Container from '@app/layout/ui/Container.astro'
 
+const navItems = [
+	{ label: 'Home', href: '#home' },
+	{ label: 'About', href: '#about' },
+	{ label: 'Experience', href: '#experience' },
+	{ label: 'Services', href: '#services' },
+	{ label: 'Portfolio', href: '#portfolio' },
+	{ label: 'Contact', href: '#contact' },
+]
+
+const mobileNavItems = [
+	{ label: 'Hero', href: '#home' },
+	{ label: 'About', href: '#about' },
+	{ label: 'Services', href: '#services' },
+	{ label: 'Work', href: '#portfolio' },
+	{ label: 'Contact', href: '#contact' },
+	{ label: 'Hire Me', href: '#contact' },
+]
 ---
 
-<nav class="nav fixed w-full">
-	<Container>
-		<div class="nav-container md:gap-x-18 px-12 py-4 md:px-4 lg:gap-x-36">
-			<div class="hidden gap-x-2 md:grid md:grid-cols-3">
-				<a class="nav-item rounded-full" href="#home">Home</a>
-				<a class="nav-item rounded-full" href="#about">About</a>
-				<a class="nav-item rounded-full" href="#experience">Experience</a>
+<nav class="nav fixed top-0 z-50 w-full" id="site-nav">
+	<Container class="!max-w-[1280px]">
+		<div class="nav-container">
+			<a class="nav-logo nav-logo--desktop" href="/" aria-label="Go to home">
+				<LOGOHEADER />
+			</a>
+			<a class="nav-logo nav-logo--mobile" href="/" aria-label="Go to home">
+				<LOGOHEADERMOBILE />
+			</a>
+
+			<div class="nav-links" aria-label="Primary navigation">
+				{
+					navItems.map((item, index) => (
+						<a
+							class:list={['nav-item', { 'is-active': index === 0 }]}
+							href={item.href}
+						>
+							{item.label}
+						</a>
+					))
+				}
 			</div>
-			<div class="text-center md:m-auto">
-				<a href="/">
-					<figure class="lg:cursor-pointer">
-						<img
-							class="w-[84px] object-cover md:w-[125px] lg:w-[145px] xl:w-[200px]"
-							src="/img/logo.png"
-							alt="Logo Jesus DEV"
-							width={200}
-							height={60}
-						/>
-					</figure>
-				</a>
-			</div>
-		<div class="ml-auto md:hidden">
+
 			<button
 				type="button"
-				class="cursor-pointer border-none bg-transparent p-0"
-				aria-label="Abrir menú de navegación"
+				class="nav-toggle"
+				aria-label="Open navigation menu"
+				aria-expanded="false"
+				aria-controls="mobile-menu"
 				id="menu-open-btn"
 			>
 				<Icon
-					class="text-5xl text-black"
+					class="text-[2.15rem]"
 					name="heroicons:bars-3-center-left-16-solid"
 				/>
 			</button>
 		</div>
-			<div class="hidden gap-x-2 md:grid md:grid-cols-3">
-				<a class="nav-item rounded-full" href="#services">Services</a>
-				<a class="nav-item rounded-full" href="#portfolio">My projects</a>
-				<a class="nav-item rounded-full" href="#contact">Contact us</a>
+	</Container>
+
+	<div
+		class="mobile-menu"
+		id="mobile-menu"
+		data-open="false"
+		aria-hidden="true"
+	>
+		<div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+		<div
+			class="mobile-menu__panel"
+			role="dialog"
+			aria-modal="true"
+			aria-label="Mobile navigation"
+		>
+			<div class="mobile-menu__header">
+				<button
+					type="button"
+					class="mobile-menu__close"
+					aria-label="Close navigation menu"
+					id="menu-close-btn"
+				>
+					<Icon class="text-[2rem]" name="heroicons:x-mark-16-solid" />
+				</button>
+			</div>
+
+			<div class="mobile-menu__links" aria-label="Mobile navigation links">
+				{
+					mobileNavItems.map((item) => (
+						<a class="mobile-menu__item" href={item.href}>
+							{item.label}
+						</a>
+					))
+				}
 			</div>
 		</div>
-	</Container>
+	</div>
 </nav>
+
+<script>
+	const nav = document.getElementById('site-nav')
+	const button = document.getElementById('menu-open-btn')
+	const closeButton = document.getElementById('menu-close-btn')
+	const menu = document.getElementById('mobile-menu')
+	const closeTargets = menu?.querySelectorAll('[data-mobile-menu-close]')
+	const desktopLinks = Array.from(
+		document.querySelectorAll<HTMLAnchorElement>('.nav-links .nav-item')
+	)
+
+	const setMenuOpen = (isOpen: boolean) => {
+		menu?.setAttribute('data-open', String(isOpen))
+		menu?.setAttribute('aria-hidden', String(!isOpen))
+		button?.setAttribute('aria-expanded', String(isOpen))
+		button?.setAttribute(
+			'aria-label',
+			isOpen ? 'Close navigation menu' : 'Open navigation menu'
+		)
+	}
+
+	const syncNav = () => {
+		nav?.classList.toggle('is-scrolled', window.scrollY > 50)
+	}
+
+	const setActiveDesktopLink = (href: string) => {
+		desktopLinks.forEach((link) => {
+			link.classList.toggle('is-active', link.getAttribute('href') === href)
+		})
+	}
+
+	button?.addEventListener('click', () => {
+		const isOpen = menu?.getAttribute('data-open') === 'true'
+		setMenuOpen(!isOpen)
+	})
+
+	closeButton?.addEventListener('click', () => setMenuOpen(false))
+	closeTargets?.forEach((target) => {
+		target.addEventListener('click', () => setMenuOpen(false))
+	})
+
+	menu?.querySelectorAll('a').forEach((link) => {
+		link.addEventListener('click', () => setMenuOpen(false))
+	})
+
+	desktopLinks.forEach((link) => {
+		link.addEventListener('click', () => {
+			const href = link.getAttribute('href')
+
+			if (href) {
+				setActiveDesktopLink(href)
+			}
+		})
+	})
+
+	window.addEventListener('keydown', (event) => {
+		if (event.key === 'Escape') {
+			setMenuOpen(false)
+		}
+	})
+
+	window.addEventListener('resize', () => {
+		if (window.innerWidth >= 768) {
+			setMenuOpen(false)
+		}
+	})
+
+	syncNav()
+	window.addEventListener('scroll', syncNav, { passive: true })
+</script>
 
 <style lang="scss">
 	@use './scss/Nav.scss';

@@ -1,133 +1,117 @@
 ---
-import { Image } from 'astro:assets'
-import LOGOFOOTER from '@shared/assets/img/logo_white.svg'
 import { Icon } from 'astro-icon/components'
-
+import LOGOHEADER from '@shared/assets/img/logo_white.svg'
 import Container from '@app/layout/ui/Container.astro'
-import Button from '@shared/ui/Button.astro'
 
-import AnimationFade from '@app/layout/ui/AnimationFade.astro'
+const navItems = ['Home', 'About', 'Services', 'Portfolio']
 ---
 
-<footer class="footer">
-	<Container isFooter={true}>
-		<div class="relative py-14 md:pb-10 md:pt-20 xl:pb-12 xl:pt-28">
-			<div class="footer-container gap-y-12 md:gap-x-10 xl:gap-y-0">
-				<div class="justify-self-center md:col-span-3 md:justify-self-start">
-					<h1 class="footer-title md:mb-20 xl:mb-24">Lets Connect there</h1>
+<footer class="footer w-full">
+	<Container class="!max-w-[1280px]">
+		<div
+			class="footer-cta mb-[6.4rem] flex w-full items-center justify-between gap-[3.2rem] max-[900px]:flex-col max-[900px]:items-start"
+		>
+			<h2>Let's Connect there</h2>
+			<a class="footer-cta__button btn-primary-premium" href="#contact">
+				Hire me <Icon name="heroicons:arrow-up-right-20-solid" />
+			</a>
+		</div>
+
+		<div
+			class="footer-grid grid grid-cols-5 gap-[4.8rem] max-[900px]:grid-cols-1 max-[900px]:gap-[4rem]"
+		>
+			<div class="footer-brand col-span-2 flex flex-col gap-[2.4rem]">
+				<div class="footer-brand__logo flex h-[4.8rem] items-center">
+					<LOGOHEADER />
 				</div>
-				<div class="row-start-3 md:row-start-auto md:justify-self-end">
-					<Button footerStyle={true} class="mx-auto md:mb-20 xl:mb-24">
-						Hire me
-					</Button>
+				<p>
+					Building exceptional digital experiences with engineering mastery and
+					clean design.
+				</p>
+				<div class="footer-socials flex gap-[1.6rem]">
+					<a
+						href="https://github.com/chjesus"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="GitHub profile"
+					>
+						<Icon name="heroicons:code-bracket-square-20-solid" />
+					</a>
+					<a
+						href="https://x.com/ch__jesus"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="X profile"
+					>
+						<Icon name="heroicons:bolt-20-solid" />
+					</a>
+					<a
+						href="https://www.linkedin.com/in/jesus-chacon-510643162/"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="LinkedIn profile"
+					>
+						<Icon name="heroicons:briefcase-20-solid" />
+					</a>
 				</div>
-				<div class="md:col-span-2 md:self-start">
-					<AnimationFade translateX={-50} delay={0}>
-            <LOGOFOOTER class="mx-auto object-cover md:m-0"/>
-						<p class="footer-description mt-6 md:mt-0">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-							congue interdum ligula a dignissim. Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Sed lobortis orci elementum egestas
-							lobortis.
-						</p>
-					</AnimationFade>
-				</div>
-				<div class="row-start-6 md:col-span-2 md:row-start-3 md:self-start">
-					<AnimationFade translateX={-50} delay={0}>
-						<div class="footer-social_media_list">
-							<a
-								href="https://github.com/chjesus"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="footer-social_media_item"
-                aria-label="Perfil de github"
-							>
-								<Icon name="mingcute:github-fill" />
-							</a>
-							<a
-								class="footer-social_media_item"
-								href="https://x.com/ch__jesus"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="Perfil de x"
-							>
-								<Icon name="mingcute:social-x-fill" />
-							</a>
-							<a
-								class="footer-social_media_item"
-								href="https://www.linkedin.com/in/jesus-chacon-510643162/"
-								target="_blank"
-								rel="noopener noreferrer"
-								aria-label="Perfil de linkedin"
-							>
-								<Icon name="mingcute:linkedin-fill" />
-							</a>
-						</div>
-					</AnimationFade>
-				</div>
-				<div class="self-start md:row-span-2">
-					<AnimationFade translateX={-50} delay={0.3}>
-						<div class="flex gap-14">
-						<ul class="footer-list">
-							<li class="footer-list_item">Navigation</li>
-							<li class="footer-list_item">
-								<a href="#home">Home</a>
+			</div>
+
+			<nav class="footer-nav" aria-label="Footer navigation">
+				<h4>Navigation</h4>
+				<ul>
+					{
+						navItems.map((item) => (
+							<li>
+								<a href={item === 'Home' ? '#home' : `#${item.toLowerCase()}`}>
+									{item}
+								</a>
 							</li>
-							<li class="footer-list_item">
-								<a href="#about">About</a>
-							</li>
-							<li class="footer-list_item">
-								<a href="#services">Services</a>
-							</li>
-							<li class="footer-list_item">
-								<a href="#portfolio">Portfolio</a>
-							</li>
-							<li class="footer-list_item">
-								<a href="#contact">Contact</a>
-							</li>
-						</ul>
-						<ul class="footer-list">
-							<li class="footer-list_item">Contact</li>
-							<li class="footer-list_item">jesus_chacon@gmail.com</li>
-						</ul>
-						</div>
-					</AnimationFade>
+						))
+					}
+				</ul>
+			</nav>
+
+			<div class="footer-contact">
+				<h4>Contact</h4>
+				<ul>
+					<li>+57 available on request</li>
+					<li>jesus_chacon@gmail.com</li>
+					<li>chjesus.dev</li>
+				</ul>
+			</div>
+
+			<form class="footer-newsletter">
+				<h4>Get the latest information</h4>
+				<div class="footer-newsletter__field">
+					<input
+						id="footer-email"
+						type="email"
+						placeholder="Email Address"
+						aria-label="Email Address"
+					/>
+					<button type="submit" aria-label="Subscribe">
+						<Icon name="iconamoon:send-fill" />
+					</button>
 				</div>
-				<div class="self-start">
-					<AnimationFade translateX={-50} delay={0.6}>
-						<div class="flex flex-col gap-11">
-							<h2 class="footer-subtitle">Get the latest information</h2>
-							<label class="flex" for="email">
-								<input
-									type="email"
-									placeholder="Email Address"
-									class="footer-input"
-									id="email"
-									name="email"
-									aria-label="Email Address"
-								/>
-								<span class="footer-input_icon">
-									<Icon name="iconamoon:send-fill" />
-								</span>
-							</label>
-						</div>
-					</AnimationFade>
-				</div>
+			</form>
+		</div>
+
+		<div
+			class="footer-bottom mt-[6.4rem] flex w-full items-center justify-between gap-[1.6rem] pb-[2rem] pt-[3.2rem] max-[900px]:flex-col max-[900px]:items-start"
+		>
+			<p>Copyright© 2026 Jesús Chacón. All Rights Reserved.</p>
+			<div class="footer-bottom__links flex gap-[2.4rem]">
+				<a
+					href="mailto:jesus_chacon@gmail.com?subject=User%20Terms%20%26%20Conditions"
+				>
+					User Terms & Conditions
+				</a>
+				<a href="mailto:jesus_chacon@gmail.com?subject=Privacy%20Policy">
+					Privacy Policy
+				</a>
 			</div>
 		</div>
 	</Container>
-	<div class="footer-bottom py-8">
-		<Container>
-			<div class="grid grid-cols-1 justify-between md:grid-cols-2">
-				<span class="footer-bottom__item md:!justify-self-start">
-					Copyright© 2026 Jesus Chacon. All Rights Reserved.
-				</span>
-				<span class="footer-bottom__item md:!justify-self-end">
-					User Terms & Conditions | Privacy Policy
-				</span>
-			</div>
-		</Container>
-	</div>
 </footer>
 
 <style lang="scss">

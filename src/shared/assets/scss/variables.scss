@@ -1,12 +1,24 @@
 :root {
-	--primary: #5104a3;
-	--primary-dark: #1e013d;
-	--primary-hover: #6b21c8;
+	--primary: #d0bcff;
+	--primary-dark: #0d0d1b;
+	--primary-hover: #fbabff;
+	--primary-container: #a078ff;
+	--secondary-accent: #ae05c6;
+	--magenta-spark: #fbabff;
 
 	--secondary: #d8d8d8;
 	--secondary-dark: #37474f;
 
-	--bg: #110123;
+	--bg: #121220;
+	--bg-obsidian: #0d0d1b;
+	--surface: #121220;
+	--surface-container-lowest: #0d0d1b;
+	--surface-container-low: #1b1a29;
+	--surface-container: #1f1e2d;
+	--glass: rgba(26, 20, 48, 0.7);
+	--glass-border: rgba(255, 255, 255, 0.1);
+	--text-primary: #e4e0f5;
+	--text-muted: #cbc3d7;
 
 	--bg-white: #ffffff;
 	--bg-white-hover: #f0e6ff;
@@ -14,17 +26,17 @@
 
 	--text-white: #ffffff;
 	--text-dark: #000000;
-	--text-secondary: #fcfcfd;
+	--text-secondary: #cbc3d7;
 
 	--white: #ffffff;
 
-	--bg-card-service: #fafafa;
-	--text-card-service-title: #2d3748;
-	--text-card-service-description: #718096;
+	--bg-card-service: rgba(26, 20, 48, 0.7);
+	--text-card-service-title: #e4e0f5;
+	--text-card-service-description: #cbc3d7;
 
 	/* Portfolio */
-	--text-card-portfolio-primary: #000000;
-	--text-card-portfolio-secondary: #454d55;
+	--text-card-portfolio-primary: #e4e0f5;
+	--text-card-portfolio-secondary: #cbc3d7;
 	--odd-card-gradient: linear-gradient(
 		40deg,
 		#e7f3f2 0%,
