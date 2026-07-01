@@ -24,10 +24,7 @@ Use this file as the default implementation and validation rulebook.
 ## Package Manager and Environment
 
 - `pnpm-lock.yaml` exists: prefer `pnpm`
-- Required env var from `.env.example`: `PUBLIC_URL_BUCKET`
-- Setup:
-  - `cp .env.example .env`
-  - fill `PUBLIC_URL_BUCKET`
+- No required environment variables at this time
 
 ## Build / Lint / Test Commands
 

@@ -21,14 +21,13 @@ import { PROJECTS } from '@shared/constants'
 		>
 			{
 				PROJECTS.slice(0, 3).map((project, index) => (
-					<CardProject
-						date={project.date}
-						title={project.title}
-						subtitle={project.subtitle}
-						description={project.description}
-						imageAlt={project.imageAlt}
-						type={(index + 1) % 2 === 0 ? 'even' : 'odd'}
-					/>
+				<CardProject
+					date={project.date}
+					title={project.title}
+					subtitle={project.subtitle}
+					imageAlt={project.imageAlt}
+					type={(index + 1) % 2 === 0 ? 'even' : 'odd'}
+				/>
 				))
 			}
 		</div>
