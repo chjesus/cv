@@ -1,71 +1,31 @@
 export type Project = {
-	id: number
 	date: string
 	title: string
 	subtitle: string
-	description: string
-	url?: string
-	imageUrl?: string
 	imageAlt?: string
-	technologies?: string[]
 }
 
 export type ExperienceItem = {
 	info: string
 	period: string
 	company: string
-	companyUrl?: string
-	location?: string
 }
 
 export const PROJECTS: Project[] = [
 	{
-		id: 1,
 		date: 'October 2023',
 		title: 'E-Commerce Redesign',
 		subtitle: 'Modernized storefront with Next.js',
-		description:
-			'A premium commerce experience focused on performance, conversion, and reusable UI systems.',
 	},
 	{
-		id: 2,
 		date: 'March 2024',
 		title: 'Analytics Platform',
 		subtitle: 'Interactive product intelligence',
-		description:
-			'Built dashboard surfaces, data flows, and interface patterns for executive decision-making.',
 	},
 	{
-		id: 3,
 		date: 'June 2024',
 		title: 'SaaS Design System',
 		subtitle: 'Scalable component architecture',
-		description:
-			'Created a tokenized UI foundation with accessible components and consistent delivery patterns.',
-	},
-	{
-		id: 4,
-		date: 'May-July 2017',
-		title: 'Developing Bike App',
-		subtitle: 'Frontend service',
-		description:
-			'Expedita laborum suscipit sequi et nobis voluptas fuga placeat. Omnis est ratione. Repellendus recusandae a.',
-	},
-	{
-		id: 5,
-		date: 'May-July 2017',
-		title: 'Developing Subscription App',
-		subtitle: 'Frontend service',
-		description:
-			'Expedita laborum suscipit sequi et nobis voluptas fuga placeat. Omnis est ratione. Repellendus recusandae a.',
-	},
-	{
-		id: 6,
-		date: 'May-July 2017',
-		title: 'Developing Finance App',
-		subtitle: 'Frontend service',
-		description:
-			'Expedita laborum suscipit sequi et nobis voluptas fuga placeat. Omnis est ratione. Repellendus recusandae a.',
 	},
 ]
 
