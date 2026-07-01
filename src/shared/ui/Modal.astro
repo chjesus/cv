@@ -11,22 +11,22 @@ import { Icon } from 'astro-icon/components'
 		</form>
 		<nav class="menu flex" aria-label="Navegación móvil">
 			<li class="menu-item">
-				<a class="p-0 menu-link" href="#home">Home</a>
+				<a class="menu-link p-0" href="#home">Home</a>
 			</li>
 			<li class="menu-item">
-				<a class="p-0 menu-link" href="#about">About</a>
+				<a class="menu-link p-0" href="#about">About</a>
 			</li>
 			<li class="menu-item">
-				<a class="p-0 menu-link" href="#experience">Experience</a>
+				<a class="menu-link p-0" href="#experience">Experience</a>
 			</li>
 			<li class="menu-item">
-				<a class="p-0 menu-link" href="#services">Services</a>
+				<a class="menu-link p-0" href="#services">Services</a>
 			</li>
 			<li class="menu-item">
-				<a class="p-0 menu-link" href="#portfolio">My Projects</a>
+				<a class="menu-link p-0" href="#portfolio">My Projects</a>
 			</li>
 			<li class="menu-item">
-				<a class="p-0 menu-link" href="#contact">Contact us</a>
+				<a class="menu-link p-0" href="#contact">Contact us</a>
 			</li>
 		</nav>
 	</div>
@@ -58,14 +58,5 @@ import { Icon } from 'astro-icon/components'
 </script>
 
 <style lang="scss">
-	.menu {
-		width: 100%;
-		gap: 30px;
-		&-item {
-			font-size: 3rem;
-			font-weight: 500;
-			color: var(--text-dark);
-			padding: 0;
-		}
-	}
+	@use './scss/Modal.scss';
 </style>

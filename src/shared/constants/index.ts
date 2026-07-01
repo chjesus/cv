@@ -21,27 +21,27 @@ export type ExperienceItem = {
 export const PROJECTS: Project[] = [
 	{
 		id: 1,
-		date: 'May-July 2017',
-		title: 'Developing Car App',
-		subtitle: 'Frontend service',
+		date: 'October 2023',
+		title: 'E-Commerce Redesign',
+		subtitle: 'Modernized storefront with Next.js',
 		description:
-			'Expedita laborum suscipit sequi et nobis voluptas fuga placeat. Omnis est ratione. Repellendus recusandae a.',
+			'A premium commerce experience focused on performance, conversion, and reusable UI systems.',
 	},
 	{
 		id: 2,
-		date: 'May-July 2017',
-		title: 'Developing Shoe App',
-		subtitle: 'Frontend service',
+		date: 'March 2024',
+		title: 'Analytics Platform',
+		subtitle: 'Interactive product intelligence',
 		description:
-			'Expedita laborum suscipit sequi et nobis voluptas fuga placeat. Omnis est ratione. Repellendus recusandae a.',
+			'Built dashboard surfaces, data flows, and interface patterns for executive decision-making.',
 	},
 	{
 		id: 3,
-		date: 'May-July 2017',
-		title: 'Developing Bike App',
-		subtitle: 'Frontend service',
+		date: 'June 2024',
+		title: 'SaaS Design System',
+		subtitle: 'Scalable component architecture',
 		description:
-			'Expedita laborum suscipit sequi et nobis voluptas fuga placeat. Omnis est ratione. Repellendus recusandae a.',
+			'Created a tokenized UI foundation with accessible components and consistent delivery patterns.',
 	},
 	{
 		id: 4,
@@ -71,36 +71,36 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCE_WORK_LIST: ExperienceItem[] = [
 	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
+		info: 'Led frontend architecture, performance initiatives, and delivery standards for modern web platforms.',
+		period: '2020 - Present',
+		company: 'Senior Developer at TechCorp',
 	},
 	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
+		info: 'Developed robust API integrations and interactive React dashboards for enterprise clients.',
+		period: '2017 - 2020',
+		company: 'Full-Stack Engineer at WebSolutions',
 	},
 	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
+		info: 'Built production interfaces and internal tooling with a focus on reliability and maintainability.',
+		period: '2015 - 2017',
+		company: 'Frontend Developer',
 	},
 ]
 
 export const EXPERIENCE_EDUCATION_LIST: ExperienceItem[] = [
 	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
+		info: 'Specialized in distributed systems, software architecture, and scalable product foundations.',
+		period: '2015 - 2017',
+		company: 'MSc Computer Science',
 	},
 	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
+		info: 'Graduated with honors while building a strong base in engineering fundamentals and product delivery.',
+		period: '2011 - 2015',
+		company: 'BSc Software Engineering',
 	},
 	{
-		info: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-		period: '2020 - 2021',
-		company: 'Lorem, ipsum.',
+		info: 'Continuous learning across frontend performance, accessibility, architecture, and developer experience.',
+		period: 'Ongoing',
+		company: 'Professional Development',
 	},
 ]

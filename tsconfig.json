@@ -3,24 +3,12 @@
   "compilerOptions": {
     "baseUrl": "./src",
     "paths": {
-      "@*": [
-        "src/*"
-      ],
-      "@app/*": [
-        "app/*"
-      ],
-      "@pages/*": [
-        "pages/*"
-      ],
-      "@shared/*": [
-        "shared/*"
-      ],
-      "@widgets/*": [
-        "widgets/*"
-      ],
-      "@entities/*": [
-        "entities/*"
-      ]
+      "@*": ["src/*"],
+      "@app/*": ["app/*"],
+      "@pages/*": ["pages/*"],
+      "@shared/*": ["shared/*"],
+      "@widgets/*": ["widgets/*"],
+      "@entities/*": ["entities/*"]
     }
   }
 }

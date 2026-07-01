@@ -1,128 +1,64 @@
 ---
-import EXPERIENCEIMG from '@shared/assets/img/experience.svg'
+import { Icon } from 'astro-icon/components'
 
-import {
-	EXPERIENCE_WORK_LIST,
-	EXPERIENCE_EDUCATION_LIST,
-} from '@shared/constants'
-
-import Text from '@shared/ui/Text.astro'
-import Badge from '@shared/ui/Badge.astro'
-import Title from '@shared/ui/Title.astro'
-import Circle from '@shared/ui/Circle.astro'
-import Strong from '@shared/ui/Strong.astro'
-import SubTitle from '@shared/ui/SubTitle.astro'
-import FloatingBlurCircle from '@shared/ui/FloatingBlurCircle.astro'
 import Container from '@app/layout/ui/Container.astro'
 
-import AnimationFade from '@app/layout/ui/AnimationFade.astro'
+import {
+	EXPERIENCE_EDUCATION_LIST,
+	EXPERIENCE_WORK_LIST,
+} from '@shared/constants'
 
+const columns = [
+	{
+		eyebrow: 'Experience',
+		title: 'Work Experience',
+		icon: 'mdi:briefcase',
+		variant: 'work',
+		items: EXPERIENCE_WORK_LIST,
+	},
+	{
+		eyebrow: 'Education',
+		title: 'My Education',
+		icon: 'mdi:school',
+		variant: 'education',
+		items: EXPERIENCE_EDUCATION_LIST,
+	},
+]
 ---
 
-<section class="experience py-24 md:py-48" id="experience">
-	<Container>
-		<div class="relative">
-			<div class="text-center md:text-left">
-				<AnimationFade translateX={-50}>
-					<Badge class="mx-auto md:mx-0">Experience</Badge>
-				</AnimationFade>
-			</div>
-			<div class="experience-header mb-10 grid">
-				<AnimationFade translateX={-50}>
-					<Title class="text-center md:text-left">
-						Check <Strong>Experience</Strong> and Work!
-					</Title>
-				</AnimationFade>
-				<AnimationFade translateX={50}>
-					<Text class="py-10 text-center md:text-left">
-						Embark on a journey through my professional evolution, where every
-						project tells a story of growth, expertise, and passion.
-					</Text>
-				</AnimationFade>
-			</div>
-			<div class="experience-body grid gap-10">
-				<div class="self-start">
-					<AnimationFade translateY={50} delay={0}>
-						<SubTitle class="text-center md:text-left">
-							Work <Strong>Experience</Strong>
-						</SubTitle>
-						<ul class="experience-list px-8 md:px-0">
-							{
-								EXPERIENCE_WORK_LIST.map(({ info, period, company }) => (
-									<li class="experience-list_item text-center md:text-left">
-										{info}
-										<span class="experience-list_item_age py-6 md:py-9">
-											{period}
-											<a
-												class="experience-list_item_link"
-												target="_blank"
-												rel="noopener noreferrer"
-												href="/"
-											>
-												{company}
-											</a>
-										</span>
-									</li>
-								))
-							}
-						</ul>
-					</AnimationFade>
-				</div>
-				<div class="self-start">
-					<AnimationFade translateY={50} delay={0.3}>
-						<SubTitle class="text-center md:text-left">Education</SubTitle>
-						<ul class="experience-list px-8 md:px-0">
-							{
-								EXPERIENCE_EDUCATION_LIST.map(({ info, period, company }) => (
-									<li class="experience-list_item text-center md:text-left">
-										{info}
-										<span class="experience-list_item_age py-6 md:py-9">
-											{period}
-											<a
-												class="experience-list_item_link"
-												target="_blank"
-												rel="noopener noreferrer"
-												href="/"
-											>
-												{company}
-											</a>
-										</span>
-									</li>
-								))
-							}
-						</ul>
-					</AnimationFade>
-				</div>
-				<figure class="mx-auto xl:w-[32rem]">
-					<AnimationFade translateY={50} delay={0.6}>
-						<EXPERIENCEIMG class="h-auto w-full" />
-					</AnimationFade>
-				</figure>
-			</div>
-			<FloatingBlurCircle
-				duration="7s"
-				delay="-2s"
-				position="-top-[5%] right-[80%] md:-top-[30%] md:-left-[10%] z-0"
-				blur="blur-[90px]"
-				size="size-[110px] md:size-[125px]"
-			>
-				<Circle
-					size="size-[14px]"
-					position="top-3/4 left-1/4 md:left-[60%] md:top-[60%]"
-				/>
-			</FloatingBlurCircle>
-			<FloatingBlurCircle
-				duration="6s"
-				delay="-4s"
-				position="top-[45%] right-[5%] md:top-[20%] md:-right-[10%]"
-				blur="blur-[100px]"
-				size="size-0 md:size-[125px]"
-			>
-				<Circle
-					size="size-[12px] md:size-[24px]"
-					position="top-3/4 left-1/4 md:left-1/3 md:top-0"
-				/>
-			</FloatingBlurCircle>
+<section class="premium-section experience" id="experience">
+	<Container class="!max-w-[1280px]">
+		<div
+			class="experience-grid grid grid-cols-2 gap-[clamp(4rem,6vw,8rem)] max-[820px]:grid-cols-1"
+		>
+			{
+				columns.map((column) => (
+					<div class="experience-column flex flex-col items-start gap-[2.4rem]">
+						<span class="premium-badge">{column.eyebrow}</span>
+						<h2 class="premium-title">{column.title}</h2>
+						<div class="experience-list mt-[1.2rem] grid gap-[3.2rem]">
+							{column.items.map((item) => (
+								<article class="experience-item grid grid-cols-[4rem_1fr] gap-[1.6rem]">
+									<span
+										class:list={[
+											'grid h-[4rem] w-[4rem] shrink-0 place-items-center',
+											'experience-item__icon',
+											`is-${column.variant}`,
+										]}
+									>
+										<Icon name={column.icon} />
+									</span>
+									<div>
+										<h3>{item.company}</h3>
+										<span>{item.period}</span>
+										<p>{item.info}</p>
+									</div>
+								</article>
+							))}
+						</div>
+					</div>
+				))
+			}
 		</div>
 	</Container>
 </section>

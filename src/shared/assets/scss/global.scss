@@ -5,7 +5,7 @@
 html {
 	font-size: 43.75%;
 	scroll-behavior: smooth;
-	scroll-padding-top: 50px;
+	scroll-padding-top: 88px;
 }
 
 @media (min-width: 600px) {
@@ -29,6 +29,217 @@ html {
 body {
 	width: 100%;
 	min-height: 100vh;
+	margin: 0;
+	background: var(--surface);
+	color: var(--text-primary);
+	font-family: 'Inter', 'Source Sans 3', sans-serif;
+	overflow-x: hidden;
+}
+
+body::selection {
+	background: rgba(160, 120, 255, 0.55);
+	color: #ffffff;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--bg-obsidian);
+}
+
+::-webkit-scrollbar-thumb {
+	background: #343343;
+	border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #494454;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+button,
+input,
+textarea {
+	font: inherit;
+}
+
+.premium-section {
+	position: relative;
+	padding-block: clamp(8rem, 9vw, 12rem);
+}
+
+.premium-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.8rem;
+	width: fit-content;
+	padding: 0.7rem 1.2rem;
+	border: 1px solid rgba(208, 188, 255, 0.3);
+	border-radius: 999px;
+	background: rgba(208, 188, 255, 0.1);
+	box-shadow: 0 0 10px rgba(160, 120, 255, 0.1);
+	color: var(--primary);
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	line-height: 1;
+	text-transform: uppercase;
+	backdrop-filter: blur(12px);
+}
+
+.premium-badge::before {
+	content: '';
+	width: 0.6rem;
+	height: 0.6rem;
+	border-radius: 999px;
+	background: var(--primary);
+	box-shadow: 0 0 12px rgba(208, 188, 255, 0.75);
+}
+
+.premium-title {
+	margin: 0;
+	color: var(--text-primary);
+	font-family: 'Sora', sans-serif;
+	font-size: clamp(3.2rem, 4vw, 4.8rem);
+	font-weight: 700;
+	letter-spacing: -0.02em;
+	line-height: 1.2;
+}
+
+.premium-display {
+	margin: 0;
+	color: var(--text-primary);
+	font-family: 'Sora', sans-serif;
+	font-size: clamp(4rem, 6.5vw, 7.2rem);
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	line-height: 1.1;
+}
+
+.text-luminous {
+	background: linear-gradient(135deg, #d0bcff 0%, #fbabff 100%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.premium-copy {
+	color: var(--text-muted);
+	font-size: clamp(1.6rem, 1.45vw, 1.8rem);
+	font-weight: 400;
+	line-height: 1.6;
+}
+
+.glass-panel,
+.glass-card {
+	position: relative;
+	border: 1px solid var(--glass-border);
+	background: var(--glass);
+	backdrop-filter: blur(16px);
+}
+
+.glass-card {
+	overflow: hidden;
+	backdrop-filter: blur(12px);
+	transition:
+		transform 0.3s ease,
+		border-color 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+	transform: translateY(-4px) scale(1.02);
+	border-color: rgba(139, 92, 246, 0.5);
+	box-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+.btn-primary-premium,
+.btn-secondary-premium {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.8rem;
+	min-height: 5.6rem;
+	padding: 1.5rem 3.2rem;
+	border-radius: 1.2rem;
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 1.4rem;
+	font-weight: 500;
+	line-height: 1;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease,
+		background 0.3s ease;
+}
+
+.btn-primary-premium {
+	position: relative;
+	overflow: hidden;
+	border: 0;
+	background: linear-gradient(135deg, #a078ff 0%, #5104a3 100%);
+	color: #ffffff;
+	box-shadow: 0 0 0 rgba(160, 120, 255, 0);
+}
+
+.btn-primary-premium::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(255, 255, 255, 0.28),
+		transparent
+	);
+	transform: translateX(-150%) skewX(-15deg);
+	animation: premium-shimmer 3s infinite;
+}
+
+.btn-primary-premium:hover {
+	transform: scale(1.02);
+	box-shadow: 0 0 20px rgba(160, 120, 255, 0.4);
+}
+
+.btn-secondary-premium {
+	border: 1px solid var(--primary);
+	background: transparent;
+	color: var(--primary);
+}
+
+.btn-secondary-premium:hover {
+	transform: scale(1.02);
+	background: rgba(208, 188, 255, 0.1);
+}
+
+@keyframes premium-shimmer {
+	0% {
+		transform: translateX(-150%) skewX(-15deg);
+	}
+	50%,
+	100% {
+		transform: translateX(250%) skewX(-15deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0.01ms !important;
+	}
 }
 
 @font-face {
