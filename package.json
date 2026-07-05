@@ -11,7 +11,11 @@
     "prettier:start": "prettier --write .",
     "prettier:check": "prettier --check .",
     "lint:start": "eslint --ext .astro,.ts,.js,.tsx .",
-    "lint:fix": "eslint --ext .astro,.ts,.js,.tsx . --fix"
+    "lint:fix": "eslint --ext .astro,.ts,.js,.tsx . --fix",
+    "biome:check": "biome check .",
+    "biome:fix": "biome check . --write",
+    "biome:format": "biome format . --write",
+    "biome:lint": "biome lint ."
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
@@ -28,6 +32,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.5",
+    "@biomejs/biome": "2.5.2",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "astro-eslint-parser": "^1.2.2",
