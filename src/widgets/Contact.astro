@@ -3,72 +3,78 @@ import Container from '@app/layout/ui/Container.astro'
 import { Icon } from 'astro-icon/components'
 ---
 
-<section class="premium-section contact" id="contact">
-	<Container class="!max-w-[1280px]">
-		<div
-			class="contact-grid grid grid-cols-[minmax(0,7fr)_minmax(36rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1"
-		>
-			<div class="contact-copy flex flex-col items-start gap-[2.4rem]">
-				<span class="premium-badge">Contact</span>
-				<h2 class="premium-title">
-					Let's Build Something <span class="text-luminous">Exceptional</span>
-				</h2>
-				<p class="premium-copy">
-					Have a project in mind or want to discuss opportunities? I'm currently
-					available for freelance work and full-time positions.
-				</p>
+<section
+  class="premium-section contact"
+  id="contact"
+>
+  <Container class="!max-w-[1280px]">
+    <div
+      class="contact-grid grid grid-cols-[minmax(0,7fr)_minmax(36rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1"
+    >
+      <div class="contact-copy flex flex-col items-start gap-[2.4rem]">
+        <span class="premium-badge">Contact</span>
+        <h2 class="premium-title">
+          Let's Build Something <span class="text-luminous">Exceptional</span>
+        </h2>
+        <p class="premium-copy">
+          Have a project in mind or want to discuss opportunities? I'm currently
+          available for freelance work and full-time positions.
+        </p>
 
-				<form class="contact-form grid w-full gap-[2.4rem]">
-					<label class="grid gap-[0.8rem]">
-						<span>Name</span>
-						<input
-							id="name"
-							name="name"
-							type="text"
-							placeholder="John Doe"
-							required
-						/>
-					</label>
-					<label class="grid gap-[0.8rem]">
-						<span>Email</span>
-						<input
-							id="email"
-							name="email"
-							type="email"
-							placeholder="john@example.com"
-							required
-						/>
-					</label>
-					<label class="grid gap-[0.8rem]">
-						<span>Message</span>
-						<textarea
-							id="message"
-							name="message"
-							placeholder="Tell me about your project..."
-							required
-						></textarea>
-					</label>
-					<button class="btn-primary-premium justify-self-start" type="submit">
-						Send Message
-					</button>
-				</form>
-			</div>
+        <form class="contact-form grid w-full gap-[2.4rem]">
+          <label class="grid gap-[0.8rem]">
+            <span>Name</span>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="John Doe"
+              required
+            />
+          </label>
+          <label class="grid gap-[0.8rem]">
+            <span>Email</span>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="john@example.com"
+              required
+            />
+          </label>
+          <label class="grid gap-[0.8rem]">
+            <span>Message</span>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Tell me about your project..."
+              required
+            ></textarea>
+          </label>
+          <button
+            class="btn-primary-premium justify-self-start"
+            type="submit"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
 
-			<div
-				class="contact-visual relative grid aspect-square place-items-center max-[900px]:hidden"
-				aria-hidden="true"
-			>
-				<div class="contact-visual__glow"></div>
-				<div
-					class="contact-visual__card glass-card grid aspect-square w-[74%] place-items-center"
-				>
-					<Icon name="heroicons:envelope-20-solid" />
-				</div>
-			</div>
-		</div>
-	</Container>
+      <div
+        class="contact-visual relative grid aspect-square place-items-center max-[900px]:hidden"
+        aria-hidden="true"
+      >
+        <div class="contact-visual__glow"></div>
+        <div
+          class="contact-visual__card glass-card grid aspect-square w-[74%] place-items-center"
+        >
+          <Icon name="heroicons:envelope-20-solid" />
+        </div>
+      </div>
+    </div>
+  </Container>
 </section>
 
 <style lang="scss">
-	@use './scss/Contact.scss';
+  @use './scss/Contact.scss';
 </style>

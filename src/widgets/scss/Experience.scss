@@ -1,39 +1,39 @@
 .experience {
-	&-item {
-		&__icon {
-			border-radius: 999px;
-			font-size: 1.85rem;
-			line-height: 1;
+  &-item {
+    &__icon {
+      border-radius: 999px;
+      font-size: 1.85rem;
+      line-height: 1;
 
-			svg {
-				width: 1.85rem;
-				height: 1.85rem;
-			}
+      svg {
+        width: 1.85rem;
+        height: 1.85rem;
+      }
 
-			&.is-work {
-				background: rgba(208, 188, 255, 0.1);
-				color: var(--primary);
-			}
+      &.is-work {
+        background: rgba(208, 188, 255, 0.1);
+        color: var(--primary);
+      }
 
-			&.is-education {
-				background: rgba(251, 171, 255, 0.1);
-				color: var(--magenta-spark);
-			}
-		}
+      &.is-education {
+        background: rgba(251, 171, 255, 0.1);
+        color: var(--magenta-spark);
+      }
+    }
 
-		h3 {
-			margin: 0;
-			color: var(--text-primary);
-			font-family: 'Sora', sans-serif;
-			font-size: 1.8rem;
-			font-weight: 700;
-		}
+    h3 {
+      margin: 0;
+      color: var(--text-primary);
+      font-family: 'Sora', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
 
-		p {
-			margin: 0.8rem 0 0;
-			color: var(--text-muted);
-			font-size: 1.6rem;
-			line-height: 1.6;
-		}
-	}
+    p {
+      margin: 0.8rem 0 0;
+      color: var(--text-muted);
+      font-size: 1.6rem;
+      line-height: 1.6;
+    }
+  }
 }

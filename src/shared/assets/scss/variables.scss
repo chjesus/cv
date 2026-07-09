@@ -1,52 +1,52 @@
 :root {
-	--primary: #d0bcff;
-	--primary-dark: #0d0d1b;
-	--primary-hover: #fbabff;
-	--primary-container: #a078ff;
-	--secondary-accent: #ae05c6;
-	--magenta-spark: #fbabff;
+  --primary: #d0bcff;
+  --primary-dark: #0d0d1b;
+  --primary-hover: #fbabff;
+  --primary-container: #a078ff;
+  --secondary-accent: #ae05c6;
+  --magenta-spark: #fbabff;
 
-	--secondary: #d8d8d8;
-	--secondary-dark: #37474f;
+  --secondary: #d8d8d8;
+  --secondary-dark: #37474f;
 
-	--bg: #121220;
-	--bg-obsidian: #0d0d1b;
-	--surface: #121220;
-	--surface-container-lowest: #0d0d1b;
-	--surface-container-low: #1b1a29;
-	--surface-container: #1f1e2d;
-	--glass: rgba(26, 20, 48, 0.7);
-	--glass-border: rgba(255, 255, 255, 0.1);
-	--text-primary: #e4e0f5;
-	--text-muted: #cbc3d7;
+  --bg: #121220;
+  --bg-obsidian: #0d0d1b;
+  --surface: #121220;
+  --surface-container-lowest: #0d0d1b;
+  --surface-container-low: #1b1a29;
+  --surface-container: #1f1e2d;
+  --glass: rgba(26, 20, 48, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-primary: #e4e0f5;
+  --text-muted: #cbc3d7;
 
-	--bg-white: #ffffff;
-	--bg-white-hover: #f0e6ff;
-	--bg-dark: #000000;
+  --bg-white: #ffffff;
+  --bg-white-hover: #f0e6ff;
+  --bg-dark: #000000;
 
-	--text-white: #ffffff;
-	--text-dark: #000000;
-	--text-secondary: #cbc3d7;
+  --text-white: #ffffff;
+  --text-dark: #000000;
+  --text-secondary: #cbc3d7;
 
-	--white: #ffffff;
+  --white: #ffffff;
 
-	--bg-card-service: rgba(26, 20, 48, 0.7);
-	--text-card-service-title: #e4e0f5;
-	--text-card-service-description: #cbc3d7;
+  --bg-card-service: rgba(26, 20, 48, 0.7);
+  --text-card-service-title: #e4e0f5;
+  --text-card-service-description: #cbc3d7;
 
-	/* Portfolio */
-	--text-card-portfolio-primary: #e4e0f5;
-	--text-card-portfolio-secondary: #cbc3d7;
-	--odd-card-gradient: linear-gradient(
-		40deg,
-		#e7f3f2 0%,
-		#ebf4f8 51%,
-		#dfeef9 100%
-	);
-	--even-card-gradient: linear-gradient(
-		40deg,
-		#f5e9f1 0%,
-		#ebf4f8 51%,
-		#f7e3e2 100%
-	);
+  /* Portfolio */
+  --text-card-portfolio-primary: #e4e0f5;
+  --text-card-portfolio-secondary: #cbc3d7;
+  --odd-card-gradient: linear-gradient(
+    40deg,
+    #e7f3f2 0%,
+    #ebf4f8 51%,
+    #dfeef9 100%
+  );
+  --even-card-gradient: linear-gradient(
+    40deg,
+    #f5e9f1 0%,
+    #ebf4f8 51%,
+    #f7e3e2 100%
+  );
 }

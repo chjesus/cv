@@ -1,64 +1,69 @@
 ---
 import Container from '@app/layout/ui/Container.astro'
 import {
-	EXPERIENCE_EDUCATION_LIST,
-	EXPERIENCE_WORK_LIST,
+  EXPERIENCE_EDUCATION_LIST,
+  EXPERIENCE_WORK_LIST,
 } from '@shared/constants'
 import { Icon } from 'astro-icon/components'
 
 const columns = [
-	{
-		eyebrow: 'Experience',
-		title: 'Work Experience',
-		icon: 'mdi:briefcase',
-		variant: 'work',
-		items: EXPERIENCE_WORK_LIST,
-	},
-	{
-		eyebrow: 'Education',
-		title: 'My Education',
-		icon: 'mdi:school',
-		variant: 'education',
-		items: EXPERIENCE_EDUCATION_LIST,
-	},
+  {
+    eyebrow: 'Experience',
+    title: 'Work Experience',
+    icon: 'mdi:briefcase',
+    variant: 'work',
+    items: EXPERIENCE_WORK_LIST,
+  },
+  {
+    eyebrow: 'Education',
+    title: 'My Education',
+    icon: 'mdi:school',
+    variant: 'education',
+    items: EXPERIENCE_EDUCATION_LIST,
+  },
 ]
 ---
 
-<section class="premium-section experience" id="experience">
-	<Container class="!max-w-[1280px]">
-		<div
-			class="experience-grid grid grid-cols-2 gap-[clamp(4rem,6vw,8rem)] max-[820px]:grid-cols-1"
-		>
-			{columns.map((column) => (
-					<div class="experience-column flex flex-col items-start gap-[2.4rem]">
-						<span class="premium-badge">{column.eyebrow}</span>
-						<h2 class="premium-title">{column.title}</h2>
-						<div class="experience-list mt-[1.2rem] grid gap-[3.2rem]">
-							{column.items.map((item) => (
-								<article class="experience-item grid grid-cols-[4rem_1fr] gap-[1.6rem]">
-									<span
-										class:list={[
-											'grid h-[4rem] w-[4rem] shrink-0 place-items-center',
-											'experience-item__icon',
-											`is-${column.variant}`,
-										]}
-									>
-										<Icon name={column.icon} />
-									</span>
-									<div>
-										<h3>{item.company}</h3>
-										<span>{item.period}</span>
-										<p>{item.info}</p>
-									</div>
-								</article>
-							))}
-						</div>
-					</div>
-				))}
-		</div>
-	</Container>
+<section
+  class="premium-section experience"
+  id="experience"
+>
+  <Container class="!max-w-[1280px]">
+    <div
+      class="experience-grid grid grid-cols-2 gap-[clamp(4rem,6vw,8rem)] max-[820px]:grid-cols-1"
+    >
+      {
+        columns.map((column) => (
+          <div class="experience-column flex flex-col items-start gap-[2.4rem]">
+            <span class="premium-badge">{column.eyebrow}</span>
+            <h2 class="premium-title">{column.title}</h2>
+            <div class="experience-list mt-[1.2rem] grid gap-[3.2rem]">
+              {column.items.map((item) => (
+                <article class="experience-item grid grid-cols-[4rem_1fr] gap-[1.6rem]">
+                  <span
+                    class:list={[
+                      'grid h-[4rem] w-[4rem] shrink-0 place-items-center',
+                      'experience-item__icon',
+                      `is-${column.variant}`,
+                    ]}
+                  >
+                    <Icon name={column.icon} />
+                  </span>
+                  <div>
+                    <h3>{item.company}</h3>
+                    <span>{item.period}</span>
+                    <p>{item.info}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
 </section>
 
 <style lang="scss">
-	@use './scss/Experience.scss';
+  @use './scss/Experience.scss';
 </style>

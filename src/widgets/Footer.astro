@@ -7,113 +7,122 @@ const navItems = ['Home', 'About', 'Services', 'Portfolio']
 ---
 
 <footer class="footer w-full">
-	<Container class="!max-w-[1280px]">
-		<div
-			class="footer-cta mb-[6.4rem] flex w-full items-center justify-between gap-[3.2rem] max-[900px]:flex-col max-[900px]:items-start"
-		>
-			<h2>Let's Connect there</h2>
-			<a class="footer-cta__button btn-primary-premium" href="#contact">
-				Hire me <Icon name="heroicons:arrow-up-right-20-solid" />
-			</a>
-		</div>
+  <Container class="!max-w-[1280px]">
+    <div
+      class="footer-cta mb-[6.4rem] flex w-full items-center justify-between gap-[3.2rem] max-[900px]:flex-col max-[900px]:items-start"
+    >
+      <h2>Let's Connect there</h2>
+      <a
+        class="footer-cta__button btn-primary-premium"
+        href="#contact"
+      >
+        Hire me <Icon name="heroicons:arrow-up-right-20-solid" />
+      </a>
+    </div>
 
-		<div
-			class="footer-grid grid grid-cols-5 gap-[4.8rem] max-[900px]:grid-cols-1 max-[900px]:gap-[4rem]"
-		>
-			<div class="footer-brand col-span-2 flex flex-col gap-[2.4rem]">
-				<div class="footer-brand__logo flex h-[4.8rem] items-center">
-					<LOGOHEADER />
-				</div>
-				<p>
-					Building exceptional digital experiences with engineering mastery and
-					clean design.
-				</p>
-				<div class="footer-socials flex gap-[1.6rem]">
-					<a
-						href="https://github.com/chjesus"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="GitHub profile"
-					>
-						<Icon name="heroicons:code-bracket-square-20-solid" />
-					</a>
-					<a
-						href="https://x.com/ch__jesus"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="X profile"
-					>
-						<Icon name="heroicons:bolt-20-solid" />
-					</a>
-					<a
-						href="https://www.linkedin.com/in/jesus-chacon-510643162/"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="LinkedIn profile"
-					>
-						<Icon name="heroicons:briefcase-20-solid" />
-					</a>
-				</div>
-			</div>
+    <div
+      class="footer-grid grid grid-cols-5 gap-[4.8rem] max-[900px]:grid-cols-1 max-[900px]:gap-[4rem]"
+    >
+      <div class="footer-brand col-span-2 flex flex-col gap-[2.4rem]">
+        <div class="footer-brand__logo flex h-[4.8rem] items-center">
+          <LOGOHEADER />
+        </div>
+        <p>
+          Building exceptional digital experiences with engineering mastery and
+          clean design.
+        </p>
+        <div class="footer-socials flex gap-[1.6rem]">
+          <a
+            href="https://github.com/chjesus"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+          >
+            <Icon name="heroicons:code-bracket-square-20-solid" />
+          </a>
+          <a
+            href="https://x.com/ch__jesus"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="X profile"
+          >
+            <Icon name="heroicons:bolt-20-solid" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jesus-chacon-510643162/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile"
+          >
+            <Icon name="heroicons:briefcase-20-solid" />
+          </a>
+        </div>
+      </div>
 
-			<nav class="footer-nav" aria-label="Footer navigation">
-				<h4>Navigation</h4>
-				<ul>
-					{
-						navItems.map((item) => (
-							<li>
-								<a href={item === 'Home' ? '#home' : `#${item.toLowerCase()}`}>
-									{item}
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</nav>
+      <nav
+        class="footer-nav"
+        aria-label="Footer navigation"
+      >
+        <h4>Navigation</h4>
+        <ul>
+          {
+            navItems.map((item) => (
+              <li>
+                <a href={item === 'Home' ? '#home' : `#${item.toLowerCase()}`}>
+                  {item}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
 
-			<div class="footer-contact">
-				<h4>Contact</h4>
-				<ul>
-					<li>+57 available on request</li>
-					<li>jesus_chacon@gmail.com</li>
-					<li>chjesus.dev</li>
-				</ul>
-			</div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li>+57 available on request</li>
+          <li>jesus_chacon@gmail.com</li>
+          <li>chjesus.dev</li>
+        </ul>
+      </div>
 
-			<form class="footer-newsletter">
-				<h4>Get the latest information</h4>
-				<div class="footer-newsletter__field">
-					<input
-						id="footer-email"
-						type="email"
-						placeholder="Email Address"
-						aria-label="Email Address"
-					/>
-					<button type="submit" aria-label="Subscribe">
-						<Icon name="iconamoon:send-fill" />
-					</button>
-				</div>
-			</form>
-		</div>
+      <form class="footer-newsletter">
+        <h4>Get the latest information</h4>
+        <div class="footer-newsletter__field">
+          <input
+            id="footer-email"
+            type="email"
+            placeholder="Email Address"
+            aria-label="Email Address"
+          />
+          <button
+            type="submit"
+            aria-label="Subscribe"
+          >
+            <Icon name="iconamoon:send-fill" />
+          </button>
+        </div>
+      </form>
+    </div>
 
-		<div
-			class="footer-bottom mt-[6.4rem] flex w-full items-center justify-between gap-[1.6rem] pb-[2rem] pt-[3.2rem] max-[900px]:flex-col max-[900px]:items-start"
-		>
-			<p>Copyright© 2026 Jesús Chacón. All Rights Reserved.</p>
-			<div class="footer-bottom__links flex gap-[2.4rem]">
-				<a
-					href="mailto:jesus_chacon@gmail.com?subject=User%20Terms%20%26%20Conditions"
-				>
-					User Terms & Conditions
-				</a>
-				<a href="mailto:jesus_chacon@gmail.com?subject=Privacy%20Policy">
-					Privacy Policy
-				</a>
-			</div>
-		</div>
-	</Container>
+    <div
+      class="footer-bottom mt-[6.4rem] flex w-full items-center justify-between gap-[1.6rem] pt-[3.2rem] pb-[2rem] max-[900px]:flex-col max-[900px]:items-start"
+    >
+      <p>Copyright© 2026 Jesús Chacón. All Rights Reserved.</p>
+      <div class="footer-bottom__links flex gap-[2.4rem]">
+        <a
+          href="mailto:jesus_chacon@gmail.com?subject=User%20Terms%20%26%20Conditions"
+        >
+          User Terms & Conditions
+        </a>
+        <a href="mailto:jesus_chacon@gmail.com?subject=Privacy%20Policy">
+          Privacy Policy
+        </a>
+      </div>
+    </div>
+  </Container>
 </footer>
 
 <style lang="scss">
-	@use './scss/Footer.scss';
+  @use './scss/Footer.scss';
 </style>
