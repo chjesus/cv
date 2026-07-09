@@ -1,9 +1,8 @@
 ---
-import { Icon } from 'astro-icon/components'
-
 import Layout from '@app/layout/Layout.astro'
-import Container from '@app/layout/ui/Container.astro'
 import AnimationFade from '@app/layout/ui/AnimationFade.astro'
+import Container from '@app/layout/ui/Container.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
 <Layout title="404 - Page Not Found | JESÚS CHACÓN">
@@ -74,7 +73,7 @@ import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 									Go Back
 								</button>
 							</div>
-							<div class="not-found__meta" aria-label="Technical details">
+							<div class="not-found__meta">
 								<div>
 									<p>Status Code</p>
 									<strong>ERROR_ROUTE_UNDEFINED</strong>
@@ -91,18 +90,7 @@ import AnimationFade from '@app/layout/ui/AnimationFade.astro'
 		</section>
 	</main>
 
-	<script>
-		document
-			.querySelector('[data-history-back]')
-			?.addEventListener('click', () => {
-				if (window.history.length > 1) {
-					window.history.back()
-					return
-				}
-
-				window.location.href = '/'
-			})
-	</script>
+	<script></script>
 </Layout>
 
 <style lang="scss">
