@@ -1,12 +1,10 @@
 ---
-import { Icon } from 'astro-icon/components'
-
 import Container from '@app/layout/ui/Container.astro'
-
 import {
 	EXPERIENCE_EDUCATION_LIST,
 	EXPERIENCE_WORK_LIST,
 } from '@shared/constants'
+import { Icon } from 'astro-icon/components'
 
 const columns = [
 	{
@@ -31,8 +29,7 @@ const columns = [
 		<div
 			class="experience-grid grid grid-cols-2 gap-[clamp(4rem,6vw,8rem)] max-[820px]:grid-cols-1"
 		>
-			{
-				columns.map((column) => (
+			{columns.map((column) => (
 					<div class="experience-column flex flex-col items-start gap-[2.4rem]">
 						<span class="premium-badge">{column.eyebrow}</span>
 						<h2 class="premium-title">{column.title}</h2>
@@ -57,8 +54,7 @@ const columns = [
 							))}
 						</div>
 					</div>
-				))
-			}
+				))}
 		</div>
 	</Container>
 </section>

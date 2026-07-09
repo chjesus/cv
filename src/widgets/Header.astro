@@ -1,9 +1,8 @@
 ---
-import IMAGEHEADER from '@shared/assets/img/header.svg'
-import { Icon } from 'astro-icon/components'
-
 import Container from '@app/layout/ui/Container.astro'
+import IMAGEHEADER from '@shared/assets/img/header.svg'
 import HeroLanguage from '@widgets/ui/HeroLanguage.astro'
+import { Icon } from 'astro-icon/components'
 ---
 
 <header
@@ -15,9 +14,7 @@ import HeroLanguage from '@widgets/ui/HeroLanguage.astro'
 		<div
 			class="hero-grid relative grid grid-cols-[minmax(0,7fr)_minmax(34rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1"
 		>
-			<div
-				class="hero-copy relative z-[1] flex flex-col items-start gap-[2.4rem]"
-			>
+			<div class="hero-copy relative z-[1] flex flex-col items-start gap-[2.4rem]">
 				<span class="premium-badge">Hello There</span>
 				<h1 class="premium-display">
 					Engineering <br />
@@ -51,7 +48,6 @@ import HeroLanguage from '@widgets/ui/HeroLanguage.astro'
 				</div>
 			</div>
 		</div>
-
 		<HeroLanguage />
 	</Container>
 </header>

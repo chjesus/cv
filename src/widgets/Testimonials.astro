@@ -1,7 +1,6 @@
 ---
-import { Icon } from 'astro-icon/components'
-
 import Container from '@app/layout/ui/Container.astro'
+import { Icon } from 'astro-icon/components'
 
 const testimonials = [
 	{
@@ -39,13 +38,11 @@ const testimonials = [
 		<div
 			class="testimonials-grid grid grid-cols-2 gap-[2.4rem] max-[820px]:grid-cols-1"
 		>
-			{
-				testimonials.map((testimonial) => (
+			{testimonials.map((testimonial) => (
 					<article class="testimonial-card glass-card mouse-track-container group flex flex-col p-[3.2rem] max-[820px]:p-[2.8rem]">
 						<div class="glow-overlay" />
 						<div
 							class="testimonial-card__stars relative z-[1] mb-[1.6rem] flex gap-[0.4rem]"
-							aria-label="Five star rating"
 						>
 							{Array.from({ length: 5 }).map(() => (
 								<Icon name="heroicons:star-20-solid" />
@@ -69,8 +66,7 @@ const testimonials = [
 							</div>
 						</div>
 					</article>
-				))
-			}
+				))}
 		</div>
 	</Container>
 </section>
@@ -80,16 +76,16 @@ const testimonials = [
 </style>
 
 <script>
-	const testimonialCards = document.querySelectorAll('.testimonial-card')
+const testimonialCards = document.querySelectorAll('.testimonial-card')
 
-	testimonialCards.forEach((card) => {
-		if (!(card instanceof HTMLElement)) return
+testimonialCards.forEach((card) => {
+	if (!(card instanceof HTMLElement)) return
 
-		card.addEventListener('mousemove', (event) => {
-			const rect = card.getBoundingClientRect()
+	card.addEventListener('mousemove', (event) => {
+		const rect = card.getBoundingClientRect()
 
-			card.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`)
-			card.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`)
-		})
+		card.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`)
+		card.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`)
 	})
+})
 </script>

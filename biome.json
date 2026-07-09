@@ -134,7 +134,9 @@
   },
   "json": { "formatter": { "indentStyle": "space", "indentWidth": 2 } },
   "html": {
+    "experimentalFullSupportEnabled": true,
     "formatter": {
+      "enabled": true,
       "indentScriptAndStyle": false,
       "selfCloseVoidElements": "always"
     }
@@ -142,7 +144,6 @@
   "overrides": [
     {
       "includes": ["**/*.astro"],
-      "formatter": { "enabled": false },
       "linter": {
         "rules": {
           "correctness": {
@@ -151,10 +152,8 @@
           },
           "style": { "useConst": "off", "useImportType": "off" }
         }
-      },
-      "assist": { "actions": { "source": { "organizeImports": "off" } } }
+      }
     },
-    { "includes": ["*.astro"] },
     { "includes": ["*.ts", "*.tsx"], "linter": { "rules": {} } },
     {
       "includes": ["*.ts", "*.tsx", "*.mts", "*.cts"],
@@ -190,7 +189,6 @@
       "includes": ["*.json", "*.md", "*.toml", "*.yml"],
       "formatter": { "indentStyle": "space" }
     },
-    { "includes": ["*.astro"] },
     { "includes": ["*.ts"] }
   ],
   "assist": {
