@@ -1,0 +1,24 @@
+{
+  "printWidth": 80,
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false,
+  "singleAttributePerLine": true,
+  "bracketSameLine": false,
+  "plugins": [
+    "prettier-plugin-astro",
+    "prettier-plugin-astro-organize-imports",
+    "prettier-plugin-tailwindcss"
+  ],
+  "tailwindStylesheet": "./src/shared/assets/scss/global.css",
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
+}

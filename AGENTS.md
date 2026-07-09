@@ -17,7 +17,7 @@ Use this file as the default implementation and validation rulebook.
 - Astro 5 app (`output: 'server'`) with Vercel adapter
 - UI: Astro components + one React/TSX animation component
 - Styles: Tailwind utilities + SCSS + global SCSS variables
-- Lint: ESLint (`@typescript-eslint`, `astro`, `jsx-a11y`)
+- Lint: ESLint flat config (`typescript-eslint`, `astro`, `jsx-a11y`)
 - Format: Prettier (+ Astro, organize-imports, tailwindcss plugins)
 - TypeScript: strict (`astro/tsconfigs/strict`)
 
@@ -53,10 +53,12 @@ Run from repository root.
 
 - `pnpm lint:start`
 - `pnpm lint:fix`
+- `pnpm lint` (same as `lint:start`)
 
 ### Format
 
-- `pnpm prettier:start`
+- `pnpm format`
+- `pnpm format:check`
 
 ### Type Check (direct)
 
@@ -99,14 +101,14 @@ If a framework is added, update this section with exact commands, for example:
 
 ## Formatting Conventions
 
-From `.prettierrc.mjs`:
+From `.prettierrc`:
 
 - `semi: false`
 - `singleQuote: true`
 - `printWidth: 80`
-- `trailingComma: 'es5'`
-- `useTabs: true` for code
-- `endOfLine: 'lf'`
+- `trailingComma: 'all'`
+- `useTabs: false`
+- `tabWidth: 2`
 - `*.json`, `*.md`, `*.toml`, `*.yml` use spaces (`useTabs: false`)
   Always run formatting after substantial edits.
 
@@ -154,17 +156,18 @@ The repo is mostly presentational. For new logic (forms, async work, API calls):
 
 Before completing a task:
 
-1. Run `pnpm lint:start`
-2. Run `pnpm build`
-3. Report failures with exact file paths and likely causes
-4. Keep edits scoped; avoid unrelated refactors
-5. Preserve alias/import/format conventions
+1. Run `pnpm run format:check`
+2. Run `pnpm lint:start`
+3. Run `pnpm build`
+4. Report failures with exact file paths and likely causes
+5. Keep edits scoped; avoid unrelated refactors
+6. Preserve alias/import/format conventions
 
 ## High-Value Config Files
 
 - `package.json`
-- `.eslintrc.cjs`
-- `.prettierrc.mjs`
+- `eslint.config.ts`
+- `.prettierrc`
 - `tsconfig.json`
 - `astro.config.mjs`
 - `src/shared/assets/scss/variables.scss`

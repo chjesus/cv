@@ -5,31 +5,34 @@ import CardProject from '@shared/ui/CardProject.astro'
 import { PROJECTS } from '@shared/constants'
 ---
 
-<section class="premium-section portfolio" id="portfolio">
-	<Container class="!max-w-[1280px]">
-		<div
-			class="portfolio-header mb-[6.4rem] flex flex-col items-start gap-[1.6rem]"
-		>
-			<span class="premium-badge">Portfolio</span>
-			<h2 class="premium-title">
-				Explore My Digital <span class="text-luminous">Portfolio</span>
-			</h2>
-		</div>
+<section
+  class="premium-section portfolio"
+  id="portfolio"
+>
+  <Container class="!max-w-[1280px]">
+    <div
+      class="portfolio-header mb-[6.4rem] flex flex-col items-start gap-[1.6rem]"
+    >
+      <span class="premium-badge">Portfolio</span>
+      <h2 class="premium-title">
+        Explore My Digital <span class="text-luminous">Portfolio</span>
+      </h2>
+    </div>
 
-		<div
-			class="portfolio-grid grid grid-cols-3 gap-[2.4rem] max-[900px]:grid-cols-1"
-		>
-			{
-				PROJECTS.slice(0, 3).map((project, index) => (
-				<CardProject
-					date={project.date}
-					title={project.title}
-					subtitle={project.subtitle}
-					imageAlt={project.imageAlt}
-					type={(index + 1) % 2 === 0 ? 'even' : 'odd'}
-				/>
-				))
-			}
-		</div>
-	</Container>
+    <div
+      class="portfolio-grid grid grid-cols-3 gap-[2.4rem] max-[900px]:grid-cols-1"
+    >
+      {
+        PROJECTS.slice(0, 3).map((project, index) => (
+          <CardProject
+            date={project.date}
+            title={project.title}
+            subtitle={project.subtitle}
+            imageAlt={project.imageAlt}
+            type={(index + 1) % 2 === 0 ? 'even' : 'odd'}
+          />
+        ))
+      }
+    </div>
+  </Container>
 </section>

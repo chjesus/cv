@@ -1,58 +1,58 @@
 .card-project {
-	border-radius: 1.6rem;
-	background: rgba(26, 20, 48, 0.7);
+  border-radius: 1.6rem;
+  background: rgba(26, 20, 48, 0.7);
 
-	&__image {
-		background: var(--surface-container);
+  &__image {
+    background: var(--surface-container);
 
-		img {
-			transition: transform 0.5s ease;
-		}
+    img {
+      transition: transform 0.5s ease;
+    }
 
-		div {
-			background: linear-gradient(0deg, var(--surface), transparent);
-			opacity: 0.6;
-		}
-	}
+    div {
+      background: linear-gradient(0deg, var(--surface), transparent);
+      opacity: 0.6;
+    }
+  }
 
-	&:hover &__image img {
-		transform: scale(1.1);
-	}
+  &:hover &__image img {
+    transform: scale(1.1);
+  }
 
-	&__date {
-		color: var(--text-muted);
-		font-size: 1.2rem;
-		line-height: 1;
-	}
+  &__date {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
 
-	h3 {
-		margin: 1.2rem 0 0.8rem;
-		color: var(--text-primary);
-		font-family: 'Sora', sans-serif;
-		font-size: 1.9rem;
-		font-weight: 700;
-		line-height: 1.25;
-	}
+  h3 {
+    margin: 1.2rem 0 0.8rem;
+    color: var(--text-primary);
+    font-family: 'Sora', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
 
-	p {
-		margin: 0 0 1.6rem;
-		color: var(--text-muted);
-		font-size: 1.4rem;
-	}
+  p {
+    margin: 0 0 1.6rem;
+    color: var(--text-muted);
+    font-size: 1.4rem;
+  }
 
-	&__tech {
-		span {
-			border-radius: 999px;
-			background: rgba(208, 188, 255, 0.16);
-			color: var(--primary);
-			font-family: 'JetBrains Mono', monospace;
-			font-size: 1rem;
-			font-weight: 700;
-		}
+  &__tech {
+    span {
+      border-radius: 999px;
+      background: rgba(208, 188, 255, 0.16);
+      color: var(--primary);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+    }
 
-		span:nth-child(2) {
-			background: rgba(251, 171, 255, 0.2);
-			color: var(--magenta-spark);
-		}
-	}
+    span:nth-child(2) {
+      background: rgba(251, 171, 255, 0.2);
+      color: var(--magenta-spark);
+    }
+  }
 }

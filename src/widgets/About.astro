@@ -3,71 +3,76 @@ import Container from '@app/layout/ui/Container.astro'
 import { Icon } from 'astro-icon/components'
 
 const skills = [
-	'catppuccin:html',
-	'catppuccin:css3',
-	'catppuccin:javascript',
-	'catppuccin:javascript-react',
-	'catppuccin:next',
-	'catppuccin:astro',
-	'catppuccin:vite',
+  'catppuccin:html',
+  'catppuccin:css3',
+  'catppuccin:javascript',
+  'catppuccin:javascript-react',
+  'catppuccin:next',
+  'catppuccin:astro',
+  'catppuccin:vite',
 ]
 ---
 
-<section class="premium-section about" id="about">
-	<Container class="!max-w-[1280px]">
-		<div
-			class="about-grid grid grid-cols-[minmax(28rem,5fr)_minmax(0,7fr)] items-center gap-[10.4rem] max-[820px]:grid-cols-1"
-		>
-			<figure
-				class="about-image glass-panel max-[820px]:mx-auto max-[820px]:max-w-[38rem]"
-			>
-				<img
-					src="/img/profile.png"
-					alt="Jesus Chacon"
-					width="460"
-					height="460"
-				/>
-			</figure>
+<section
+  class="premium-section about"
+  id="about"
+>
+  <Container class="!max-w-[1280px]">
+    <div
+      class="about-grid grid grid-cols-[minmax(28rem,5fr)_minmax(0,7fr)] items-center gap-[10.4rem] max-[820px]:grid-cols-1"
+    >
+      <figure
+        class="about-image glass-panel max-[820px]:mx-auto max-[820px]:max-w-[38rem]"
+      >
+        <img
+          src="/img/profile.png"
+          alt="Jesus Chacon"
+          width="460"
+          height="460"
+        />
+      </figure>
 
-			<div class="about-content flex flex-col items-start gap-[2.4rem]">
-				<span class="premium-badge">About me</span>
-				<h2 class="premium-title">
-					<span class="text-luminous">JESÚS</span>
-					CHACÓN
-				</h2>
-				<p class="premium-copy">
-					I am a passionate Senior Full-Stack Developer with over 10 years of
-					experience crafting digital solutions that bridge complex engineering
-					and elegant design. My expertise lies in building scalable web
-					architectures and intuitive user interfaces that drive business
-					growth.
-				</p>
-				<p class="premium-copy">
-					Dedicated to continuous learning and technical excellence, I thrive in
-					collaborative environments where innovation meets robust execution.
-					Whether optimizing performance bottlenecks or leading complex
-					migrations, I bring quiet confidence and proven mastery to every
-					project.
-				</p>
+      <div class="about-content flex flex-col items-start gap-[2.4rem]">
+        <span class="premium-badge">About me</span>
+        <h2 class="premium-title">
+          <span class="text-luminous">JESÚS</span>
+          CHACÓN
+        </h2>
+        <p class="premium-copy">
+          I am a passionate Senior Full-Stack Developer with over 10 years of
+          experience crafting digital solutions that bridge complex engineering
+          and elegant design. My expertise lies in building scalable web
+          architectures and intuitive user interfaces that drive business
+          growth.
+        </p>
+        <p class="premium-copy">
+          Dedicated to continuous learning and technical excellence, I thrive in
+          collaborative environments where innovation meets robust execution.
+          Whether optimizing performance bottlenecks or leading complex
+          migrations, I bring quiet confidence and proven mastery to every
+          project.
+        </p>
 
-				<div class="about-skills mt-[0.8rem] flex flex-col gap-[1.6rem]">
-					<h3>Skills</h3>
-					<div class="about-skills__grid flex flex-wrap gap-[1.6rem]">
-						{skills.map((skill) => (
-								<span
-									class="about-skill grid h-[4.8rem] w-[4.8rem] place-items-center"
-									title={skill.split(':')[1]}
-								>
-									<Icon name={skill} />
-								</span>
-							))}
-					</div>
-				</div>
-			</div>
-		</div>
-	</Container>
+        <div class="about-skills mt-[0.8rem] flex flex-col gap-[1.6rem]">
+          <h3>Skills</h3>
+          <div class="about-skills__grid flex flex-wrap gap-[1.6rem]">
+            {
+              skills.map((skill) => (
+                <span
+                  class="about-skill grid h-[4.8rem] w-[4.8rem] place-items-center"
+                  title={skill.split(':')[1]}
+                >
+                  <Icon name={skill} />
+                </span>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
 </section>
 
 <style lang="scss">
-	@use './scss/About.scss';
+  @use './scss/About.scss';
 </style>

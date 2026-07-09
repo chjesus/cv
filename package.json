@@ -8,14 +8,11 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "prettier:start": "prettier --write .",
-    "prettier:check": "prettier --check .",
-    "lint:start": "eslint --ext .astro,.ts,.js,.tsx .",
-    "lint:fix": "eslint --ext .astro,.ts,.js,.tsx . --fix",
-    "biome:check": "biome check .",
-    "biome:fix": "biome check . --write",
-    "biome:format": "biome format . --write",
-    "biome:lint": "biome lint ."
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:start": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
@@ -32,19 +29,20 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.5",
-    "@biomejs/biome": "2.5.2",
+    "@eslint/js": "^10.0.1",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
+    "@typescript-eslint/parser": "^8.63.0",
     "astro-eslint-parser": "^1.2.2",
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-astro": "^1.2.3",
+    "eslint": "10.6.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-astro": "^2.1.1",
     "eslint-plugin-jsx-a11y": "^6.9.0",
-    "prettier": "^3.3.3",
+    "prettier": "^3.9.4",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-astro-organize-imports": "^0.4.9",
-    "prettier-plugin-tailwindcss": "^0.6.5",
+    "prettier-plugin-astro-organize-imports": "^0.4.12",
+    "prettier-plugin-tailwindcss": "^0.8.0",
     "sass": "^1.94.2",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "8.62.1"
   }
 }

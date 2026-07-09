@@ -1,62 +1,62 @@
 .contact {
-	&-copy {
-		p {
-			max-width: 64rem;
-		}
-	}
+  &-copy {
+    p {
+      max-width: 64rem;
+    }
+  }
 
-	&-form {
-		span {
-			color: var(--text-muted);
-			font-family: 'JetBrains Mono', monospace;
-			font-size: 1.3rem;
-		}
+  &-form {
+    span {
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.3rem;
+    }
 
-		input,
-		textarea {
-			width: 100%;
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			border-radius: 1.2rem;
-			background: var(--surface-container);
-			padding: 1.4rem 1.6rem;
-			color: var(--text-primary);
-			font-size: 1.6rem;
-			transition:
-				border-color 0.2s ease,
-				box-shadow 0.2s ease,
-				background 0.2s ease;
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1.2rem;
+      background: var(--surface-container);
+      padding: 1.4rem 1.6rem;
+      color: var(--text-primary);
+      font-size: 1.6rem;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 
-			&:focus {
-				outline: none;
-				border-color: var(--primary-container);
-				background: rgba(8, 6, 16, 0.8);
-				box-shadow: 0 0 0 2px rgba(160, 120, 255, 0.2);
-			}
-		}
+      &:focus {
+        outline: none;
+        border-color: var(--primary-container);
+        background: rgba(8, 6, 16, 0.8);
+        box-shadow: 0 0 0 2px rgba(160, 120, 255, 0.2);
+      }
+    }
 
-		textarea {
-			min-height: 15rem;
-			resize: vertical;
-		}
-	}
+    textarea {
+      min-height: 15rem;
+      resize: vertical;
+    }
+  }
 
-	&-visual {
-		&__glow {
-			position: absolute;
-			inset: 0;
-			border-radius: 999px;
-			background: linear-gradient(
-				45deg,
-				rgba(208, 188, 255, 0.1),
-				rgba(251, 171, 255, 0.1)
-			);
-			filter: blur(48px);
-		}
+  &-visual {
+    &__glow {
+      position: absolute;
+      inset: 0;
+      border-radius: 999px;
+      background: linear-gradient(
+        45deg,
+        rgba(208, 188, 255, 0.1),
+        rgba(251, 171, 255, 0.1)
+      );
+      filter: blur(48px);
+    }
 
-		&__card {
-			border-radius: 2.4rem;
-			color: var(--primary);
-			font-size: 7.2rem;
-		}
-	}
+    &__card {
+      border-radius: 2.4rem;
+      color: var(--primary);
+      font-size: 7.2rem;
+    }
+  }
 }

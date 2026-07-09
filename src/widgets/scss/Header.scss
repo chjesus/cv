@@ -1,47 +1,47 @@
 .hero {
-	&-shell {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-	}
+  &-shell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
 
-	&-glow {
-		position: absolute;
-		left: 50%;
-		top: 46%;
-		width: min(80rem, 80vw);
-		height: min(80rem, 80vw);
-		border-radius: 999px;
-		background: radial-gradient(
-			circle,
-			rgba(160, 120, 255, 0.15),
-			transparent 70%
-		);
-		filter: blur(60px);
-		transform: translate(-50%, -50%);
-		pointer-events: none;
-	}
+  &-glow {
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    width: min(80rem, 80vw);
+    height: min(80rem, 80vw);
+    border-radius: 999px;
+    background: radial-gradient(
+      circle,
+      rgba(160, 120, 255, 0.15),
+      transparent 70%
+    );
+    filter: blur(60px);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
 
-	&-visual {
-		&__inner {
-			border-radius: 1.6rem;
-			background: rgba(31, 30, 45, 0.38);
-		}
+  &-visual {
+    &__inner {
+      border-radius: 1.6rem;
+      background: rgba(31, 30, 45, 0.38);
+    }
 
-		&__wash {
-			position: absolute;
-			inset: 0;
-			background: linear-gradient(
-				45deg,
-				rgba(208, 188, 255, 0.1),
-				rgba(251, 171, 255, 0.1)
-			);
-			opacity: 0.55;
-		}
+    &__wash {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        45deg,
+        rgba(208, 188, 255, 0.1),
+        rgba(251, 171, 255, 0.1)
+      );
+      opacity: 0.55;
+    }
 
-		&__image {
-			opacity: 0.86;
-			mix-blend-mode: screen;
-		}
-	}
+    &__image {
+      opacity: 0.86;
+      mix-blend-mode: screen;
+    }
+  }
 }

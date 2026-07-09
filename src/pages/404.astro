@@ -6,93 +6,112 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <Layout title="404 - Page Not Found | JESÚS CHACÓN">
-	<main>
-		<section class="not-found relative flex items-center overflow-hidden">
-			<div class="not-found__grid" aria-hidden="true"></div>
+  <main>
+    <section class="not-found relative flex items-center overflow-hidden">
+      <div
+        class="not-found__grid"
+        aria-hidden="true"
+      >
+      </div>
 
-			<!-- Content -->
-			<Container>
-				<div class="not-found__content relative z-10">
-					<AnimationFade translateY={30}>
-						<div class="not-found__visual" aria-hidden="true">
-							<div class="not-found__visual-glow"></div>
-							<div class="not-found__panel">
-								<div class="not-found__panel-gradient"></div>
-								<div class="not-found__window-dots">
-									<span></span>
-									<span></span>
-									<span></span>
-								</div>
-								<img
-									src="/img/not-found-illustration.jpg"
-									alt=""
-									class="not-found__illustration"
-									loading="eager"
-									decoding="async"
-								/>
-								<div class="not-found__status-card">
-									<p>Process Status</p>
-									<div class="not-found__status-track">
-										<span></span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</AnimationFade>
+      <!-- Content -->
+      <Container>
+        <div class="not-found__content relative z-10">
+          <AnimationFade translateY={30}>
+            <div
+              class="not-found__visual"
+              aria-hidden="true"
+            >
+              <div class="not-found__visual-glow"></div>
+              <div class="not-found__panel">
+                <div class="not-found__panel-gradient"></div>
+                <div class="not-found__window-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <img
+                  src="/img/not-found-illustration.jpg"
+                  alt=""
+                  class="not-found__illustration"
+                  loading="eager"
+                  decoding="async"
+                />
+                <div class="not-found__status-card">
+                  <p>Process Status</p>
+                  <div class="not-found__status-track">
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimationFade>
 
-					<div class="not-found__copy">
-						<AnimationFade translateY={-30}>
-							<p class="not-found__eyebrow">System Interrupt</p>
-							<p class="not-found__title" aria-hidden="true">
-								4<span class="not-found__zero">0</span>4
-							</p>
-						</AnimationFade>
-						<AnimationFade translateY={30} delay={0.4}>
-							<h1 class="not-found__heading">
-								Engineering Error: <br />
-								<span>Page Not Found</span>
-							</h1>
-							<p class="not-found__description">
-								It seems the module you're looking for has been deprecated or
-								moved to a different branch. Let's get you back to the main
-								repository.
-							</p>
-						</AnimationFade>
-						<AnimationFade translateY={30} delay={0.7}>
-							<div class="not-found__actions">
-								<a href="/" class="not-found__btn btn-primary-premium">
-									<Icon name="heroicons:home-20-solid" />
-									Back to Portfolio
-								</a>
-								<button
-									type="button"
-									class="not-found__btn btn-secondary-premium"
-									data-history-back
-								>
-									<Icon name="heroicons:arrow-left-20-solid" />
-									Go Back
-								</button>
-							</div>
-							<div class="not-found__meta">
-								<div>
-									<p>Status Code</p>
-									<strong>ERROR_ROUTE_UNDEFINED</strong>
-								</div>
-								<div>
-									<p>Environment</p>
-									<strong>PRODUCTION_SECURE</strong>
-								</div>
-							</div>
-						</AnimationFade>
-					</div>
-				</div>
-			</Container>
-		</section>
-	</main>
+          <div class="not-found__copy">
+            <AnimationFade translateY={-30}>
+              <p class="not-found__eyebrow">System Interrupt</p>
+              <p
+                class="not-found__title"
+                aria-hidden="true"
+              >
+                4<span class="not-found__zero">0</span>4
+              </p>
+            </AnimationFade>
+            <AnimationFade
+              translateY={30}
+              delay={0.4}
+            >
+              <h1 class="not-found__heading">
+                Engineering Error: <br />
+                <span>Page Not Found</span>
+              </h1>
+              <p class="not-found__description">
+                It seems the module you're looking for has been deprecated or
+                moved to a different branch. Let's get you back to the main
+                repository.
+              </p>
+            </AnimationFade>
+            <AnimationFade
+              translateY={30}
+              delay={0.7}
+            >
+              <div class="not-found__actions">
+                <a
+                  href="/"
+                  class="not-found__btn btn-primary-premium"
+                >
+                  <Icon name="heroicons:home-20-solid" />
+                  Back to Portfolio
+                </a>
+                <button
+                  type="button"
+                  class="not-found__btn btn-secondary-premium"
+                  data-history-back
+                >
+                  <Icon name="heroicons:arrow-left-20-solid" />
+                  Go Back
+                </button>
+              </div>
+              <div class="not-found__meta">
+                <div>
+                  <p>Status Code</p>
+                  <strong>ERROR_ROUTE_UNDEFINED</strong>
+                </div>
+                <div>
+                  <p>Environment</p>
+                  <strong>PRODUCTION_SECURE</strong>
+                </div>
+              </div>
+            </AnimationFade>
+          </div>
+        </div>
+      </Container>
+    </section>
+  </main>
 
-	<script></script>
+  <script></script>
 </Layout>
 
 <style lang="scss">
-	@use './_scss/NotFound.scss';
+  @use './_scss/NotFound.scss';
 </style>

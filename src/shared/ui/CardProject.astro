@@ -1,37 +1,37 @@
 ---
 type Props = {
-	date: string
-	title: string
-	subtitle: string
-	imageAlt?: string
-	type: 'even' | 'odd'
+  date: string
+  title: string
+  subtitle: string
+  imageAlt?: string
+  type: 'even' | 'odd'
 }
 
 const { date, title, subtitle, imageAlt, type } = Astro.props
 ---
 
 <article class:list={['card-project glass-card min-h-full', type]}>
-	<figure class="card-project__image relative m-0 aspect-video overflow-hidden">
-		<img
-			class="h-full w-full object-cover"
-			src="https://media.istockphoto.com/id/1226444511/es/vector/ilustraci%C3%B3n-conceptual-de-la-tecnolog%C3%ADa-de-desarrollo-de-sitios-web-m%C3%B3viles-dise%C3%B1o-de.jpg?s=2048x2048&w=is&k=20&c=u2c0gjtgdfQzUY9FaWe_5SWYYOZXLBwntiFvumVl9u4="
-			alt={imageAlt || title}
-		/>
-		<div class="absolute inset-0"></div>
-	</figure>
-	<div
-		class="card-project__body relative z-[1] flex flex-col items-start p-[2.4rem]"
-	>
-		<span class="card-project__date">{date}</span>
-		<h3>{title}</h3>
-		<p>{subtitle}</p>
-		<div class="card-project__tech mt-0 flex gap-[0.8rem]">
-			<span class="grid h-[2.4rem] w-[2.4rem] place-items-center">NX</span>
-			<span class="grid h-[2.4rem] w-[2.4rem] place-items-center">TW</span>
-		</div>
-	</div>
+  <figure class="card-project__image relative m-0 aspect-video overflow-hidden">
+    <img
+      class="h-full w-full object-cover"
+      src="https://media.istockphoto.com/id/1226444511/es/vector/ilustraci%C3%B3n-conceptual-de-la-tecnolog%C3%ADa-de-desarrollo-de-sitios-web-m%C3%B3viles-dise%C3%B1o-de.jpg?s=2048x2048&w=is&k=20&c=u2c0gjtgdfQzUY9FaWe_5SWYYOZXLBwntiFvumVl9u4="
+      alt={imageAlt || title}
+    />
+    <div class="absolute inset-0"></div>
+  </figure>
+  <div
+    class="card-project__body relative z-[1] flex flex-col items-start p-[2.4rem]"
+  >
+    <span class="card-project__date">{date}</span>
+    <h3>{title}</h3>
+    <p>{subtitle}</p>
+    <div class="card-project__tech mt-0 flex gap-[0.8rem]">
+      <span class="grid h-[2.4rem] w-[2.4rem] place-items-center">NX</span>
+      <span class="grid h-[2.4rem] w-[2.4rem] place-items-center">TW</span>
+    </div>
+  </div>
 </article>
 
 <style lang="scss">
-	@use './scss/CardProject.scss';
+  @use './scss/CardProject.scss';
 </style>

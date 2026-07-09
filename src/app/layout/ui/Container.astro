@@ -7,7 +7,14 @@ const { class: className } = Astro.props
 ---
 
 <div
-	class:list={['mx-auto', 'max-w-[1240px]', 'px-[3rem]', 'md:px-28', 'xl:px-0', className]}
+  class:list={[
+    'mx-auto',
+    'max-w-[1240px]',
+    'px-[3rem]',
+    'md:px-28',
+    'xl:px-0',
+    className,
+  ]}
 >
-	<slot />
+  <slot />
 </div>

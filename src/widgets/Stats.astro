@@ -2,34 +2,39 @@
 import Container from '@app/layout/ui/Container.astro'
 
 const stats = [
-	{ value: '98', label: 'Projects' },
-	{ value: '65', label: 'Clients' },
-	{ value: '10+', label: 'Years Exp' },
-	{ value: '15', label: 'Awards' },
+  { value: '98', label: 'Projects' },
+  { value: '65', label: 'Clients' },
+  { value: '10+', label: 'Years Exp' },
+  { value: '15', label: 'Awards' },
 ]
 ---
 
 <section
-	class="premium-section stats flex justify-center"
-	aria-label="Professional metrics"
+  class="premium-section stats flex justify-center"
+  aria-label="Professional metrics"
 >
-	<Container class="w-full !max-w-[1280px]">
-		<div class="stats-grid mx-auto grid w-full grid-cols-2 gap-[2.4rem] md:grid-cols-4">
-			{
-				stats.map((stat) => (
-					<article class="stats-card glass-panel relative flex min-h-[16.2rem] flex-col items-center justify-center overflow-hidden p-[2.4rem] text-center">
-						<span class="stats-card__ghost" aria-hidden="true">
-							{stat.value.replace('+', '')}
-						</span>
-						<strong>{stat.value}</strong>
-						<span>{stat.label}</span>
-					</article>
-				))
-			}
-		</div>
-	</Container>
+  <Container class="w-full !max-w-[1280px]">
+    <div
+      class="stats-grid mx-auto grid w-full grid-cols-2 gap-[2.4rem] md:grid-cols-4"
+    >
+      {
+        stats.map((stat) => (
+          <article class="stats-card glass-panel relative flex min-h-[16.2rem] flex-col items-center justify-center overflow-hidden p-[2.4rem] text-center">
+            <span
+              class="stats-card__ghost"
+              aria-hidden="true"
+            >
+              {stat.value.replace('+', '')}
+            </span>
+            <strong>{stat.value}</strong>
+            <span>{stat.label}</span>
+          </article>
+        ))
+      }
+    </div>
+  </Container>
 </section>
 
 <style lang="scss">
-	@use './scss/Stats.scss';
+  @use './scss/Stats.scss';
 </style>

@@ -3,89 +3,92 @@ import Container from '@app/layout/ui/Container.astro'
 import { Icon } from 'astro-icon/components'
 
 const testimonials = [
-	{
-		quote:
-			'Jesús transformed our complex requirements into a seamless, high-performance platform. His technical mastery and attention to detail are truly world-class.',
-		name: 'Jayesh Patil',
-		role: 'CEO, Lirante',
-		initials: 'JP',
-	},
-	{
-		quote:
-			'Working with Jesús was a game-changer for our startup. The architecture he built is not only scalable but incredibly intuitive for our users.',
-		name: 'Sarah Chen',
-		role: 'Product Director, Nexa',
-		initials: 'SC',
-	},
+  {
+    quote:
+      'Jesús transformed our complex requirements into a seamless, high-performance platform. His technical mastery and attention to detail are truly world-class.',
+    name: 'Jayesh Patil',
+    role: 'CEO, Lirante',
+    initials: 'JP',
+  },
+  {
+    quote:
+      'Working with Jesús was a game-changer for our startup. The architecture he built is not only scalable but incredibly intuitive for our users.',
+    name: 'Sarah Chen',
+    role: 'Product Director, Nexa',
+    initials: 'SC',
+  },
 ]
 ---
 
-<section class="premium-section testimonials" id="testimonials">
-	<Container class="!max-w-[1280px]">
-		<div
-			class="testimonials-header mb-[6.4rem] flex flex-col items-start gap-[1.6rem]"
-		>
-			<span class="premium-badge">Testimonials</span>
-			<h2 class="premium-title">
-				Testimonials that Speak to <span class="text-luminous">Results</span>
-			</h2>
-			<p class="premium-copy">
-				A collection of thoughts and experiences from clients and collaborators
-				I've had the pleasure of working with.
-			</p>
-		</div>
+<section
+  class="premium-section testimonials"
+  id="testimonials"
+>
+  <Container class="!max-w-[1280px]">
+    <div
+      class="testimonials-header mb-[6.4rem] flex flex-col items-start gap-[1.6rem]"
+    >
+      <span class="premium-badge">Testimonials</span>
+      <h2 class="premium-title">
+        Testimonials that Speak to <span class="text-luminous">Results</span>
+      </h2>
+      <p class="premium-copy">
+        A collection of thoughts and experiences from clients and collaborators
+        I've had the pleasure of working with.
+      </p>
+    </div>
 
-		<div
-			class="testimonials-grid grid grid-cols-2 gap-[2.4rem] max-[820px]:grid-cols-1"
-		>
-			{testimonials.map((testimonial) => (
-					<article class="testimonial-card glass-card mouse-track-container group flex flex-col p-[3.2rem] max-[820px]:p-[2.8rem]">
-						<div class="glow-overlay" />
-						<div
-							class="testimonial-card__stars relative z-[1] mb-[1.6rem] flex gap-[0.4rem]"
-						>
-							{Array.from({ length: 5 }).map(() => (
-								<Icon name="heroicons:star-20-solid" />
-							))}
-						</div>
-						<p>“{testimonial.quote}”</p>
-						<a
-							class="testimonial-card__link group/link relative z-[1] mb-[2.4rem] mt-auto inline-flex w-fit items-center gap-[0.8rem]"
-							href="#portfolio"
-						>
-							<span>Visit site</span>
-							<Icon name="heroicons:arrow-top-right-on-square-20-solid" />
-						</a>
-						<div class="testimonial-card__author relative z-[1] flex items-center gap-[1.6rem]">
-							<span class="grid h-[4.8rem] w-[4.8rem] place-items-center">
-								{testimonial.initials}
-							</span>
-							<div>
-								<h3>{testimonial.name}</h3>
-								<strong>{testimonial.role}</strong>
-							</div>
-						</div>
-					</article>
-				))}
-		</div>
-	</Container>
+    <div
+      class="testimonials-grid grid grid-cols-2 gap-[2.4rem] max-[820px]:grid-cols-1"
+    >
+      {
+        testimonials.map((testimonial) => (
+          <article class="testimonial-card glass-card mouse-track-container group flex flex-col p-[3.2rem] max-[820px]:p-[2.8rem]">
+            <div class="glow-overlay" />
+            <div class="testimonial-card__stars relative z-[1] mb-[1.6rem] flex gap-[0.4rem]">
+              {Array.from({ length: 5 }).map(() => (
+                <Icon name="heroicons:star-20-solid" />
+              ))}
+            </div>
+            <p>“{testimonial.quote}”</p>
+            <a
+              class="testimonial-card__link group/link relative z-[1] mt-auto mb-[2.4rem] inline-flex w-fit items-center gap-[0.8rem]"
+              href="#portfolio"
+            >
+              <span>Visit site</span>
+              <Icon name="heroicons:arrow-top-right-on-square-20-solid" />
+            </a>
+            <div class="testimonial-card__author relative z-[1] flex items-center gap-[1.6rem]">
+              <span class="grid h-[4.8rem] w-[4.8rem] place-items-center">
+                {testimonial.initials}
+              </span>
+              <div>
+                <h3>{testimonial.name}</h3>
+                <strong>{testimonial.role}</strong>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </Container>
 </section>
 
 <style lang="scss">
-	@use './scss/Testimonials.scss';
+  @use './scss/Testimonials.scss';
 </style>
 
 <script>
-const testimonialCards = document.querySelectorAll('.testimonial-card')
+  const testimonialCards = document.querySelectorAll('.testimonial-card')
 
-testimonialCards.forEach((card) => {
-	if (!(card instanceof HTMLElement)) return
+  testimonialCards.forEach((card) => {
+    if (!(card instanceof HTMLElement)) return
 
-	card.addEventListener('mousemove', (event) => {
-		const rect = card.getBoundingClientRect()
+    card.addEventListener('mousemove', (event) => {
+      const rect = card.getBoundingClientRect()
 
-		card.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`)
-		card.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`)
-	})
-})
+      card.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`)
+      card.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`)
+    })
+  })
 </script>
