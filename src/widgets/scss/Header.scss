@@ -32,6 +32,21 @@
   }
 
   &-visual {
+    width: min(100%, 42rem);
+    height: 24rem;
+    margin: 1rem auto 0;
+
+    @media (min-width: 640px) {
+      width: min(100%, 54rem);
+      height: 32rem;
+    }
+
+    @media (min-width: 901px) {
+      width: auto;
+      height: 50rem;
+      margin: 0;
+    }
+
     &__inner {
       border-radius: 1.6rem;
       background: rgba(31, 30, 45, 0.38);
