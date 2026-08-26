@@ -13,27 +13,18 @@ import FooterSocials from '@widgets/ui/FooterSocials.astro'
     <div class="footer-grid grid gap-[4rem] max-[767px]:gap-[4rem]">
       <h2 class="footer-title">Let's Connect there</h2>
       <div class="footer-brand__logo flex items-center">
-        <img
-          src={logoHeaderUrl}
-          alt="Jesús Chacón logo"
-        />
+        <img src={logoHeaderUrl} alt="Jesús Chacón logo" />
         <p class="footer-brand__description">
           Building exceptional digital experiences with engineering mastery and
           clean design.
         </p>
         <FooterSocials class="max-md:hidden" />
       </div>
-      <a
-        class="footer-cta__button btn-primary-premium"
-        href="#contact"
-      >
+      <a class="footer-cta__button btn-primary-premium" href="#contact">
         Hire me <Icon name="heroicons:arrow-up-right-20-solid" />
       </a>
       <div class="footer-links-group">
-        <nav
-          class="footer-nav"
-          aria-label="Footer navigation"
-        >
+        <nav class="footer-nav" aria-label="Footer navigation">
           <h4>Navigation</h4>
           <FooterNavigationList />
         </nav>
@@ -52,10 +43,7 @@ import FooterSocials from '@widgets/ui/FooterSocials.astro'
             placeholder="Email Address"
             aria-label="Email Address"
           />
-          <button
-            type="submit"
-            aria-label="Subscribe"
-          >
+          <button type="submit" aria-label="Subscribe">
             <Icon name="iconamoon:send-fill" />
           </button>
         </div>

@@ -3,10 +3,7 @@ import Container from '@app/layout/ui/Container.astro'
 import { Icon } from 'astro-icon/components'
 ---
 
-<section
-  class="premium-section contact"
-  id="contact"
->
+<section class="premium-section contact" id="contact">
   <Container class="!max-w-[1280px]">
     <div
       class="contact-grid grid grid-cols-[minmax(0,7fr)_minmax(36rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1"
@@ -48,13 +45,9 @@ import { Icon } from 'astro-icon/components'
               id="message"
               name="message"
               placeholder="Tell me about your project..."
-              required
-            ></textarea>
+              required></textarea>
           </label>
-          <button
-            class="btn-primary-premium justify-self-start"
-            type="submit"
-          >
+          <button class="btn-primary-premium justify-self-start" type="submit">
             Send Message
           </button>
         </form>

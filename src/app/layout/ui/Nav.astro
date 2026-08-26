@@ -23,31 +23,17 @@ const mobileNavItems = [
 ]
 ---
 
-<nav
-  class="nav fixed top-0 z-50 w-full"
-  id="site-nav"
->
+<nav class="nav fixed top-0 z-50 w-full" id="site-nav">
   <Container class="!max-w-[1280px]">
     <div class="nav-container">
-      <a
-        class="nav-logo nav-logo--desktop"
-        href="/"
-        aria-label="Go to home"
-      >
+      <a class="nav-logo nav-logo--desktop" href="/" aria-label="Go to home">
         <LOGOHEADER />
       </a>
-      <a
-        class="nav-logo nav-logo--mobile"
-        href="/"
-        aria-label="Go to home"
-      >
+      <a class="nav-logo nav-logo--mobile" href="/" aria-label="Go to home">
         <LOGOHEADERMOBILE />
       </a>
 
-      <div
-        class="nav-links"
-        aria-label="Primary navigation"
-      >
+      <div class="nav-links" aria-label="Primary navigation">
         {
           navItems.map((item, index) => (
             <a
@@ -82,11 +68,7 @@ const mobileNavItems = [
     data-open="false"
     aria-hidden="true"
   >
-    <div
-      class="mobile-menu__backdrop"
-      data-mobile-menu-close
-    >
-    </div>
+    <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
     <div
       class="mobile-menu__panel"
       role="dialog"
@@ -100,23 +82,14 @@ const mobileNavItems = [
           aria-label="Close navigation menu"
           id="menu-close-btn"
         >
-          <Icon
-            class="text-[2rem]"
-            name="heroicons:x-mark-16-solid"
-          />
+          <Icon class="text-[2rem]" name="heroicons:x-mark-16-solid" />
         </button>
       </div>
 
-      <div
-        class="mobile-menu__links"
-        aria-label="Mobile navigation links"
-      >
+      <div class="mobile-menu__links" aria-label="Mobile navigation links">
         {
           mobileNavItems.map((item) => (
-            <a
-              class="mobile-menu__item"
-              href={item.href}
-            >
+            <a class="mobile-menu__item" href={item.href}>
               {item.label}
             </a>
           ))

@@ -23,97 +23,36 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin)
       name="keywords"
       content="Jesús Chacón, Frontend Developer, Ingeniero en Informática, Desarrollo Frontend, JavaScript, React, Astro JS, Next.js, Tailwind CSS, TypeScript, Vercel, Git, SEO, Google Analytics, diseño UX/UI, soluciones web personalizadas, creación de experiencias web, optimización web, Desarrollador Web, Experiencia de Usuario, Código Limpio"
     />
-    <meta
-      name="description"
-      content={description}
-    />
-    <meta
-      name="viewport"
-      content="width=device-width"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Sora:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/favicon.svg"
-    />
-    <link
-      rel="canonical"
-      href={canonicalURL.href}
-    />
-    <meta
-      name="generator"
-      content={Astro.generator}
-    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL.href} />
+    <meta name="generator" content={Astro.generator} />
 
     <!-- Open Graph -->
-    <meta
-      property="og:type"
-      content="website"
-    />
-    <meta
-      property="og:title"
-      content={title}
-    />
-    <meta
-      property="og:description"
-      content={description}
-    />
-    <meta
-      property="og:url"
-      content={canonicalURL.href}
-    />
-    {
-      image && (
-        <meta
-          property="og:image"
-          content={image}
-        />
-      )
-    }
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.href} />
+    {image && <meta property="og:image" content={image} />}
 
     <!-- Twitter Card -->
-    <meta
-      name="twitter:card"
-      content="summary_large_image"
-    />
-    <meta
-      name="twitter:title"
-      content={title}
-    />
-    <meta
-      name="twitter:description"
-      content={description}
-    />
-    {
-      image && (
-        <meta
-          name="twitter:image"
-          content={image}
-        />
-      )
-    }
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {image && <meta name="twitter:image" content={image} />}
 
     <title>{title}</title>
   </head>
   <body>
     <!-- Page Loader -->
-    <div
-      id="page-loader"
-      aria-hidden="true"
-    >
+    <div id="page-loader" aria-hidden="true">
       <div class="loader-content">
         <div class="loader-spinner">
           <div class="loader-ring"></div>

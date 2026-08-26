@@ -8,20 +8,13 @@ import { Icon } from 'astro-icon/components'
 <Layout title="404 - Page Not Found | JESÚS CHACÓN">
   <main>
     <section class="not-found relative flex items-center overflow-hidden">
-      <div
-        class="not-found__grid"
-        aria-hidden="true"
-      >
-      </div>
+      <div class="not-found__grid" aria-hidden="true"></div>
 
       <!-- Content -->
       <Container>
         <div class="not-found__content relative z-10">
           <AnimationFade translateY={30}>
-            <div
-              class="not-found__visual"
-              aria-hidden="true"
-            >
+            <div class="not-found__visual" aria-hidden="true">
               <div class="not-found__visual-glow"></div>
               <div class="not-found__panel">
                 <div class="not-found__panel-gradient"></div>
@@ -50,17 +43,11 @@ import { Icon } from 'astro-icon/components'
           <div class="not-found__copy">
             <AnimationFade translateY={-30}>
               <p class="not-found__eyebrow">System Interrupt</p>
-              <p
-                class="not-found__title"
-                aria-hidden="true"
-              >
+              <p class="not-found__title" aria-hidden="true">
                 4<span class="not-found__zero">0</span>4
               </p>
             </AnimationFade>
-            <AnimationFade
-              translateY={30}
-              delay={0.4}
-            >
+            <AnimationFade translateY={30} delay={0.4}>
               <h1 class="not-found__heading">
                 Engineering Error: <br />
                 <span>Page Not Found</span>
@@ -71,15 +58,9 @@ import { Icon } from 'astro-icon/components'
                 repository.
               </p>
             </AnimationFade>
-            <AnimationFade
-              translateY={30}
-              delay={0.7}
-            >
+            <AnimationFade translateY={30} delay={0.7}>
               <div class="not-found__actions">
-                <a
-                  href="/"
-                  class="not-found__btn btn-primary-premium"
-                >
+                <a href="/" class="not-found__btn btn-primary-premium">
                   <Icon name="heroicons:home-20-solid" />
                   Back to Portfolio
                 </a>

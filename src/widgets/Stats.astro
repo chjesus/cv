@@ -20,10 +20,7 @@ const stats = [
       {
         stats.map((stat) => (
           <article class="stats-card glass-panel relative flex min-h-[16.2rem] flex-col items-center justify-center overflow-hidden p-[2.4rem] text-center">
-            <span
-              class="stats-card__ghost"
-              aria-hidden="true"
-            >
+            <span class="stats-card__ghost" aria-hidden="true">
               {stat.value.replace('+', '')}
             </span>
             <strong>{stat.value}</strong>
