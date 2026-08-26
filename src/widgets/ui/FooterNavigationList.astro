@@ -1,0 +1,19 @@
+---
+const navItems = ['Home', 'About', 'Services', 'Portfolio']
+---
+
+<ul class="footer-navigation-list">
+  {
+    navItems.map((item) => (
+      <li>
+        <a href={item === 'Home' ? '#home' : `#${item.toLowerCase()}`}>
+          {item}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style lang="scss">
+  @use './scss/FooterNavigationList.scss';
+</style>

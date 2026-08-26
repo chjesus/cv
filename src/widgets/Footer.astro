@@ -1,89 +1,46 @@
 ---
 import { Icon } from 'astro-icon/components'
-import LOGOHEADER from '@shared/assets/img/logo_white.svg'
-import Container from '@app/layout/ui/Container.astro'
 
-const navItems = ['Home', 'About', 'Services', 'Portfolio']
+import Container from '@app/layout/ui/Container.astro'
+import logoHeaderUrl from '@shared/assets/img/logo_white.svg?url'
+import FooterContactList from '@widgets/ui/FooterContactList.astro'
+import FooterNavigationList from '@widgets/ui/FooterNavigationList.astro'
+import FooterSocials from '@widgets/ui/FooterSocials.astro'
 ---
 
 <footer class="footer w-full">
   <Container class="!max-w-[1280px]">
-    <div
-      class="footer-cta mb-[6.4rem] flex w-full items-center justify-between gap-[3.2rem] max-[900px]:flex-col max-[900px]:items-start"
-    >
-      <h2>Let's Connect there</h2>
+    <div class="footer-grid grid gap-[4rem] max-[900px]:gap-[4rem]">
+      <h2 class="footer-title">Let's Connect there</h2>
+      <div class="footer-brand__logo flex items-center">
+        <img
+          src={logoHeaderUrl}
+          alt="Jesús Chacón logo"
+        />
+        <p class="footer-brand__description">
+          Building exceptional digital experiences with engineering mastery and
+          clean design.
+        </p>
+        <FooterSocials class="max-md:hidden" />
+      </div>
       <a
         class="footer-cta__button btn-primary-premium"
         href="#contact"
       >
         Hire me <Icon name="heroicons:arrow-up-right-20-solid" />
       </a>
-    </div>
-
-    <div
-      class="footer-grid grid grid-cols-5 gap-[4.8rem] max-[900px]:grid-cols-1 max-[900px]:gap-[4rem]"
-    >
-      <div class="footer-brand col-span-2 flex flex-col gap-[2.4rem]">
-        <div class="footer-brand__logo flex h-[4.8rem] items-center">
-          <LOGOHEADER />
+      <div class="footer-links-group">
+        <nav
+          class="footer-nav"
+          aria-label="Footer navigation"
+        >
+          <h4>Navigation</h4>
+          <FooterNavigationList />
+        </nav>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <FooterContactList />
         </div>
-        <p>
-          Building exceptional digital experiences with engineering mastery and
-          clean design.
-        </p>
-        <div class="footer-socials flex gap-[1.6rem]">
-          <a
-            href="https://github.com/chjesus"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-          >
-            <Icon name="heroicons:code-bracket-square-20-solid" />
-          </a>
-          <a
-            href="https://x.com/ch__jesus"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="X profile"
-          >
-            <Icon name="heroicons:bolt-20-solid" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/jesus-chacon-510643162/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-          >
-            <Icon name="heroicons:briefcase-20-solid" />
-          </a>
-        </div>
-      </div>
-
-      <nav
-        class="footer-nav"
-        aria-label="Footer navigation"
-      >
-        <h4>Navigation</h4>
-        <ul>
-          {
-            navItems.map((item) => (
-              <li>
-                <a href={item === 'Home' ? '#home' : `#${item.toLowerCase()}`}>
-                  {item}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
-
-      <div class="footer-contact">
-        <h4>Contact</h4>
-        <ul>
-          <li>+57 available on request</li>
-          <li>jesus_chacon@gmail.com</li>
-          <li>chjesus.dev</li>
-        </ul>
       </div>
 
       <form class="footer-newsletter">
@@ -103,24 +60,26 @@ const navItems = ['Home', 'About', 'Services', 'Portfolio']
           </button>
         </div>
       </form>
-    </div>
-
-    <div
-      class="footer-bottom mt-[6.4rem] flex w-full items-center justify-between gap-[1.6rem] pt-[3.2rem] pb-[2rem] max-[900px]:flex-col max-[900px]:items-start"
-    >
-      <p>Copyright© 2026 Jesús Chacón. All Rights Reserved.</p>
-      <div class="footer-bottom__links flex gap-[2.4rem]">
-        <a
-          href="mailto:jesus_chacon@gmail.com?subject=User%20Terms%20%26%20Conditions"
-        >
-          User Terms & Conditions
-        </a>
-        <a href="mailto:jesus_chacon@gmail.com?subject=Privacy%20Policy">
-          Privacy Policy
-        </a>
-      </div>
+      <FooterSocials class="md:hidden" />
     </div>
   </Container>
+  <div class="footer-bottom mt-[6.4rem] gap-[1.6rem] py-[2rem]">
+    <Container class="!max-w-[1280px]">
+      <div class="footer-bottom__copyright gap-[1.6rem]">
+        <p>Copyright© 2026 Jesús Chacón. All Rights Reserved.</p>
+        <div class="footer-bottom__links flex gap-[2.4rem]">
+          <a
+            href="mailto:jesus_chacon@gmail.com?subject=User%20Terms%20%26%20Conditions"
+          >
+            User Terms & Conditions
+          </a>
+          <a href="mailto:jesus_chacon@gmail.com?subject=Privacy%20Policy">
+            Privacy Policy
+          </a>
+        </div>
+      </div>
+    </Container>
+  </div>
 </footer>
 
 <style lang="scss">

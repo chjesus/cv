@@ -1,0 +1,40 @@
+---
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
+---
+
+<div class:list={['footer-socials flex gap-[1.6rem]', className]}>
+  <a
+    href="https://github.com/chjesus"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="GitHub profile"
+  >
+    <Icon name="heroicons:code-bracket-square-20-solid" />
+  </a>
+  <a
+    href="https://x.com/ch__jesus"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="X profile"
+  >
+    <Icon name="heroicons:bolt-20-solid" />
+  </a>
+  <a
+    href="https://www.linkedin.com/in/jesus-chacon-510643162/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn profile"
+  >
+    <Icon name="heroicons:briefcase-20-solid" />
+  </a>
+</div>
+
+<style lang="scss">
+  @use './scss/FooterSocials.scss';
+</style>

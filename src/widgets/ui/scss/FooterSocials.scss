@@ -1,0 +1,23 @@
+.footer-socials {
+  order: 8;
+  justify-self: center;
+
+  @media (min-width: 768px) {
+    order: 6;
+    justify-self: flex-start;
+  }
+
+  a {
+    color: var(--text-muted);
+    font-size: 4rem;
+    transition: color 0.2s ease;
+
+    @media (min-width: 768px) {
+      font-size: 2rem;
+    }
+
+    &:hover {
+      color: var(--primary);
+    }
+  }
+}
