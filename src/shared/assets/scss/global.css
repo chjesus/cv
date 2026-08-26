@@ -65,7 +65,7 @@
 @layer utilities {
   .premium-section {
     position: relative;
-    padding-block: clamp(8rem, 9vw, 12rem);
+    padding-block: clamp(9rem, 9vw, 12rem);
   }
 
   .premium-badge {

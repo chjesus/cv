@@ -5,48 +5,48 @@ import HeroLanguage from '@widgets/ui/HeroLanguage.astro'
 import { Icon } from 'astro-icon/components'
 ---
 
-<header
-  class="premium-section hero flex min-h-[92rem] items-center pt-[13rem] max-[900px]:min-h-0 max-[900px]:pt-[15rem] max-[900px]:text-left"
-  id="home"
->
-  <Container class="hero-shell !max-w-[1280px]">
-    <div class="hero-glow" aria-hidden="true"></div>
-    <div
-      class="hero-grid relative grid grid-cols-[minmax(0,7fr)_minmax(34rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1"
-    >
+<header class="premium-section hero max-[900px]:text-left" id="home">
+  <Container class="!max-w-[1280px]">
+    <div class="hero-shell">
+      <div class="hero-glow" aria-hidden="true"></div>
       <div
-        class="hero-copy relative z-[1] flex flex-col items-start gap-[2.4rem]"
-      >
-        <span class="premium-badge">Hello There</span>
-        <h1 class="premium-display">
-          Engineering <br />
-          <span class="text-luminous">Mastery</span> into <br />
-          Website Creations
-        </h1>
-        <p class="premium-copy hero-description mt-[1.6rem] max-w-[60rem]">
-          I build high-performance, scalable web applications with a focus on
-          exceptional user experiences and robust architecture. Senior Dev
-          Portfolio. Built with Quiet Confidence.
-        </p>
-        <div class="hero-actions mt-[1.6rem] flex flex-wrap gap-[1.6rem]">
-          <a class="btn-primary-premium" href="#contact">
-            Hire me <Icon name="formkit:arrowright" />
-          </a>
-          <a class="btn-secondary-premium" href="#portfolio">View Portfolio</a>
-        </div>
-      </div>
-
-      <div
-        class="hero-visual relative h-[50rem] max-[900px]:hidden"
-        aria-label="Developer workspace illustration"
+        class="hero-grid relative grid grid-cols-[minmax(0,7fr)_minmax(34rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1"
       >
         <div
-          class="hero-visual__inner glass-card absolute inset-0 grid place-items-center"
+          class="hero-copy relative z-[1] flex flex-col items-start gap-[2.4rem]"
         >
-          <div class="hero-visual__wash"></div>
-          <IMAGEHEADER
-            class="hero-visual__image relative z-[1] h-auto max-h-[88%] w-[92%] object-contain"
-          />
+          <span class="premium-badge">Hello There</span>
+          <h1 class="premium-display">
+            Engineering <br />
+            <span class="text-luminous">Mastery</span> into <br />
+            Website Creations
+          </h1>
+          <p class="premium-copy hero-description mt-[1.6rem] max-w-[60rem]">
+            I build high-performance, scalable web applications with a focus on
+            exceptional user experiences and robust architecture. Senior Dev
+            Portfolio. Built with Quiet Confidence.
+          </p>
+          <div class="hero-actions mt-[1.6rem] flex flex-wrap gap-[1.6rem]">
+            <a class="btn-primary-premium" href="#contact">
+              Hire me <Icon name="formkit:arrowright" />
+            </a>
+            <a class="btn-secondary-premium" href="#portfolio">View Portfolio</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="hero-visual relative h-[50rem] max-[900px]:hidden"
+          aria-label="Developer workspace illustration"
+        >
+          <div
+            class="hero-visual__inner glass-card absolute inset-0 grid place-items-center"
+          >
+            <div class="hero-visual__wash"></div>
+            <IMAGEHEADER
+              class="hero-visual__image relative z-[1] h-auto max-h-[88%] w-[92%] object-contain"
+            />
+          </div>
         </div>
       </div>
     </div>
