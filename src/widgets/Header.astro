@@ -5,16 +5,14 @@ import HeroLanguage from '@widgets/ui/HeroLanguage.astro'
 import { Icon } from 'astro-icon/components'
 ---
 
-<header class="premium-section hero max-[900px]:text-left" id="home">
+<header class="premium-section hero" id="home">
   <Container class="!max-w-[1280px]">
     <div class="hero-shell">
       <div class="hero-glow" aria-hidden="true"></div>
       <div
         class="hero-grid relative grid grid-cols-[minmax(0,7fr)_minmax(34rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1"
       >
-        <div
-          class="hero-copy relative z-[1] flex flex-col items-start gap-[2.4rem]"
-        >
+        <div class="hero-copy relative z-[1] flex flex-col gap-[2.4rem]">
           <span class="premium-badge">Hello There</span>
           <h1 class="premium-display">
             Engineering <br />

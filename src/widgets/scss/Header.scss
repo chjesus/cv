@@ -1,12 +1,19 @@
 .hero {
-  display: flex;
-  align-items: center;
   min-height: 0;
+  text-align: center;
 
   @media (min-width: 992px) {
     min-height: 92rem;
+    text-align: left;
   }
 
+  &-copy {
+    align-items: center;
+
+    @media (min-width: 992px) {
+      align-items: flex-start;
+    }
+  }
   &-shell {
     position: relative;
     display: flex;
