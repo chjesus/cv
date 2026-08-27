@@ -19,7 +19,7 @@ const skills = [
       class="about-grid grid grid-cols-[minmax(28rem,5fr)_minmax(0,7fr)] items-center gap-[10.4rem] max-[820px]:grid-cols-1"
     >
       <figure
-        class="about-image glass-panel max-[820px]:mx-auto max-[820px]:max-w-[38rem]"
+        class="about-image glass-panel max-[820px]:order-2 max-[820px]:mx-auto max-[820px]:max-w-[38rem]"
       >
         <img
           src="/img/profile.png"
@@ -29,7 +29,9 @@ const skills = [
         />
       </figure>
 
-      <div class="about-content flex flex-col items-start gap-[2.4rem]">
+      <div
+        class="about-content flex flex-col items-start gap-[2.4rem] max-[820px]:order-1"
+      >
         <span class="premium-badge">About me</span>
         <h2 class="premium-title">
           <span class="text-luminous">JESÚS</span>
