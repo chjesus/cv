@@ -50,6 +50,16 @@ const columns = [
                     <h3>{item.company}</h3>
                     <span>{item.period}</span>
                     <p>{item.info}</p>
+                    {item.certificateUrl && (
+                      <a
+                        class="experience-item__certificate"
+                        href={item.certificateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Ver certificado
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}

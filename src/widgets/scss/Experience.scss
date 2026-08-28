@@ -35,5 +35,21 @@
       font-size: 1.6rem;
       line-height: 1.6;
     }
+
+    &__certificate {
+      display: inline-flex;
+      margin-top: 0.8rem;
+      color: var(--primary);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--magenta-spark);
+      }
+    }
   }
 }
