@@ -19,7 +19,12 @@ import { Icon } from 'astro-icon/components'
           tiempo completo.
         </p>
 
-        <form class="contact-form grid w-full gap-[2.4rem]">
+        <form
+          class="contact-form grid w-full gap-[2.4rem]"
+          action="/api/contact"
+          method="POST"
+          data-contact-form
+        >
           <label class="grid gap-[0.8rem]">
             <span>Nombre</span>
             <input
@@ -48,9 +53,19 @@ import { Icon } from 'astro-icon/components'
               placeholder="Cuéntame sobre tu proyecto..."
               required></textarea>
           </label>
-          <button class="btn-primary-premium justify-self-start" type="submit">
+          <button
+            class="btn-primary-premium justify-self-start"
+            type="submit"
+            data-contact-submit
+          >
             Enviar Mensaje
           </button>
+          <p
+            class="contact-form__status"
+            data-contact-status
+            aria-live="polite"
+          >
+          </p>
         </form>
       </div>
 
@@ -72,3 +87,48 @@ import { Icon } from 'astro-icon/components'
 <style lang="scss">
   @use './scss/Contact.scss';
 </style>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-contact-form]')
+  const submitButton = document.querySelector<HTMLButtonElement>(
+    '[data-contact-submit]',
+  )
+  const statusMessage = document.querySelector<HTMLElement>(
+    '[data-contact-status]',
+  )
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault()
+
+    if (!statusMessage || !submitButton) return
+
+    submitButton.disabled = true
+    statusMessage.dataset.state = 'loading'
+    statusMessage.textContent = 'Enviando mensaje...'
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+      })
+      const result = (await response.json()) as { message?: string }
+
+      if (!response.ok) {
+        throw new Error(result.message ?? 'No se pudo enviar el mensaje.')
+      }
+
+      statusMessage.dataset.state = 'success'
+      statusMessage.textContent =
+        result.message ?? 'Mensaje enviado correctamente.'
+      form.reset()
+    } catch (error) {
+      statusMessage.dataset.state = 'error'
+      statusMessage.textContent =
+        error instanceof Error
+          ? error.message
+          : 'No se pudo enviar el mensaje. Inténtalo nuevamente.'
+    } finally {
+      submitButton.disabled = false
+    }
+  })
+</script>
