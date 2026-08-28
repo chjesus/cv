@@ -9,6 +9,11 @@ export type ExperienceItem = {
   info: string
   period: string
   company: string
+  periodLink?: {
+    label: string
+    url: string
+  }
+  responsibilities?: string[]
   certificateUrl?: string
 }
 
@@ -32,19 +37,33 @@ export const PROJECTS: Project[] = [
 
 export const EXPERIENCE_WORK_LIST: ExperienceItem[] = [
   {
-    info: 'Lideré arquitectura frontend, iniciativas de rendimiento y estándares de entrega para plataformas web modernas.',
-    period: '2020 - Presente',
-    company: 'Desarrollador Senior en TechCorp',
+    info: 'Desarrollo frontend de interfaces web y móviles, con foco en arquitectura, escalabilidad y experiencia de usuario.',
+    period: 'Mayo 2021 - Agosto 2026 | Zalvadora',
+    company: 'Frontend Web Developer',
+    responsibilities: [
+      'Creación de interfaces de usuario con HTML, CSS y JavaScript en CodeIgniter.',
+      'Desarrollo frontend de una aplicación móvil con Ionic.',
+      'Diseño e implementación de arquitectura FSD en una aplicación web con ReactJS y Vite.',
+    ],
   },
   {
-    info: 'Desarrollé integraciones robustas con APIs y dashboards interactivos en React para clientes empresariales.',
-    period: '2017 - 2020',
-    company: 'Ingeniero Full-Stack en WebSolutions',
+    info: 'Desarrollo frontend freelance para proyectos web, componentes ReactJS e interfaces multilenguaje.',
+    period: 'Junio 2020 - Abril 2021',
+    company: 'Freelance',
+    periodLink: {
+      label: 'UpWork',
+      url: 'https://www.upwork.com/freelancers/~017ebfe65697f4f459',
+    },
+    responsibilities: [
+      'Conversión de mockups a interfaces funcionales con HTML, CSS y JavaScript.',
+      'Corrección y ajuste de componentes en ReactJS.',
+      'Creación de una web multilenguaje en ReactJS para muestras de perfumes de DIVAIN.',
+    ],
   },
   {
-    info: 'Construí interfaces en producción y herramientas internas con foco en confiabilidad y mantenibilidad.',
-    period: '2015 - 2017',
-    company: 'Desarrollador Frontend',
+    info: 'Creación de interfaces de usuario utilizando Angular.',
+    period: 'Febrero 2020 - Abril 2020 | Villartechnologies',
+    company: 'Frontend Developer',
   },
 ]
 

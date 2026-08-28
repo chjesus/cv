@@ -36,6 +36,35 @@
       line-height: 1.6;
     }
 
+    &__period-link {
+      display: inline-flex;
+      color: var(--primary);
+      font-weight: 700;
+      text-decoration: none;
+      text-underline-offset: 0.3rem;
+      transition:
+        color 180ms ease,
+        text-decoration-color 180ms ease;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--magenta-spark);
+        text-decoration: underline;
+        text-decoration-color: currentColor;
+      }
+    }
+
+    &__responsibilities {
+      display: grid;
+      gap: 0.8rem;
+      margin: 1.2rem 0 0;
+      padding-left: 1.8rem;
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      line-height: 1.6;
+      list-style: disc;
+    }
+
     &__certificate {
       display: inline-flex;
       margin-top: 0.8rem;
