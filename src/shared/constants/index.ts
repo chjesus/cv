@@ -13,54 +13,54 @@ export type ExperienceItem = {
 
 export const PROJECTS: Project[] = [
   {
-    date: 'October 2023',
-    title: 'E-Commerce Redesign',
-    subtitle: 'Modernized storefront with Next.js',
+    date: 'Octubre 2023',
+    title: 'Rediseño de E-Commerce',
+    subtitle: 'Tienda modernizada con Next.js',
   },
   {
-    date: 'March 2024',
-    title: 'Analytics Platform',
-    subtitle: 'Interactive product intelligence',
+    date: 'Marzo 2024',
+    title: 'Plataforma de Analítica',
+    subtitle: 'Inteligencia interactiva de producto',
   },
   {
-    date: 'June 2024',
-    title: 'SaaS Design System',
-    subtitle: 'Scalable component architecture',
+    date: 'Junio 2024',
+    title: 'Sistema de Diseño SaaS',
+    subtitle: 'Arquitectura de componentes escalable',
   },
 ]
 
 export const EXPERIENCE_WORK_LIST: ExperienceItem[] = [
   {
-    info: 'Led frontend architecture, performance initiatives, and delivery standards for modern web platforms.',
-    period: '2020 - Present',
-    company: 'Senior Developer at TechCorp',
+    info: 'Lideré arquitectura frontend, iniciativas de rendimiento y estándares de entrega para plataformas web modernas.',
+    period: '2020 - Presente',
+    company: 'Desarrollador Senior en TechCorp',
   },
   {
-    info: 'Developed robust API integrations and interactive React dashboards for enterprise clients.',
+    info: 'Desarrollé integraciones robustas con APIs y dashboards interactivos en React para clientes empresariales.',
     period: '2017 - 2020',
-    company: 'Full-Stack Engineer at WebSolutions',
+    company: 'Ingeniero Full-Stack en WebSolutions',
   },
   {
-    info: 'Built production interfaces and internal tooling with a focus on reliability and maintainability.',
+    info: 'Construí interfaces en producción y herramientas internas con foco en confiabilidad y mantenibilidad.',
     period: '2015 - 2017',
-    company: 'Frontend Developer',
+    company: 'Desarrollador Frontend',
   },
 ]
 
 export const EXPERIENCE_EDUCATION_LIST: ExperienceItem[] = [
   {
-    info: 'Specialized in distributed systems, software architecture, and scalable product foundations.',
+    info: 'Especialización en sistemas distribuidos, arquitectura de software y bases escalables para productos.',
     period: '2015 - 2017',
-    company: 'MSc Computer Science',
+    company: 'Maestría en Ciencias de la Computación',
   },
   {
-    info: 'Graduated with honors while building a strong base in engineering fundamentals and product delivery.',
+    info: 'Graduado con honores, construyendo una base sólida en fundamentos de ingeniería y entrega de producto.',
     period: '2011 - 2015',
-    company: 'BSc Software Engineering',
+    company: 'Ingeniería de Software',
   },
   {
-    info: 'Continuous learning across frontend performance, accessibility, architecture, and developer experience.',
-    period: 'Ongoing',
-    company: 'Professional Development',
+    info: 'Aprendizaje continuo en rendimiento frontend, accesibilidad, arquitectura y experiencia de desarrollo.',
+    period: 'En curso',
+    company: 'Desarrollo Profesional',
   },
 ]

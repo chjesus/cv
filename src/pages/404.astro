@@ -5,7 +5,7 @@ import Container from '@app/layout/ui/Container.astro'
 import { Icon } from 'astro-icon/components'
 ---
 
-<Layout title="404 - Page Not Found | JESÚS CHACÓN">
+<Layout title="404 - Página no encontrada | JESÚS CHACÓN">
   <main>
     <section class="not-found relative flex items-center overflow-hidden">
       <div class="not-found__grid" aria-hidden="true"></div>
@@ -31,7 +31,7 @@ import { Icon } from 'astro-icon/components'
                   decoding="async"
                 />
                 <div class="not-found__status-card">
-                  <p>Process Status</p>
+                  <p>Estado del proceso</p>
                   <div class="not-found__status-track">
                     <span></span>
                   </div>
@@ -42,27 +42,26 @@ import { Icon } from 'astro-icon/components'
 
           <div class="not-found__copy">
             <AnimationFade translateY={-30}>
-              <p class="not-found__eyebrow">System Interrupt</p>
+              <p class="not-found__eyebrow">Interrupción del sistema</p>
               <p class="not-found__title" aria-hidden="true">
                 4<span class="not-found__zero">0</span>4
               </p>
             </AnimationFade>
             <AnimationFade translateY={30} delay={0.4}>
               <h1 class="not-found__heading">
-                Engineering Error: <br />
-                <span>Page Not Found</span>
+                Error de ruta: <br />
+                <span>Página no encontrada</span>
               </h1>
               <p class="not-found__description">
-                It seems the module you're looking for has been deprecated or
-                moved to a different branch. Let's get you back to the main
-                repository.
+                Parece que el módulo que buscas fue descontinuado o movido a
+                otra rama. Volvamos al repositorio principal.
               </p>
             </AnimationFade>
             <AnimationFade translateY={30} delay={0.7}>
               <div class="not-found__actions">
                 <a href="/" class="not-found__btn btn-primary-premium">
                   <Icon name="heroicons:home-20-solid" />
-                  Back to Portfolio
+                  Volver al portafolio
                 </a>
                 <button
                   type="button"
@@ -70,17 +69,17 @@ import { Icon } from 'astro-icon/components'
                   data-history-back
                 >
                   <Icon name="heroicons:arrow-left-20-solid" />
-                  Go Back
+                  Regresar
                 </button>
               </div>
               <div class="not-found__meta">
                 <div>
-                  <p>Status Code</p>
-                  <strong>ERROR_ROUTE_UNDEFINED</strong>
+                  <p>Código de estado</p>
+                  <strong>RUTA_NO_DEFINIDA</strong>
                 </div>
                 <div>
-                  <p>Environment</p>
-                  <strong>PRODUCTION_SECURE</strong>
+                  <p>Entorno</p>
+                  <strong>PRODUCCION_SEGURA</strong>
                 </div>
               </div>
             </AnimationFade>

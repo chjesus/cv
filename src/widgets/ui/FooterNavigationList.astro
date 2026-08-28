@@ -1,14 +1,17 @@
 ---
-const navItems = ['Home', 'About', 'Services', 'Portfolio']
+const navItems = [
+  { label: 'Inicio', href: '#home' },
+  { label: 'Sobre mí', href: '#about' },
+  { label: 'Servicios', href: '#services' },
+  { label: 'Portafolio', href: '#portfolio' },
+]
 ---
 
 <ul class="footer-navigation-list">
   {
-    navItems.map((item) => (
+    navItems.map(({ label, href }) => (
       <li>
-        <a href={item === 'Home' ? '#home' : `#${item.toLowerCase()}`}>
-          {item}
-        </a>
+        <a href={href}>{label}</a>
       </li>
     ))
   }
