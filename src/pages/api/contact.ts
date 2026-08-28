@@ -43,7 +43,7 @@ export const POST: APIRoute = async ({ request }) => {
   const { error } = await resend.emails.send({
     from: import.meta.env.RESEND_FROM_EMAIL,
     to: [import.meta.env.CONTACT_TO_EMAIL],
-    subject: 'Nuevo mensaje desde jesuschacon.dev',
+    subject: `Nuevo mensaje de ${name} desde el formulario de contacto`,
     replyTo: email,
     template: {
       id: contactTemplateId,
