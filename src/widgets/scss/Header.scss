@@ -3,6 +3,8 @@
   text-align: center;
 
   @media (min-width: 992px) {
+    display: flex;
+    align-items: center;
     min-height: 92rem;
     text-align: left;
   }
