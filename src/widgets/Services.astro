@@ -6,10 +6,10 @@ import Container from '@app/layout/ui/Container.astro'
 const services = [
   {
     icon: 'heroicons:window-20-solid',
-    title: 'Diseño Web',
+    title: 'Desarrollo Frontend',
     description:
-      'Creando interfaces web atractivas, responsivas y centradas en el usuario que elevan tu marca.',
-    items: ['Diseño UI/UX', 'Prototipado', 'Sistemas de diseño'],
+      'Construyendo interfaces modernas, responsivas y escalables con foco en rendimiento y experiencia de usuario.',
+    items: ['ReactJS', 'HTML/CSS', 'Arquitectura frontend'],
   },
   {
     icon: 'heroicons:device-phone-mobile-20-solid',
@@ -17,16 +17,17 @@ const services = [
     description:
       'Construyendo aplicaciones móviles multiplataforma fluidas e intuitivas para iOS y Android.',
     items: ['React Native', 'Flutter', 'Publicación en App Store'],
+    isHidden: true,
   },
   {
     icon: 'heroicons:code-bracket-20-solid',
-    title: 'Desarrollo de Software',
+    title: 'Arquitectura de Interfaces',
     description:
-      'Desarrollando soluciones de software robustas y personalizadas según las necesidades de tu negocio.',
+      'Diseñando estructuras frontend mantenibles para aplicaciones web modernas, escalables y fáciles de evolucionar.',
     items: [
-      'Soluciones Full-Stack',
-      'Integración de APIs',
-      'Arquitectura Cloud',
+      'Feature-Sliced Design',
+      'Componentes reutilizables',
+      'Buenas prácticas',
     ],
   },
 ]
@@ -53,7 +54,12 @@ const services = [
     >
       {
         services.map((service) => (
-          <article class="service-card glass-card mouse-track-container flex min-h-[38rem] flex-col items-start p-[3.2rem]">
+          <article
+            class:list={[
+              'service-card glass-card mouse-track-container flex min-h-[38rem] flex-col items-start p-[3.2rem]',
+              service.isHidden && 'hidden',
+            ]}
+          >
             <div class="glow-overlay" />
             <div class="service-card__bar" />
             <span class="service-card__icon relative z-[2] grid h-[5.6rem] w-[5.6rem] place-items-center">
