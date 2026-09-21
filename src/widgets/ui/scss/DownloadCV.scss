@@ -1,0 +1,96 @@
+.download-cv {
+  position: fixed;
+  right: 1.6rem;
+  bottom: 1.6rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+  width: fit-content;
+  min-height: 4.2rem;
+  gap: 0.8rem;
+  padding: 0.8rem 1.3rem 0.8rem 0.9rem;
+  border: 1px solid rgba(208, 188, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(18, 18, 32, 0.8);
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(16px);
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background: linear-gradient(
+      110deg,
+      transparent 35%,
+      rgba(208, 188, 255, 0.22) 50%,
+      transparent 65%
+    );
+    pointer-events: none;
+    transform: translateX(-130%);
+    animation: download-cv-shimmer 4s ease-in-out infinite;
+  }
+
+  &:hover {
+    border-color: rgba(208, 188, 255, 0.45);
+    box-shadow: 0 1.4rem 3.6rem rgba(0, 0, 0, 0.3);
+    transform: translateY(-0.2rem);
+  }
+
+  &:focus-visible {
+    outline: 0.2rem solid var(--primary);
+    outline-offset: 0.3rem;
+  }
+
+  @media (max-width: 900px) {
+    right: 1rem;
+    bottom: 1.2rem;
+    min-height: 3.8rem;
+    padding: 0.7rem 1.1rem 0.7rem 0.8rem;
+    font-size: 1.1rem;
+  }
+
+  &__icon {
+    display: grid;
+    place-items: center;
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--primary), var(--magenta-spark));
+    box-shadow: 0 0 14px rgba(208, 188, 255, 0.26);
+    color: #19052c;
+
+    :global(svg) {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+
+    @media (max-width: 900px) {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
+  }
+}
+
+@keyframes download-cv-shimmer {
+  0%,
+  55% {
+    transform: translateX(-130%);
+  }
+
+  75%,
+  100% {
+    transform: translateX(130%);
+  }
+}

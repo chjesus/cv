@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<a
+  class="download-cv"
+  href="/CV-Frontend-Developer-Jesus-Chacon.pdf"
+  download
+  aria-label="Descargar currículum de Jesús Chacón en PDF"
+>
+  <span class="download-cv__icon" aria-hidden="true">
+    <Icon name="heroicons:arrow-down-tray-20-solid" />
+  </span>
+  <span>Descargar CV</span>
+</a>
+
+<style lang="scss">
+  @use './scss/DownloadCV.scss';
+</style>
