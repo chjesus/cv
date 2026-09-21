@@ -4,18 +4,27 @@ import { Icon } from 'astro-icon/components'
 
 const testimonials = [
   {
-    quote:
-      'Jesús transformó nuestros requerimientos complejos en una plataforma fluida y de alto rendimiento. Su dominio técnico y atención al detalle son verdaderamente de primer nivel.',
-    name: 'Jayesh Patil',
-    role: 'CEO de Lirante',
-    initials: 'JP',
+    quote: [
+      'Tuve la oportunidad de trabajar con Jesús como desarrollador Frontend y puedo recomendar ampliamente su trabajo.',
+      'Es una persona que se destaca tanto por su capacidad técnica como por su excelente actitud. Tiene mucha facilidad para entender los retos, proponer soluciones y llevarlas a la práctica de manera ágil y efectiva. Durante el tiempo que trabajamos juntos demostró ser muy resolutivo, autónomo y siempre dispuesto a aportar cuando el equipo lo necesitaba.',
+      'Además de ser técnicamente muy bueno, valoro especialmente su disposición, compromiso y forma de afrontar los desafíos. Es de esas personas con las que da gusto trabajar porque, ante un problema, se enfoca rápidamente en encontrar cómo resolverlo.',
+      'Sin duda, es un excelente profesional y una persona que recomendaría para cualquier equipo de desarrollo.',
+    ],
+    name: 'Fabian Devia Saenz',
+    role: 'Gerente de Tecnologia y Desarrollo',
+    initials: 'FD',
+    profileUrl: 'https://www.linkedin.com/in/fabian-devia-saenz-930850127/',
   },
   {
-    quote:
-      'Trabajar con Jesús fue un punto de inflexión para nuestra startup. La arquitectura que construyó no solo es escalable, sino también increíblemente intuitiva para nuestros usuarios.',
-    name: 'Sarah Chen',
-    role: 'Directora de Producto de Nexa',
-    initials: 'SC',
+    quote: [
+      'Jesus helped us build an interactive multi-language web application where our customers at https://divainparfums.es/ can access to choose free perfume samples.',
+      'He successfully integrated our product team, composed of UX/UI designers, backend, and product manager, and brought good ideas to the development.',
+      'We are very happy with his work and hope to count on him for future projects.',
+    ],
+    name: 'Tomas R. Pita',
+    role: 'Software Engineer',
+    initials: 'TP',
+    profileUrl: 'https://www.linkedin.com/in/tomasrpita/',
   },
 ]
 ---
@@ -36,7 +45,7 @@ const testimonials = [
     </div>
 
     <div
-      class="testimonials-grid grid grid-cols-2 gap-[2.4rem] max-[820px]:grid-cols-1"
+      class="testimonials-grid grid grid-cols-2 items-start gap-[2.4rem] max-[820px]:grid-cols-1"
     >
       {
         testimonials.map((testimonial) => (
@@ -47,10 +56,36 @@ const testimonials = [
                 <Icon name="heroicons:star-20-solid" />
               ))}
             </div>
-            <p>“{testimonial.quote}”</p>
+            <div
+              class:list={[
+                'testimonial-card__quote',
+                testimonial.quote.length > 1 && 'is-collapsed',
+              ]}
+              data-testimonial-quote
+            >
+              {testimonial.quote.map((paragraph, index) => (
+                <p>
+                  {index === 0 && '“'}
+                  {paragraph}
+                  {index === testimonial.quote.length - 1 && '”'}
+                </p>
+              ))}
+            </div>
+            {testimonial.quote.length > 1 && (
+              <button
+                class="testimonial-card__toggle"
+                type="button"
+                data-testimonial-toggle
+                aria-expanded="false"
+              >
+                Mostrar más...
+              </button>
+            )}
             <a
               class="testimonial-card__link group/link relative z-[1] mt-auto mb-[2.4rem] inline-flex w-fit items-center gap-[0.8rem]"
-              href="#portfolio"
+              href={testimonial.profileUrl ?? '#portfolio'}
+              target={testimonial.profileUrl ? '_blank' : undefined}
+              rel={testimonial.profileUrl ? 'noopener noreferrer' : undefined}
             >
               <span>Visitar sitio</span>
               <Icon name="heroicons:arrow-top-right-on-square-20-solid" />
@@ -86,6 +121,27 @@ const testimonials = [
 
       card.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`)
       card.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`)
+    })
+  })
+
+  const testimonialToggles = document.querySelectorAll(
+    '[data-testimonial-toggle]',
+  )
+
+  testimonialToggles.forEach((toggle) => {
+    if (!(toggle instanceof HTMLButtonElement)) return
+
+    toggle.addEventListener('click', () => {
+      const card = toggle.closest('.testimonial-card')
+      const quote = card?.querySelector('[data-testimonial-quote]')
+
+      if (!(quote instanceof HTMLElement)) return
+
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true'
+
+      quote.classList.toggle('is-collapsed', isExpanded)
+      toggle.setAttribute('aria-expanded', String(!isExpanded))
+      toggle.textContent = isExpanded ? 'Mostrar más...' : 'Mostrar menos'
     })
   })
 </script>
