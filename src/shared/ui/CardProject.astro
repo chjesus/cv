@@ -8,6 +8,7 @@ type Props = {
   image?: string
   imageAlt?: string
   url?: string
+  feedbackUrl?: string
   techs?: string[]
   type: 'even' | 'odd'
 }
@@ -19,6 +20,7 @@ const {
   image,
   imageAlt,
   url,
+  feedbackUrl,
   techs = [],
   type,
 } = Astro.props
@@ -57,16 +59,31 @@ const DEFAULT_IMAGE =
       )
     }
     {
-      url && (
-        <a
-          class="card-project__link mt-[1.6rem] inline-flex"
-          href={url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Ir al sitio de ${title} (se abre en una nueva pestaña)`}
-        >
-          Ir al sitio
-        </a>
+      (url || feedbackUrl) && (
+        <div class="card-project__links mt-[1.6rem] flex flex-wrap gap-[2.4rem]">
+          {url && (
+            <a
+              class="card-project__link inline-flex"
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ir al sitio de ${title} (se abre en una nueva pestaña)`}
+            >
+              Ir al sitio
+            </a>
+          )}
+          {feedbackUrl && (
+            <a
+              class="card-project__link inline-flex"
+              href={feedbackUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Ver feedback de ${title} (se abre en una nueva pestaña)`}
+            >
+              Ver feedback
+            </a>
+          )}
+        </div>
       )
     }
   </div>

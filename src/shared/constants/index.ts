@@ -5,6 +5,7 @@ export type Project = {
   image?: string
   imageAlt?: string
   url?: string
+  feedbackUrl?: string
   techs?: string[]
 }
 
@@ -22,7 +23,7 @@ export type ExperienceItem = {
 
 export const PROJECTS: Project[] = [
   {
-    date: 'Octubre 2023',
+    date: 'Noviembre 2025',
     title: 'ArmoryGG',
     subtitle:
       'Consulta stats, equipo y talentos de personajes de WoW MoP Classic',
@@ -38,14 +39,21 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    date: 'Marzo 2024',
-    title: 'Plataforma de Analítica',
-    subtitle: 'Inteligencia interactiva de producto',
-  },
-  {
-    date: 'Junio 2024',
-    title: 'Sistema de Diseño SaaS',
-    subtitle: 'Arquitectura de componentes escalable',
+    date: 'Junio 2021',
+    title: 'Divain Samples',
+    subtitle: 'Tienda de muestras de perfumes para hombre, mujer y unisex',
+    image: '/img/proyecto_2.webp',
+    imageAlt: 'Vista de la tienda Divain Samples con muestras de perfumes',
+    url: 'https://divainsamples.com/',
+    feedbackUrl:
+      'https://www.upwork.com/freelancers/~017ebfe65697f4f459?p=1403873516385112064',
+    techs: [
+      'catppuccin:javascript-react',
+      'catppuccin:html',
+      'catppuccin:css3',
+      'catppuccin:javascript',
+      'catppuccin:folder-redux',
+    ],
   },
 ]
 
