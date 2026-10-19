@@ -40,18 +40,29 @@
     font-size: 1.4rem;
   }
 
-  &__tech {
-    span {
-      border-radius: 999px;
-      background: rgba(208, 188, 255, 0.16);
-      color: var(--primary);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1rem;
-      font-weight: 700;
-    }
+  &__tech-icon {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.8rem;
+    background: var(--surface-container);
+    font-size: 2rem;
+    transition: transform 0.3s ease;
 
-    span:nth-child(2) {
-      background: rgba(251, 171, 255, 0.2);
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__link {
+    color: var(--primary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
       color: var(--magenta-spark);
     }
   }

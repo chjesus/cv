@@ -1,20 +1,37 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 type Props = {
   date: string
   title: string
   subtitle: string
+  image?: string
   imageAlt?: string
+  url?: string
+  techs?: string[]
   type: 'even' | 'odd'
 }
 
-const { date, title, subtitle, imageAlt, type } = Astro.props
+const {
+  date,
+  title,
+  subtitle,
+  image,
+  imageAlt,
+  url,
+  techs = [],
+  type,
+} = Astro.props
+
+const DEFAULT_IMAGE =
+  'https://media.istockphoto.com/id/1226444511/es/vector/ilustraci%C3%B3n-conceptual-de-la-tecnolog%C3%ADa-de-desarrollo-de-sitios-web-m%C3%B3viles-dise%C3%B1o-de.jpg?s=2048x2048&w=is&k=20&c=u2c0gjtgdfQzUY9FaWe_5SWYYOZXLBwntiFvumVl9u4='
 ---
 
 <article class:list={['card-project glass-card min-h-full', type]}>
   <figure class="card-project__image relative m-0 aspect-video overflow-hidden">
     <img
       class="h-full w-full object-cover"
-      src="https://media.istockphoto.com/id/1226444511/es/vector/ilustraci%C3%B3n-conceptual-de-la-tecnolog%C3%ADa-de-desarrollo-de-sitios-web-m%C3%B3viles-dise%C3%B1o-de.jpg?s=2048x2048&w=is&k=20&c=u2c0gjtgdfQzUY9FaWe_5SWYYOZXLBwntiFvumVl9u4="
+      src={image || DEFAULT_IMAGE}
       alt={imageAlt || title}
     />
     <div class="absolute inset-0"></div>
@@ -25,10 +42,33 @@ const { date, title, subtitle, imageAlt, type } = Astro.props
     <span class="card-project__date">{date}</span>
     <h3>{title}</h3>
     <p>{subtitle}</p>
-    <div class="card-project__tech mt-0 flex gap-[0.8rem]">
-      <span class="grid h-[2.4rem] w-[2.4rem] place-items-center">NX</span>
-      <span class="grid h-[2.4rem] w-[2.4rem] place-items-center">TW</span>
-    </div>
+    {
+      techs.length > 0 && (
+        <div class="card-project__tech mt-0 flex flex-wrap gap-[0.8rem]">
+          {techs.map((tech) => (
+            <span
+              class="card-project__tech-icon grid h-[3.6rem] w-[3.6rem] place-items-center"
+              title={tech.split(':')[1]}
+            >
+              <Icon name={tech} />
+            </span>
+          ))}
+        </div>
+      )
+    }
+    {
+      url && (
+        <a
+          class="card-project__link mt-[1.6rem] inline-flex"
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Ir al sitio de ${title} (se abre en una nueva pestaña)`}
+        >
+          Ir al sitio
+        </a>
+      )
+    }
   </div>
 </article>
 

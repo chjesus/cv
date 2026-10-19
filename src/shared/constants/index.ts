@@ -2,7 +2,10 @@ export type Project = {
   date: string
   title: string
   subtitle: string
+  image?: string
   imageAlt?: string
+  url?: string
+  techs?: string[]
 }
 
 export type ExperienceItem = {
@@ -20,8 +23,19 @@ export type ExperienceItem = {
 export const PROJECTS: Project[] = [
   {
     date: 'Octubre 2023',
-    title: 'Rediseño de E-Commerce',
-    subtitle: 'Tienda modernizada con Next.js',
+    title: 'ArmoryGG',
+    subtitle:
+      'Consulta stats, equipo y talentos de personajes de WoW MoP Classic',
+    image: '/img/proyecto_1.webp',
+    imageAlt: 'Vista de ArmoryGG mostrando el perfil de un personaje',
+    url: 'https://mop-armory-wow.vercel.app/',
+    techs: [
+      'catppuccin:next',
+      'catppuccin:typescript',
+      'catppuccin:javascript-react',
+      'catppuccin:biome',
+      'catppuccin:vite',
+    ],
   },
   {
     date: 'Marzo 2024',
