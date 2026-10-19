@@ -29,7 +29,7 @@ export const PROJECTS: Project[] = [
       'Consulta stats, equipo y talentos de personajes de WoW MoP Classic',
     image: '/img/proyecto_1.webp',
     imageAlt: 'Vista de ArmoryGG mostrando el perfil de un personaje',
-    url: 'https://mop-armory-wow.vercel.app/',
+    url: 'https://armorygg.vercel.app/',
     techs: [
       'catppuccin:next',
       'catppuccin:typescript',
