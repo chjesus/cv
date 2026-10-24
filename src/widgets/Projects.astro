@@ -7,33 +7,27 @@ import { PROJECTS } from '@shared/constants'
 
 <section class="premium-section portfolio" id="portfolio">
   <Container class="!max-w-[1280px]">
-    <div
-      class="portfolio-header mb-[6.4rem] flex flex-col items-start gap-[1.6rem]"
-    >
+    <div class="portfolio-header mb-[6.4rem] flex flex-col items-start gap-[1.6rem]">
       <span class="premium-badge">Portafolio</span>
       <h2 class="premium-title">
         Explora Mi <span class="text-luminous">Portafolio Digital</span>
       </h2>
     </div>
 
-    <div
-      class="portfolio-grid grid grid-cols-3 gap-[2.4rem] max-[900px]:grid-cols-2 max-[640px]:grid-cols-1"
-    >
-      {
-        PROJECTS.slice(0, 3).map((project, index) => (
-          <CardProject
-            date={project.date}
-            title={project.title}
-            subtitle={project.subtitle}
-            image={project.image}
-            imageAlt={project.imageAlt}
-            url={project.url}
-            feedbackUrl={project.feedbackUrl}
-            techs={project.techs}
-            type={(index + 1) % 2 === 0 ? 'even' : 'odd'}
-          />
-        ))
-      }
+    <div class="portfolio-grid grid grid-cols-3 gap-[2.4rem] max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
+      {PROJECTS.slice(0, 3).map((project, index) => (
+        <CardProject
+          date={project.date}
+          title={project.title}
+          subtitle={project.subtitle}
+          image={project.image}
+          imageAlt={project.imageAlt}
+          url={project.url}
+          feedbackUrl={project.feedbackUrl}
+          techs={project.techs}
+          type={(index + 1) % 2 === 0 ? 'even' : 'odd'}
+        />
+      ))}
     </div>
   </Container>
 </section>

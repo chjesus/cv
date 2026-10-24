@@ -34,16 +34,14 @@ const mobileNavItems = [
       </a>
 
       <div class="nav-links" aria-label="Navegación principal">
-        {
-          navItems.map((item, index) => (
-            <a
-              class:list={['nav-item', { 'is-active': index === 0 }]}
-              href={item.href}
-            >
-              {item.label}
-            </a>
-          ))
-        }
+        {navItems.map((item, index) => (
+          <a
+            class:list={['nav-item', { 'is-active': index === 0 }]}
+            href={item.href}
+          >
+            {item.label}
+          </a>
+        ))}
       </div>
 
       <button
@@ -87,13 +85,11 @@ const mobileNavItems = [
       </div>
 
       <div class="mobile-menu__links" aria-label="Enlaces de navegación móvil">
-        {
-          mobileNavItems.map((item) => (
-            <a class="mobile-menu__item" href={item.href}>
-              {item.label}
-            </a>
-          ))
-        }
+        {mobileNavItems.map((item) => (
+          <a class="mobile-menu__item" href={item.href}>
+            {item.label}
+          </a>
+        ))}
       </div>
     </div>
   </div>

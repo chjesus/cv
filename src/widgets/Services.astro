@@ -35,9 +35,7 @@ const services = [
 
 <section class="premium-section services" id="services">
   <Container class="!max-w-[1280px]">
-    <div
-      class="services-header mb-[6.4rem] flex items-end justify-between gap-[2.4rem]"
-    >
+    <div class="services-header mb-[6.4rem] flex items-end justify-between gap-[2.4rem]">
       <div>
         <h2 class="premium-title">
           Competencias <span class="text-luminous">Clave</span>
@@ -49,34 +47,30 @@ const services = [
       </div>
     </div>
 
-    <div
-      class="services-grid grid grid-cols-3 gap-[2.4rem] max-[900px]:grid-cols-1"
-    >
-      {
-        services.map((service) => (
-          <article
-            class:list={[
-              'service-card glass-card mouse-track-container flex min-h-[38rem] flex-col items-start p-[3.2rem]',
-              service.isHidden && 'hidden',
-            ]}
-          >
-            <div class="glow-overlay" />
-            <div class="service-card__bar" />
-            <span class="service-card__icon relative z-[2] grid h-[5.6rem] w-[5.6rem] place-items-center">
-              <Icon name={service.icon} />
-            </span>
-            <h3>{service.title}</h3>
-            <p>{service.description}</p>
-            <ul class="relative z-[2] grid gap-[1.2rem]">
-              {service.items.map((item) => (
-                <li class="flex items-center gap-[1.2rem]">
-                  <Icon name="heroicons:chevron-right-20-solid" /> {item}
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))
-      }
+    <div class="services-grid grid grid-cols-3 gap-[2.4rem] max-[900px]:grid-cols-1">
+      {services.map((service) => (
+        <article
+          class:list={[
+            'service-card glass-card mouse-track-container flex min-h-[38rem] flex-col items-start p-[3.2rem]',
+            service.isHidden && 'hidden',
+          ]}
+        >
+          <div class="glow-overlay" />
+          <div class="service-card__bar" />
+          <span class="service-card__icon relative z-[2] grid h-[5.6rem] w-[5.6rem] place-items-center">
+            <Icon name={service.icon} />
+          </span>
+          <h3>{service.title}</h3>
+          <p>{service.description}</p>
+          <ul class="relative z-[2] grid gap-[1.2rem]">
+            {service.items.map((item) => (
+              <li class="flex items-center gap-[1.2rem]">
+                <Icon name="heroicons:chevron-right-20-solid" /> {item}
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
     </div>
   </Container>
 </section>

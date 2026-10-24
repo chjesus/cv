@@ -5,9 +5,7 @@ import { Icon } from 'astro-icon/components'
 
 <section class="premium-section contact" id="contact">
   <Container class="!max-w-[1280px]">
-    <div
-      class="contact-grid grid grid-cols-[minmax(0,7fr)_minmax(36rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1"
-    >
+    <div class="contact-grid grid grid-cols-[minmax(0,7fr)_minmax(36rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1">
       <div class="contact-copy flex flex-col items-start gap-[2.4rem]">
         <span class="premium-badge">Contacto</span>
         <h2 class="premium-title">
@@ -51,7 +49,8 @@ import { Icon } from 'astro-icon/components'
               id="message"
               name="message"
               placeholder="Cuéntame sobre tu proyecto..."
-              required></textarea>
+              required
+            ></textarea>
           </label>
           <button
             class="btn-primary-premium justify-self-start"
@@ -64,8 +63,7 @@ import { Icon } from 'astro-icon/components'
             class="contact-form__status"
             data-contact-status
             aria-live="polite"
-          >
-          </p>
+          ></p>
         </form>
       </div>
 
@@ -74,9 +72,7 @@ import { Icon } from 'astro-icon/components'
         aria-hidden="true"
       >
         <div class="contact-visual__glow"></div>
-        <div
-          class="contact-visual__card glass-card grid aspect-square w-[74%] place-items-center"
-        >
+        <div class="contact-visual__card glass-card grid aspect-square w-[74%] place-items-center">
           <Icon name="heroicons:envelope-20-solid" />
         </div>
       </div>

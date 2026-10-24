@@ -14,20 +14,16 @@ const stats = [
   aria-label="Métricas profesionales"
 >
   <Container class="w-full !max-w-[1280px]">
-    <div
-      class="stats-grid mx-auto grid w-full grid-cols-2 gap-[2.4rem] md:grid-cols-4"
-    >
-      {
-        stats.map((stat) => (
-          <article class="stats-card glass-panel relative flex min-h-[16.2rem] flex-col items-center justify-center overflow-hidden p-[2.4rem] text-center">
-            <span class="stats-card__ghost" aria-hidden="true">
-              {stat.value.replace('+', '')}
-            </span>
-            <strong>{stat.value}</strong>
-            <span>{stat.label}</span>
-          </article>
-        ))
-      }
+    <div class="stats-grid mx-auto grid w-full grid-cols-2 gap-[2.4rem] md:grid-cols-4">
+      {stats.map((stat) => (
+        <article class="stats-card glass-panel relative flex min-h-[16.2rem] flex-col items-center justify-center overflow-hidden p-[2.4rem] text-center">
+          <span class="stats-card__ghost" aria-hidden="true">
+            {stat.value.replace('+', '')}
+          </span>
+          <strong>{stat.value}</strong>
+          <span>{stat.label}</span>
+        </article>
+      ))}
     </div>
   </Container>
 </section>
