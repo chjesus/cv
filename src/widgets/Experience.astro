@@ -26,69 +26,65 @@ const columns = [
 
 <section class="premium-section experience" id="experience">
   <Container class="!max-w-[1280px]">
-    <div
-      class="experience-grid grid grid-cols-2 gap-[clamp(4rem,6vw,8rem)] max-[820px]:grid-cols-1"
-    >
-      {
-        columns.map((column) => (
-          <div class="experience-column flex flex-col items-start gap-[2.4rem]">
-            <span class="premium-badge">{column.eyebrow}</span>
-            <h2 class="premium-title">{column.title}</h2>
-            <div class="experience-list mt-[1.2rem] grid gap-[3.2rem]">
-              {column.items.map((item) => (
-                <article class="experience-item grid grid-cols-[4rem_1fr] gap-[1.6rem]">
-                  <span
-                    class:list={[
-                      'grid h-[4rem] w-[4rem] shrink-0 place-items-center',
-                      'experience-item__icon',
-                      `is-${column.variant}`,
-                    ]}
-                  >
-                    <Icon name={column.icon} />
+    <div class="experience-grid grid grid-cols-2 gap-[clamp(4rem,6vw,8rem)] max-[820px]:grid-cols-1">
+      {columns.map((column) => (
+        <div class="experience-column flex flex-col items-start gap-[2.4rem]">
+          <span class="premium-badge">{column.eyebrow}</span>
+          <h2 class="premium-title">{column.title}</h2>
+          <div class="experience-list mt-[1.2rem] grid gap-[3.2rem]">
+            {column.items.map((item) => (
+              <article class="experience-item grid grid-cols-[4rem_1fr] gap-[1.6rem]">
+                <span
+                  class:list={[
+                    'grid h-[4rem] w-[4rem] shrink-0 place-items-center',
+                    'experience-item__icon',
+                    `is-${column.variant}`,
+                  ]}
+                >
+                  <Icon name={column.icon} />
+                </span>
+                <div>
+                  <h3>{item.company}</h3>
+                  <span class="experience-item__period">
+                    {item.period}
+                    {item.periodLink && (
+                      <>
+                        {' | '}
+                        <a
+                          class="experience-item__period-link"
+                          href={item.periodLink.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.periodLink.label}
+                        </a>
+                      </>
+                    )}
                   </span>
-                  <div>
-                    <h3>{item.company}</h3>
-                    <span class="experience-item__period">
-                      {item.period}
-                      {item.periodLink && (
-                        <>
-                          {' | '}
-                          <a
-                            class="experience-item__period-link"
-                            href={item.periodLink.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {item.periodLink.label}
-                          </a>
-                        </>
-                      )}
-                    </span>
-                    <p>{item.info}</p>
-                    {item.responsibilities && (
-                      <ul class="experience-item__responsibilities">
-                        {item.responsibilities.map((responsibility) => (
-                          <li>{responsibility}</li>
-                        ))}
-                      </ul>
-                    )}
-                    {item.certificateUrl && (
-                      <a
-                        class="experience-item__certificate"
-                        href={item.certificateUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Ver certificado
-                      </a>
-                    )}
-                  </div>
-                </article>
-              ))}
-            </div>
+                  <p>{item.info}</p>
+                  {item.responsibilities && (
+                    <ul class="experience-item__responsibilities">
+                      {item.responsibilities.map((responsibility) => (
+                        <li>{responsibility}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.certificateUrl && (
+                    <a
+                      class="experience-item__certificate"
+                      href={item.certificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Ver certificado
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
           </div>
-        ))
-      }
+        </div>
+      ))}
     </div>
   </Container>
 </section>

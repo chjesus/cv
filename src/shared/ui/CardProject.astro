@@ -38,54 +38,48 @@ const DEFAULT_IMAGE =
     />
     <div class="absolute inset-0"></div>
   </figure>
-  <div
-    class="card-project__body relative z-[1] flex flex-col items-start p-[2.4rem]"
-  >
+  <div class="card-project__body relative z-[1] flex flex-col items-start p-[2.4rem]">
     <span class="card-project__date">{date}</span>
     <h3>{title}</h3>
     <p>{subtitle}</p>
-    {
-      techs.length > 0 && (
-        <div class="card-project__tech mt-0 flex flex-wrap gap-[0.8rem]">
-          {techs.map((tech) => (
-            <span
-              class="card-project__tech-icon grid h-[3.6rem] w-[3.6rem] place-items-center"
-              title={tech.split(':')[1]}
-            >
-              <Icon name={tech} />
-            </span>
-          ))}
-        </div>
-      )
-    }
-    {
-      (url || feedbackUrl) && (
-        <div class="card-project__links mt-[1.6rem] flex flex-wrap gap-[2.4rem]">
-          {url && (
-            <a
-              class="card-project__link inline-flex"
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Ir al sitio de ${title} (se abre en una nueva pestaña)`}
-            >
-              Ir al sitio
-            </a>
-          )}
-          {feedbackUrl && (
-            <a
-              class="card-project__link inline-flex"
-              href={feedbackUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Ver feedback de ${title} (se abre en una nueva pestaña)`}
-            >
-              Ver feedback
-            </a>
-          )}
-        </div>
-      )
-    }
+    {techs.length > 0 && (
+      <div class="card-project__tech mt-0 flex flex-wrap gap-[0.8rem]">
+        {techs.map((tech) => (
+          <span
+            class="card-project__tech-icon grid h-[3.6rem] w-[3.6rem] place-items-center"
+            title={tech.split(':')[1]}
+          >
+            <Icon name={tech} />
+          </span>
+        ))}
+      </div>
+    )}
+    {(url || feedbackUrl) && (
+      <div class="card-project__links mt-[1.6rem] flex flex-wrap gap-[2.4rem]">
+        {url && (
+          <a
+            class="card-project__link inline-flex"
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Ir al sitio de ${title} (se abre en una nueva pestaña)`}
+          >
+            Ir al sitio
+          </a>
+        )}
+        {feedbackUrl && (
+          <a
+            class="card-project__link inline-flex"
+            href={feedbackUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Ver feedback de ${title} (se abre en una nueva pestaña)`}
+          >
+            Ver feedback
+          </a>
+        )}
+      </div>
+    )}
   </div>
 </article>
 

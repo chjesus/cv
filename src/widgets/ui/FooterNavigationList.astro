@@ -8,13 +8,11 @@ const navItems = [
 ---
 
 <ul class="footer-navigation-list">
-  {
-    navItems.map(({ label, href }) => (
-      <li>
-        <a href={href}>{label}</a>
-      </li>
-    ))
-  }
+  {navItems.map(({ label, href }) => (
+    <li>
+      <a href={href}>{label}</a>
+    </li>
+  ))}
 </ul>
 
 <style lang="scss">

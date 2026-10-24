@@ -31,9 +31,7 @@ const testimonials = [
 
 <section class="premium-section testimonials" id="testimonials">
   <Container class="!max-w-[1280px]">
-    <div
-      class="testimonials-header mb-[6.4rem] flex flex-col items-start gap-[1.6rem]"
-    >
+    <div class="testimonials-header mb-[6.4rem] flex flex-col items-start gap-[1.6rem]">
       <span class="premium-badge">Testimonios</span>
       <h2 class="premium-title">
         Testimonios que Hablan de <span class="text-luminous">Resultados</span>
@@ -44,64 +42,60 @@ const testimonials = [
       </p>
     </div>
 
-    <div
-      class="testimonials-grid grid grid-cols-2 items-start gap-[2.4rem] max-[820px]:grid-cols-1"
-    >
-      {
-        testimonials.map((testimonial) => (
-          <article class="testimonial-card glass-card mouse-track-container group flex flex-col p-[3.2rem] max-[820px]:p-[2.8rem]">
-            <div class="glow-overlay" />
-            <div class="testimonial-card__stars relative z-[1] mb-[1.6rem] flex gap-[0.4rem]">
-              {Array.from({ length: 5 }).map(() => (
-                <Icon name="heroicons:star-20-solid" />
-              ))}
-            </div>
-            <div
-              class:list={[
-                'testimonial-card__quote',
-                testimonial.quote.length > 1 && 'is-collapsed',
-              ]}
-              data-testimonial-quote
+    <div class="testimonials-grid grid grid-cols-2 items-start gap-[2.4rem] max-[820px]:grid-cols-1">
+      {testimonials.map((testimonial) => (
+        <article class="testimonial-card glass-card mouse-track-container group flex flex-col p-[3.2rem] max-[820px]:p-[2.8rem]">
+          <div class="glow-overlay" />
+          <div class="testimonial-card__stars relative z-[1] mb-[1.6rem] flex gap-[0.4rem]">
+            {Array.from({ length: 5 }).map(() => (
+              <Icon name="heroicons:star-20-solid" />
+            ))}
+          </div>
+          <div
+            class:list={[
+              'testimonial-card__quote',
+              testimonial.quote.length > 1 && 'is-collapsed',
+            ]}
+            data-testimonial-quote
+          >
+            {testimonial.quote.map((paragraph, index) => (
+              <p>
+                {index === 0 && '“'}
+                {paragraph}
+                {index === testimonial.quote.length - 1 && '”'}
+              </p>
+            ))}
+          </div>
+          {testimonial.quote.length > 1 && (
+            <button
+              class="testimonial-card__toggle"
+              type="button"
+              data-testimonial-toggle
+              aria-expanded="false"
             >
-              {testimonial.quote.map((paragraph, index) => (
-                <p>
-                  {index === 0 && '“'}
-                  {paragraph}
-                  {index === testimonial.quote.length - 1 && '”'}
-                </p>
-              ))}
+              Mostrar más...
+            </button>
+          )}
+          <a
+            class="testimonial-card__link group/link relative z-[1] mt-auto mb-[2.4rem] inline-flex w-fit items-center gap-[0.8rem]"
+            href={testimonial.profileUrl ?? '#portfolio'}
+            target={testimonial.profileUrl ? '_blank' : undefined}
+            rel={testimonial.profileUrl ? 'noopener noreferrer' : undefined}
+          >
+            <span>Visitar sitio</span>
+            <Icon name="heroicons:arrow-top-right-on-square-20-solid" />
+          </a>
+          <div class="testimonial-card__author relative z-[1] flex items-center gap-[1.6rem]">
+            <span class="grid h-[4.8rem] w-[4.8rem] place-items-center">
+              {testimonial.initials}
+            </span>
+            <div>
+              <h3>{testimonial.name}</h3>
+              <strong>{testimonial.role}</strong>
             </div>
-            {testimonial.quote.length > 1 && (
-              <button
-                class="testimonial-card__toggle"
-                type="button"
-                data-testimonial-toggle
-                aria-expanded="false"
-              >
-                Mostrar más...
-              </button>
-            )}
-            <a
-              class="testimonial-card__link group/link relative z-[1] mt-auto mb-[2.4rem] inline-flex w-fit items-center gap-[0.8rem]"
-              href={testimonial.profileUrl ?? '#portfolio'}
-              target={testimonial.profileUrl ? '_blank' : undefined}
-              rel={testimonial.profileUrl ? 'noopener noreferrer' : undefined}
-            >
-              <span>Visitar sitio</span>
-              <Icon name="heroicons:arrow-top-right-on-square-20-solid" />
-            </a>
-            <div class="testimonial-card__author relative z-[1] flex items-center gap-[1.6rem]">
-              <span class="grid h-[4.8rem] w-[4.8rem] place-items-center">
-                {testimonial.initials}
-              </span>
-              <div>
-                <h3>{testimonial.name}</h3>
-                <strong>{testimonial.role}</strong>
-              </div>
-            </div>
-          </article>
-        ))
-      }
+          </div>
+        </article>
+      ))}
     </div>
   </Container>
 </section>
