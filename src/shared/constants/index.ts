@@ -1,14 +1,3 @@
-export type Project = {
-  date: string
-  title: string
-  subtitle: string
-  image?: string
-  imageAlt?: string
-  url?: string
-  feedbackUrl?: string
-  techs?: string[]
-}
-
 export type ExperienceItem = {
   info: string
   period: string
@@ -20,42 +9,6 @@ export type ExperienceItem = {
   responsibilities?: string[]
   certificateUrl?: string
 }
-
-export const PROJECTS: Project[] = [
-  {
-    date: 'Noviembre 2025',
-    title: 'ArmoryGG',
-    subtitle:
-      'Consulta stats, equipo y talentos de personajes de WoW MoP Classic',
-    image: '/img/proyecto_1.webp',
-    imageAlt: 'Vista de ArmoryGG mostrando el perfil de un personaje',
-    url: 'https://armorygg.vercel.app/',
-    techs: [
-      'catppuccin:next',
-      'catppuccin:typescript',
-      'catppuccin:javascript-react',
-      'catppuccin:biome',
-      'catppuccin:vite',
-    ],
-  },
-  {
-    date: 'Junio 2021',
-    title: 'Divain Samples',
-    subtitle: 'Tienda de muestras de perfumes para hombre, mujer y unisex',
-    image: '/img/proyecto_2.webp',
-    imageAlt: 'Vista de la tienda Divain Samples con muestras de perfumes',
-    url: 'https://divainsamples.com/',
-    feedbackUrl:
-      'https://www.upwork.com/freelancers/~017ebfe65697f4f459?p=1403873516385112064',
-    techs: [
-      'catppuccin:javascript-react',
-      'catppuccin:html',
-      'catppuccin:css3',
-      'catppuccin:javascript',
-      'catppuccin:folder-redux',
-    ],
-  },
-]
 
 export const EXPERIENCE_WORK_LIST: ExperienceItem[] = [
   {
