@@ -26,10 +26,13 @@ Use this file as the default implementation and validation rulebook.
 
 - `pnpm-lock.yaml` exists: prefer `pnpm`
 - No required environment variables at this time
-- Sanity `projectId` (`d1c9n3s6`) and `dataset` (`production`) are public and
-  hardcoded in `astro.config.mjs` and `sanity.config.ts`; `sanity.cli.ts` reads
-  them from `PUBLIC_SANITY_PROJECT_ID` and `PUBLIC_SANITY_DATASET` (see
-  `.env.example`) for local CLI commands; keep all values in sync
+- Sanity `projectId` (`d1c9n3s6`) and `dataset` (`production`) are public.
+  `sanity.config.ts` (via `src/shared/sanity/env.ts`, `import.meta.env`) and
+  `sanity.cli.ts` (`process.env`) read `PUBLIC_SANITY_PROJECT_ID` and
+  `PUBLIC_SANITY_DATASET` (see `.env.example`); set them locally and in Vercel.
+  `astro.config.mjs` still hardcodes them; keep the values in sync
+- Never use `process.env` in `sanity.config.ts` or its imports: the Studio runs
+  in the browser, where `process` is undefined
 
 ## Sanity
 
