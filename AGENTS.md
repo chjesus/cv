@@ -15,7 +15,8 @@ Use this file as the default implementation and validation rulebook.
 ## Stack Overview
 
 - Astro 5 app (`output: 'server'`) with Vercel adapter
-- UI: Astro components + one React/TSX animation component
+- UI: Astro components; React (`@astrojs/react`) is installed for the embedded Sanity Studio
+- CMS: Sanity, embedded via `@sanity/astro` (Studio served at `/admin`, same Vercel deploy)
 - Styles: Tailwind utilities + SCSS + global SCSS variables
 - Lint: ESLint flat config (`typescript-eslint`, `astro`, `jsx-a11y`)
 - Format: Prettier (+ Astro, organize-imports, tailwindcss plugins)
@@ -25,6 +26,20 @@ Use this file as the default implementation and validation rulebook.
 
 - `pnpm-lock.yaml` exists: prefer `pnpm`
 - No required environment variables at this time
+- Sanity `projectId` (`d1c9n3s6`) and `dataset` (`production`) are public and
+  hardcoded in `astro.config.mjs`, `sanity.config.ts`, and `sanity.cli.ts`;
+  keep the three in sync
+
+## Sanity
+
+- Studio config: `sanity.config.ts` (repo root); Studio route: `/admin`
+- Schemas: `src/shared/sanity/schemas/` (register new types in `index.ts`)
+- Query from `.astro` files with `import { sanityClient } from 'sanity:client'`
+- `/admin` is excluded from the sitemap in `astro.config.mjs`
+- The Studio needs CORS origins (with credentials) for `http://localhost:8080`
+  and each deployed domain, configured at sanity.io/manage
+- Do not scaffold a standalone Studio (`pnpm create sanity` without `--bare`);
+  the Studio lives inside this Astro app
 
 ## Build / Lint / Test Commands
 
@@ -86,7 +101,7 @@ If a framework is added, update this section with exact commands, for example:
 - `src/pages/`: route entry files
 - `src/app/`: layout shell and app-level UI
 - `src/widgets/`: page sections
-- `src/shared/`: shared UI, constants, and shared assets/styles
+- `src/shared/`: shared UI, constants, Sanity schemas, and shared assets/styles
 - `src/entities/`: reserved placeholder
 - `public/`: static assets/fonts
 
@@ -170,6 +185,7 @@ Before completing a task:
 - `.prettierrc`
 - `tsconfig.json`
 - `astro.config.mjs`
+- `sanity.config.ts`
 - `src/shared/assets/scss/variables.scss`
 
 ## Maintenance Note
