@@ -1,8 +1,21 @@
 ---
+import { sanityClient } from 'sanity:client'
+
 import Container from '@app/layout/ui/Container.astro'
 import CardProject from '@shared/ui/CardProject.astro'
 
-import { PROJECTS } from '@shared/constants'
+import { PROJECTS_QUERY, type SanityProject } from '@shared/sanity/queries'
+import { formatProjectDate, urlFor } from '@shared/sanity/utils'
+
+let projects: SanityProject[] = []
+let hasError = false
+
+try {
+  projects = await sanityClient.fetch<SanityProject[]>(PROJECTS_QUERY)
+} catch (error) {
+  console.error('Failed to load projects from Sanity', error)
+  hasError = true
+}
 ---
 
 <section class="premium-section portfolio" id="portfolio">
@@ -14,17 +27,25 @@ import { PROJECTS } from '@shared/constants'
       </h2>
     </div>
 
+    {hasError && (
+      <p class="premium-copy" role="alert">
+        No se pudieron cargar los proyectos. Inténtalo de nuevo más tarde.
+      </p>
+    )}
+
     <div class="portfolio-grid grid grid-cols-3 gap-[2.4rem] max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
-      {PROJECTS.slice(0, 3).map((project, index) => (
+      {projects.map((project, index) => (
         <CardProject
-          date={project.date}
+          date={formatProjectDate(project.date)}
           title={project.title}
           subtitle={project.subtitle}
-          image={project.image}
-          imageAlt={project.imageAlt}
-          url={project.url}
-          feedbackUrl={project.feedbackUrl}
-          techs={project.techs}
+          image={
+            project.image ? urlFor(project.image).width(800).url() : undefined
+          }
+          imageAlt={project.image?.alt ?? undefined}
+          url={project.url ?? undefined}
+          feedbackUrl={project.feedbackUrl ?? undefined}
+          techs={project.techs ?? undefined}
           type={(index + 1) % 2 === 0 ? 'even' : 'odd'}
         />
       ))}
