@@ -8,7 +8,7 @@ import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://portfolio-jesus.com',
+  site: 'https://jesuschacon.dev',
   server: { port: 8080, host: true, open: true },
   output: 'server',
   vite: {
