@@ -9,7 +9,7 @@ import { Icon } from 'astro-icon/components'
   <Container class="w-full !max-w-[1280px]">
     <div class="hero-shell">
       <div class="hero-glow" aria-hidden="true"></div>
-      <div class="hero-grid relative grid grid-cols-[minmax(0,7fr)_minmax(34rem,5fr)] items-center gap-[2.4rem] max-[900px]:grid-cols-1">
+      <div class="hero-grid max-[900px]:grid-cols-1">
         <div class="hero-copy relative z-[1] flex flex-col gap-[2.4rem]">
           <span class="premium-badge">Hola</span>
           <h1 class="premium-display">
@@ -17,7 +17,7 @@ import { Icon } from 'astro-icon/components'
             <span class="text-luminous">Interfaces Frontend</span> con <br />
             Diseño Preciso
           </h1>
-          <p class="premium-copy hero-description mt-[1.6rem] max-w-[60rem]">
+          <p class="hero-description premium-copy mt-[1.6rem] max-w-[60rem]">
             Desarrollo aplicaciones web escalables y de alto rendimiento,
             enfocadas en experiencias de usuario excepcionales y arquitectura
             sólida. Desarrollador Frontend, construido con confianza serena.
@@ -35,8 +35,9 @@ import { Icon } from 'astro-icon/components'
         <div
           class="hero-visual relative"
           aria-label="Ilustración del espacio de trabajo del desarrollador"
+          role="img"
         >
-          <div class="hero-visual__inner glass-card absolute inset-0 grid place-items-center">
+          <div class="hero-visual__inner glass-card">
             <div class="hero-visual__wash"></div>
             <IMAGEHEADER class="hero-visual__image relative z-[1] h-auto max-h-[88%] w-[92%] object-contain" />
           </div>
