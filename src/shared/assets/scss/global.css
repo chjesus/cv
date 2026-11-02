@@ -79,7 +79,7 @@
     background: rgba(208, 188, 255, 0.1);
     box-shadow: 0 0 10px rgba(160, 120, 255, 0.1);
     color: var(--primary);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-jetbrains-mono);
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.2em;
@@ -100,7 +100,7 @@
   .premium-title {
     margin: 0;
     color: var(--text-primary);
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sora);
     font-size: clamp(3.2rem, 4vw, 4.8rem);
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -110,7 +110,7 @@
   .premium-display {
     margin: 0;
     color: var(--text-primary);
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sora);
     font-size: clamp(4rem, 6.5vw, 7.2rem);
     font-weight: 700;
     letter-spacing: -0.04em;
@@ -163,7 +163,7 @@
     min-height: 5.6rem;
     padding: 1.5rem 3.2rem;
     border-radius: 1.2rem;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-jetbrains-mono);
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 1;
@@ -234,37 +234,5 @@
       scroll-behavior: auto !important;
       transition-duration: 0.01ms !important;
     }
-  }
-
-  @font-face {
-    font-family: 'Roboto';
-    src: url('/fonts/Roboto-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Source Sans 3';
-    src: url('/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Cardo';
-    src: url('/fonts/Cardo-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
-  @font-face {
-    font-family: 'Cardo';
-    src: url('/fonts/Cardo-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
   }
 }

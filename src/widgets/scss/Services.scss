@@ -71,7 +71,7 @@
     z-index: 2;
     margin: 2.4rem 0 1.6rem;
     color: var(--text-primary);
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sora);
     font-size: 3.2rem;
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -96,7 +96,7 @@
 
   li {
     color: var(--text-muted);
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-jetbrains-mono);
     font-size: 1.4rem;
     line-height: 1;
 

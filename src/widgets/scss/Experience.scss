@@ -24,7 +24,7 @@
     h3 {
       margin: 0;
       color: var(--text-primary);
-      font-family: 'Sora', sans-serif;
+      font-family: var(--font-sora);
       font-size: 1.8rem;
       font-weight: 700;
     }
@@ -35,7 +35,7 @@
       gap: 0.4rem;
       margin-top: 0.4rem;
       color: var(--text-muted);
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-jetbrains-mono);
       font-size: 1.35rem;
       font-weight: 600;
       line-height: 1.4;

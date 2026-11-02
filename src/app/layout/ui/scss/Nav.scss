@@ -39,54 +39,22 @@
     }
   }
 
-  &-logo {
-    color: var(--text-primary);
-    font-family: 'Sora', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    white-space: nowrap;
-    transition: color 0.2s ease;
+  &-logo--desktop {
+    display: none;
+    align-items: center;
 
-    &:hover {
-      color: var(--primary);
-    }
-
-    &--desktop {
-      display: none;
-      align-items: center;
-
-      @media (min-width: 768px) {
-        display: inline-flex;
-      }
-
-      img,
-      svg {
-        height: 6.6rem;
-        width: auto;
-        display: block;
-        @media (min-width: 768px) {
-          height: 8.6rem;
-        }
-      }
-    }
-
-    &--mobile {
+    @media (min-width: 768px) {
       display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1.2rem 0;
+    }
+  }
 
-      img,
-      svg {
-        height: 5.8rem;
-        width: auto;
-        display: block;
-      }
+  &-logo--mobile {
+    display: inline-flex;
+    justify-content: center;
+    padding: 1.2rem 0;
 
-      @media (min-width: 768px) {
-        display: none;
-      }
+    @media (min-width: 768px) {
+      display: none;
     }
   }
 
@@ -103,7 +71,7 @@
   &-item {
     position: relative;
     color: var(--text-muted);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-inter);
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1;
@@ -151,7 +119,7 @@
     border-radius: 999px;
     background: transparent;
     color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-inter);
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -266,7 +234,7 @@
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.06);
     color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-inter);
     font-size: 1.3rem;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -306,7 +274,7 @@
     border-radius: 1.6rem;
     background: rgba(255, 255, 255, 0.035);
     color: var(--text-primary);
-    font-family: 'Sora', sans-serif;
+    font-family: var(--font-sora);
     font-size: 1.7rem;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -319,7 +287,7 @@
     &::after {
       content: '→';
       color: var(--primary);
-      font-family: 'Inter', sans-serif;
+      font-family: var(--font-inter);
       font-size: 1.6rem;
       opacity: 0.7;
     }

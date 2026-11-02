@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap'
 import vercel from '@astrojs/vercel'
 import sanity from '@sanity/astro'
 import tailwindcss from '@tailwindcss/vite'
-import { defineConfig } from 'astro/config'
+import { defineConfig, fontProviders } from 'astro/config'
 import icon from 'astro-icon'
 
 // https://astro.build/config
@@ -39,4 +39,27 @@ export default defineConfig({
     react(),
   ],
   adapter: vercel(),
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: 'Inter',
+      cssVariable: '--font-inter',
+      weights: [400, 500, 600, 700],
+      fallbacks: ['sans-serif'],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'Sora',
+      cssVariable: '--font-sora',
+      weights: [400, 600, 700, 800],
+      fallbacks: ['sans-serif'],
+    },
+    {
+      provider: fontProviders.google(),
+      name: 'JetBrains Mono',
+      cssVariable: '--font-jetbrains-mono',
+      weights: [500, 700],
+      fallbacks: ['monospace'],
+    },
+  ],
 })
